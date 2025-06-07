@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Claude Code 마스터하기</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Claude Code 마스터하기</h1>
+</header>
+<h1 id="제1장-claude-code란-무엇인가">제1장: Claude Code란
+무엇인가?</h1>
+<blockquote>
+<p>“The best way to predict the future is to invent it.” - Alan Kay</p>
+</blockquote>
+<p>프로그래밍의 역사는 추상화의 역사입니다. 기계어에서 어셈블리로, 고급
+언어에서 프레임워크로, 그리고 이제 우리는 AI와 자연어로 대화하며 코드를
+작성하는 시대에 도달했습니다.</p>
+<h2 id="전통적인-개발-도구의-한계">1.1 전통적인 개발 도구의 한계</h2>
+<h3 id="현재-개발-환경의-도전-과제">현재 개발 환경의 도전 과제</h3>
+<p>오늘날 개발자들이 직면한 현실을 살펴봅시다:</p>
+<p><strong>1. 폭발적으로 증가하는 복잡성</strong></p>
+<pre><code>- 평균적인 웹 애플리케이션: 100개 이상의 의존성
+- 마이크로서비스 아키텍처: 수십 개의 독립적인 서비스
+- 풀스택 개발: 프론트엔드, 백엔드, 데이터베이스, DevOps</code></pre>
+<p><strong>2. 끊임없이 변화하는 기술 스택</strong> - JavaScript 생태계:
+매년 새로운 프레임워크 등장 - 클라우드 서비스: AWS만 200개 이상의 서비스
+제공 - 프로그래밍 언어: 각 언어마다 고유한 패러다임과 생태계</p>
+<p><strong>3. 반복적이고 소모적인 작업</strong> - 보일러플레이트 코드
+작성 - 유사한 CRUD 기능 반복 구현 - 문서화와 주석 작성 - 테스트 코드
+작성</p>
+<h3 id="ide의-진화와-한계">IDE의 진화와 한계</h3>
+<p>통합 개발 환경(IDE)은 지난 수십 년간 꾸준히 발전해왔습니다:</p>
+<pre><code>1980년대: 텍스트 에디터 + 컴파일러
+↓
+1990년대: 통합 개발 환경 (문법 강조, 디버거)
+↓
+2000년대: 인텔리센스, 리팩토링 도구
+↓
+2010년대: 플러그인 생태계, 클라우드 통합
+↓
+2020년대: AI 코드 자동완성 (Copilot 등)</code></pre>
+<p>하지만 여전히 한계가 존재합니다:</p>
+<ol type="1">
+<li><p><strong>컨텍스트 이해 부족</strong>: IDE는 코드의 문법은
+이해하지만, 비즈니스 로직이나 의도는 파악하지 못합니다.</p></li>
+<li><p><strong>수동적인 도구</strong>: 개발자가 명시적으로 요청해야만
+도움을 제공합니다.</p></li>
+<li><p><strong>단편적인 지원</strong>: 코드 작성, 테스트, 문서화, 배포
+등이 분리되어 있습니다.</p></li>
+</ol>
+<h2 id="ai-페어-프로그래밍의-등장">1.2 AI 페어 프로그래밍의 등장</h2>
+<h3 id="페어-프로그래밍의-재정의">페어 프로그래밍의 재정의</h3>
+<p>전통적인 페어 프로그래밍: - 두 명의 개발자가 하나의 컴퓨터 앞에 앉아
+작업 - 한 명은 코드를 작성(Driver), 다른 한 명은 검토(Navigator) - 지식
+공유와 코드 품질 향상이 목적</p>
+<p>AI 페어 프로그래밍: - 개발자와 AI가 대화하며 협업 - AI는 24시간 사용
+가능한 시니어 개발자 역할 - 즉각적인 피드백과 다양한 관점 제공</p>
+<h3 id="ai-개발-도구의-스펙트럼">AI 개발 도구의 스펙트럼</h3>
+<pre><code>낮은 수준의 지원                              높은 수준의 지원
+    |                                              |
+    v                                              v
+[자동완성] → [코드 생성] → [대화형 어시스턴트] → [자율 에이전트]
+ 
+ Copilot     Tabnine      Claude Code         (미래)</code></pre>
+<p>Claude Code는 ‘대화형 어시스턴트’ 영역에서 가장 진보된 형태를
+보여줍니다.</p>
+<h2 id="claude-code의-핵심-철학">1.3 Claude Code의 핵심 철학</h2>
+<h3 id="유연성-flexibility">1. 유연성 (Flexibility)</h3>
+<p>Claude Code는 특정 워크플로우를 강제하지 않습니다:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 다양한 접근 방식 모두 가능</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;버그를 찾아서 수정해줘&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;TDD 방식으로 새 기능을 구현해줘&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;이 코드를 함수형 스타일로 리팩토링해줘&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;아키텍처를 분석하고 개선점을 제안해줘&quot;</span></span></code></pre></div>
+<h3 id="투명성-transparency">2. 투명성 (Transparency)</h3>
+<p>모든 작업 과정이 투명하게 공개됩니다:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Claude Code의 작업 과정을 실시간으로 확인</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> 파일 <span class="ex">탐색</span> 중: src/components/</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> 코드 <span class="ex">분석</span> 중: UserProfile.jsx</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> 수정 <span class="ex">사항</span> 적용 중...</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> 테스트 <span class="ex">실행</span> 중...</span></code></pre></div>
+<h3 id="협업-collaboration">3. 협업 (Collaboration)</h3>
+<p>AI는 도구가 아닌 동료입니다:</p>
+<ul>
+<li>제안과 대안 제시</li>
+<li>잠재적 문제 사전 경고</li>
+<li>더 나은 해결책 토론</li>
+<li>학습과 성장 지원</li>
+</ul>
+<h3 id="맥락-이해-context-awareness">4. 맥락 이해 (Context
+Awareness)</h3>
+<p>전체 프로젝트 맥락을 이해합니다:</p>
+<pre><code>프로젝트 구조 파악
+    ↓
+코딩 컨벤션 학습
+    ↓
+비즈니스 로직 이해
+    ↓
+최적화된 솔루션 제공</code></pre>
+<h2 id="다른-ai-코딩-도구와의-차별점">1.4 다른 AI 코딩 도구와의
+차별점</h2>
+<h3 id="github-copilot과의-비교">GitHub Copilot과의 비교</h3>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>GitHub Copilot</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작동 방식</td>
+<td>인라인 자동완성</td>
+<td>대화형 상호작용</td>
+</tr>
+<tr>
+<td>컨텍스트</td>
+<td>현재 파일 중심</td>
+<td>전체 프로젝트</td>
+</tr>
+<tr>
+<td>작업 범위</td>
+<td>코드 작성</td>
+<td>설계, 구현, 테스트, 배포</td>
+</tr>
+<tr>
+<td>커스터마이징</td>
+<td>제한적</td>
+<td>완전 커스터마이징 가능</td>
+</tr>
+<tr>
+<td>학습 곡선</td>
+<td>낮음</td>
+<td>중간</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chatgpt와의-비교">ChatGPT와의 비교</h3>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>ChatGPT</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파일 시스템 접근</td>
+<td>불가능</td>
+<td>완전한 접근</td>
+</tr>
+<tr>
+<td>코드 실행</td>
+<td>제한적</td>
+<td>직접 실행 가능</td>
+</tr>
+<tr>
+<td>지속성</td>
+<td>대화별 리셋</td>
+<td>프로젝트 컨텍스트 유지</td>
+</tr>
+<tr>
+<td>도구 통합</td>
+<td>없음</td>
+<td>Git, 테스트, 빌드 도구 등</td>
+</tr>
+</tbody>
+</table>
+<h3 id="claude-code만의-독특한-기능">Claude Code만의 독특한 기능</h3>
+<p><strong>1. CLAUDE.md를 통한 프로젝트 맞춤화</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 우리 프로젝트의 규칙</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>모든 컴포넌트는 함수형으로 작성</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>테스트 커버리지 80% 이상 유지</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>커밋 메시지는 conventional commits 따르기</span></code></pre></div>
+<p><strong>2. 멀티모달 입력 지원</strong> - 디자인 스크린샷을 보고 UI
+구현 - 다이어그램을 코드로 변환 - 에러 스크린샷으로 디버깅</p>
+<p><strong>3. 진정한 풀스택 지원</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 프론트엔드부터 배포까지 한 번에</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;사용자 인증 기능을 만들어줘. React 프론트엔드, Node.js 백엔드, PostgreSQL 데이터베이스, Docker 컨테이너화까지&quot;</span></span></code></pre></div>
+<h2 id="실제-사례-30분-만에-만든-실시간-채팅-앱">실제 사례: 30분 만에
+만든 실시간 채팅 앱</h2>
+<p>한 스타트업 개발자의 경험담:</p>
+<blockquote>
+<p>“새로운 프로젝트를 시작해야 했는데, 실시간 채팅 기능이
+핵심이었습니다. 보통이라면 아키텍처 설계부터 시작해서 일주일은 걸렸을
+텐데, Claude Code와 함께 30분 만에 작동하는 프로토타입을
+만들었습니다.</p>
+<p>더 놀라운 건, 코드 품질이 제가 직접 작성한 것보다 나았다는 점입니다.
+에러 핸들링, 보안, 확장성까지 고려되어 있었죠.”</p>
+</blockquote>
+<p>이것이 가능했던 이유: 1. Claude Code가 실시간 통신의 베스트
+프랙티스를 알고 있음 2. 프로젝트 구조를 자동으로 파악하고 적절히 통합 3.
+테스트 코드까지 함께 생성 4. 잠재적 문제점을 사전에 지적하고 해결</p>
+<h2 id="마치며">마치며</h2>
+<p>Claude Code는 단순한 도구가 아닙니다. 이는 개발 방식의 패러다임
+전환입니다.</p>
+<p><strong>Before Claude Code:</strong> - 개발자가 모든 세부사항을 직접
+구현 - 반복적인 작업에 시간 소모 - 새로운 기술 학습에 높은 진입 장벽</p>
+<p><strong>After Claude Code:</strong> - 개발자는 ‘무엇을’ 만들지에 집중
+- AI가 ‘어떻게’ 구현할지를 도움 - 빠른 실험과 검증 가능 - 지속적인
+학습과 성장</p>
+<p>다음 장에서는 Claude Code를 실제로 설치하고 첫 번째 명령을
+실행해보겠습니다. AI와 함께하는 개발의 첫걸음을 내딛을 준비가
+되셨나요?</p>
+</body>
+</html>
