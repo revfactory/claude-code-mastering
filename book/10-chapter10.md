@@ -2,6 +2,28 @@
 
 > "실습은 이론을 현실로 만든다" - 벤자민 프랭클린
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    아키텍처 설계
+      엔터프라이즈급 시스템 설계
+      마이크로서비스 아키텍처
+      확장 가능한 구조
+    풀스택 개발
+      백엔드 API 구축
+      프론트엔드 최적화
+      실시간 통신
+    품질 보장
+      테스트 자동화
+      성능 최적화
+      보안 강화
+    DevOps 실천
+      컨테이너화
+      CI/CD 파이프라인
+      모니터링 시스템
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -89,56 +111,83 @@ claude "CollabSpace 엔터프라이즈 협업 플랫폼의 아키텍처를 설�
 
 **Claude Code가 제안하는 아키텍처 개요:**
 
-```
-┌─────────────────── 프론트엔드 계층 ────────────────────┐
-│                                                      │
-│  ┌────────────┐  ┌────────────┐  ┌────────────┐     │
-│  │  Web App   │  │ Mobile App │  │ Desktop App│     │
-│  │ (Next.js)  │  │ (React     │  │ (Electron) │     │
-│  │            │  │  Native)   │  │            │     │
-│  └────────────┘  └────────────┘  └────────────┘     │
-│                        │                            │
-└────────────────────────┼────────────────────────────┘
-                         │
-┌────────────────── API Gateway 계층 ───────────────────┐
-│                        │                            │
-│  ┌─────────────────────▼─────────────────────┐       │
-│  │         API Gateway (Kong/Istio)         │       │
-│  │ - 인증/인가  - Rate Limiting             │       │
-│  │ - 로드 밸런싱 - 서비스 디스커버리         │       │
-│  └─────────────────────┬─────────────────────┘       │
-└────────────────────────┼────────────────────────────┘
-                         │
-┌───────────────── 마이크로서비스 계층 ──────────────────┐
-│                        │                            │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐     │
-│ │  Auth   │ │  User   │ │Workspace│ │ Project │     │
-│ │ Service │ │ Service │ │ Service │ │ Service │     │
-│ └─────────┘ └─────────┘ └─────────┘ └─────────┘     │
-│                                                     │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐     │
-│ │  Chat   │ │  File   │ │ Search  │ │ Notif   │     │
-│ │ Service │ │ Service │ │ Service │ │ Service │     │
-│ └─────────┘ └─────────┘ └─────────┘ └─────────┘     │
-│                                                     │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐     │
-│ │ Realtime│ │Analytics│ │ Audit   │ │ Email   │     │
-│ │ Service │ │ Service │ │ Service │ │ Service │     │
-│ └─────────┘ └─────────┘ └─────────┘ └─────────┘     │
-└────────────────────────┼────────────────────────────┘
-                         │
-┌─────────────────── 데이터 계층 ────────────────────────┐
-│                        │                            │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐     │
-│ │PostgreSQL││  Redis  │ │Elasticsearch│ │MinIO  │   │
-│ │(Primary) │ │(Cache)  │ │ (Search)  │ │(Files)│     │
-│ └─────────┘ └─────────┘ └─────────┘ └─────────┘     │
-│                                                     │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐                 │
-│ │  Kafka  │ │TimescaleDB│ │ Vault  │                │
-│ │(Events) │ │(Analytics)│ │(Secrets)│                │
-│ └─────────┘ └─────────┘ └─────────┘                 │
-└─────────────────────────────────────────────────────┘
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph frontend [프론트엔드 계층]
+        A[Web App<br/>Next.js]
+        B[Mobile App<br/>React Native]
+        C[Desktop App<br/>Electron]
+    end
+    
+    subgraph gateway [API Gateway 계층]
+        D[API Gateway<br/>Kong/Istio<br/>인증/인가, Rate Limiting<br/>로드 밸런싱, 서비스 디스커버리]
+    end
+    
+    subgraph microservices [마이크로서비스 계층]
+        E[Auth Service]
+        F[User Service]
+        G[Workspace Service]
+        H[Project Service]
+        I[Chat Service]
+        J[File Service]
+        K[Search Service]
+        L[Notification Service]
+        M[Realtime Service]
+        N[Analytics Service]
+        O[Audit Service]
+        P[Email Service]
+    end
+    
+    subgraph data [데이터 계층]
+        Q[PostgreSQL<br/>Primary DB]
+        R[Redis<br/>Cache]
+        S[Elasticsearch<br/>Search]
+        T[MinIO<br/>Files]
+        U[Kafka<br/>Events]
+        V[TimescaleDB<br/>Analytics]
+        W[Vault<br/>Secrets]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    
+    D --> E
+    D --> F
+    D --> G
+    D --> H
+    D --> I
+    D --> J
+    D --> K
+    D --> L
+    D --> M
+    D --> N
+    D --> O
+    D --> P
+    
+    E --> Q
+    F --> Q
+    G --> Q
+    H --> Q
+    I --> R
+    J --> T
+    K --> S
+    L --> R
+    M --> U
+    N --> V
+    O --> Q
+    P --> R
+    
+    classDef frontendStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef gatewayStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef microserviceStyle fill:#cbd5e1,stroke:#475569,stroke-width:1px,color:#1e293b
+    classDef dataStyle fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#64748b
+    
+    class A,B,C frontendStyle
+    class D gatewayStyle
+    class E,F,G,H,I,J,K,L,M,N,O,P microserviceStyle
+    class Q,R,S,T,U,V,W dataStyle
 ```
 
 **상세 아키텍처 설계 요청:**
@@ -407,104 +456,53 @@ claude "CollabSpace를 위한 엔터프라이즈급 모노레포를 구성해줘
 - Docker 기반 컨테이너화 준비
 
 프로젝트 구조:
-```
-collab-space/
-├── apps/                           # 애플리케이션 (독립 배포 단위)
-│   ├── web/                       # 웹 클라이언트 (Next.js 14)
-│   ├── mobile/                    # 모바일 앱 (React Native)
-│   ├── desktop/                   # 데스크톱 앱 (Electron)
-│   ├── api-gateway/              # API 게이트웨이 (Fastify)
-│   ├── auth-service/             # 인증 서비스
-│   ├── chat-service/             # 채팅 서비스
-│   ├── file-service/             # 파일 관리 서비스
-│   ├── notification-service/     # 알림 서비스
-│   ├── search-service/           # 검색 서비스
-│   └── analytics-service/        # 분석 서비스
-│
-├── packages/                      # 공유 라이브러리
-│   ├── ui/                       # 공통 UI 컴포넌트
-│   │   ├── components/           # React 컴포넌트
-│   │   ├── icons/               # 아이콘 라이브러리
-│   │   ├── themes/              # 테마 시스템
-│   │   └── hooks/               # 커스텀 훅
-│   │
-│   ├── types/                    # TypeScript 타입 정의
-│   │   ├── api/                 # API 타입
-│   │   ├── database/            # 데이터베이스 스키마
-│   │   ├── events/              # 이벤트 타입
-│   │   └── shared/              # 공통 타입
-│   │
-│   ├── config/                   # 설정 관리
-│   │   ├── eslint/              # ESLint 설정
-│   │   ├── typescript/          # TypeScript 설정
-│   │   ├── tailwind/            # Tailwind 설정
-│   │   └── jest/                # Jest 설정
-│   │
-│   ├── utils/                    # 공통 유틸리티
-│   │   ├── validation/          # 데이터 검증
-│   │   ├── formatting/          # 포매팅 함수
-│   │   ├── encryption/          # 암호화 유틸
-│   │   └── api-client/          # API 클라이언트
-│   │
-│   ├── database/                 # 데이터베이스 관련
-│   │   ├── prisma/              # Prisma 스키마
-│   │   ├── migrations/          # 마이그레이션
-│   │   └── seeds/               # 시드 데이터
-│   │
-│   └── monitoring/               # 모니터링 도구
-│       ├── logger/              # 구조화된 로깅
-│       ├── metrics/             # 메트릭 수집
-│       └── tracing/             # 분산 추적
-│
-├── tools/                        # 개발 도구
-│   ├── build/                   # 빌드 스크립트
-│   ├── scripts/                 # 자동화 스크립트
-│   ├── generators/              # 코드 생성기
-│   └── testing/                 # 테스트 유틸리티
-│
-├── infrastructure/               # 인프라 코드
-│   ├── docker/                  # Docker 설정
-│   │   ├── development/         # 개발 환경
-│   │   ├── production/          # 프로덕션 환경
-│   │   └── compose/             # Docker Compose
-│   │
-│   ├── kubernetes/              # Kubernetes 매니페스트
-│   │   ├── base/               # 기본 설정
-│   │   ├── overlays/           # 환경별 설정
-│   │   └── helm/               # Helm 차트
-│   │
-│   ├── terraform/               # 인프라 프로비저닝
-│   │   ├── modules/            # 재사용 모듈
-│   │   ├── environments/       # 환경별 설정
-│   │   └── policies/           # 보안 정책
-│   │
-│   └── monitoring/              # 모니터링 설정
-│       ├── prometheus/         # 메트릭 수집
-│       ├── grafana/            # 대시보드
-│       └── jaeger/             # 분산 추적
-│
-├── docs/                        # 문서
-│   ├── architecture/           # 아키텍처 문서
-│   ├── api/                    # API 문서
-│   ├── deployment/             # 배포 가이드
-│   └── development/            # 개발 가이드
-│
-├── .github/                     # GitHub 설정
-│   ├── workflows/              # CI/CD 워크플로우
-│   ├── templates/              # 이슈/PR 템플릿
-│   └── dependabot.yml         # 의존성 업데이트
-│
-├── .vscode/                     # VS Code 설정
-│   ├── settings.json           # 에디터 설정
-│   ├── extensions.json         # 추천 확장
-│   └── launch.json             # 디버깅 설정
-│
-├── turbo.json                   # Turborepo 설정
-├── package.json                 # 루트 패키지 설정
-├── pnpm-workspace.yaml         # PNPM 워크스페이스
-├── docker-compose.yml          # 로컬 개발 환경
-├── CLAUDE.md                   # Claude Code 설정
-└── README.md                   # 프로젝트 개요
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[collab-space/] --> B[apps/<br/><small>애플리케이션</small>]
+    A --> C[packages/<br/><small>공유 라이브러리</small>]
+    A --> D[tools/<br/><small>개발 도구</small>]
+    A --> E[infrastructure/<br/><small>인프라 코드</small>]
+    A --> F[docs/<br/><small>문서</small>]
+    A --> G[.github/<br/><small>GitHub 설정</small>]
+    
+    B --> B1[web/<br/><small>Next.js 14</small>]
+    B --> B2[mobile/<br/><small>React Native</small>]
+    B --> B3[api-gateway/<br/><small>Fastify</small>]
+    B --> B4[auth-service/<br/><small>인증</small>]
+    B --> B5[chat-service/<br/><small>채팅</small>]
+    B --> B6[file-service/<br/><small>파일 관리</small>]
+    
+    C --> C1[ui/<br/><small>공통 UI 컴포넌트</small>]
+    C --> C2[types/<br/><small>TypeScript 타입</small>]
+    C --> C3[config/<br/><small>설정 관리</small>]
+    C --> C4[utils/<br/><small>공통 유틸리티</small>]
+    C --> C5[database/<br/><small>DB 관련</small>]
+    C --> C6[monitoring/<br/><small>모니터링</small>]
+    
+    D --> D1[build/<br/><small>빌드 스크립트</small>]
+    D --> D2[scripts/<br/><small>자동화</small>]
+    D --> D3[generators/<br/><small>코드 생성</small>]
+    D --> D4[testing/<br/><small>테스트 유틸</small>]
+    
+    E --> E1[docker/<br/><small>컨테이너 설정</small>]
+    E --> E2[kubernetes/<br/><small>K8s 매니페스트</small>]
+    E --> E3[terraform/<br/><small>인프라 프로비저닝</small>]
+    E --> E4[monitoring/<br/><small>모니터링 설정</small>]
+    
+    F --> F1[architecture/<br/><small>아키텍처</small>]
+    F --> F2[api/<br/><small>API 문서</small>]
+    F --> F3[deployment/<br/><small>배포 가이드</small>]
+    F --> F4[development/<br/><small>개발 가이드</small>]
+    
+    classDef rootStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    classDef categoryStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef itemStyle fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#64748b
+    
+    class A rootStyle
+    class B,C,D,E,F,G categoryStyle
+    class B1,B2,B3,B4,B5,B6,C1,C2,C3,C4,C5,C6,D1,D2,D3,D4,E1,E2,E3,E4,F1,F2,F3,F4 itemStyle
 ```
 
 추가 설정 요구사항:
@@ -793,26 +791,64 @@ Slack의 실시간 커뮤니케이션과 Notion의 구조화된 정보 관리를
 ## 기술 아키텍처
 
 ### 시스템 아키텍처
-```
-┌─────────────────────────────────────────────────────┐
-│                   클라이언트 계층                      │
-│  Web (Next.js) | Mobile (RN) | Desktop (Electron)   │
-└─────────────────────┬───────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────┐
-│              API Gateway (Kong/Istio)               │
-│          인증 | 라우팅 | 로드밸런싱 | 모니터링          │
-└─────────────────────┬───────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────┐
-│                마이크로서비스 계층                     │
-│  Auth | User | Workspace | Chat | File | Notif     │
-└─────────────────────┬───────────────────────────────┘
-                      │
-┌─────────────────────▼───────────────────────────────┐
-│                   데이터 계층                         │
-│  PostgreSQL | Redis | Elasticsearch | MinIO | Kafka │
-└─────────────────────────────────────────────────────┘
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph clients [클라이언트 계층]
+        A[Web<br/>Next.js]
+        B[Mobile<br/>React Native]  
+        C[Desktop<br/>Electron]
+    end
+    
+    subgraph gateway [API Gateway 계층]
+        D[API Gateway<br/>Kong/Istio<br/>인증 | 라우팅 | 로드밸런싱 | 모니터링]
+    end
+    
+    subgraph services [마이크로서비스 계층]
+        E[Auth]
+        F[User]
+        G[Workspace]
+        H[Chat]
+        I[File]
+        J[Notification]
+    end
+    
+    subgraph data [데이터 계층]
+        K[PostgreSQL]
+        L[Redis]
+        M[Elasticsearch]
+        N[MinIO]
+        O[Kafka]
+    end
+    
+    A --> D
+    B --> D
+    C --> D
+    
+    D --> E
+    D --> F
+    D --> G
+    D --> H
+    D --> I
+    D --> J
+    
+    E --> K
+    F --> K
+    G --> K
+    H --> L
+    I --> N
+    J --> O
+    
+    classDef clientStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef gatewayStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef serviceStyle fill:#cbd5e1,stroke:#475569,stroke-width:1px,color:#1e293b
+    classDef dataStyle fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,color:#64748b
+    
+    class A,B,C clientStyle
+    class D gatewayStyle
+    class E,F,G,H,I,J serviceStyle
+    class K,L,M,N,O dataStyle
 ```
 
 ### 기술 스택
@@ -2224,41 +2260,45 @@ claude "CollabSpace의 초기 아키텍처 결정이 어떻게 도움이 되었�
 
 **확장 가능한 설계의 실제 효과:**
 
-```yaml
-# 초기 설계 (1-1000 사용자)
-architecture:
-  type: "modular-monolith"
-  deployment:
-    - web-server: 2 instances
-    - database: 1 primary + 1 replica
-    - cache: 1 Redis instance
-  cost: "$500/month"
-
-# 성장 단계 (1000-10000 사용자)
-architecture:
-  type: "service-oriented"
-  deployment:
-    - api-gateway: 3 instances
-    - auth-service: 2 instances
-    - chat-service: 5 instances
-    - file-service: 3 instances
-    - database: 1 primary + 2 replicas
-    - cache: Redis Cluster (3 nodes)
-  cost: "$2000/month"
-  
-# 엔터프라이즈 (10000+ 사용자)
-architecture:
-  type: "microservices"
-  deployment:
-    - services: 15 different services
-    - kubernetes: 3 node clusters
-    - database: Sharded across regions
-    - cache: Global Redis clusters
-    - cdn: Multi-region CDN
-  cost: "$10000/month"
-  
-# 핵심 포인트: 각 단계 전환 시 코드 변경 최소화
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph phase1 [초기 설계<br/>1-1000 사용자<br/>$500/month]
+        A1[Modular Monolith]
+        A2[Web Server x2]
+        A3[DB Primary + Replica]
+        A4[Redis x1]
+    end
+    
+    subgraph phase2 [성장 단계<br/>1000-10000 사용자<br/>$2000/month]
+        B1[Service-Oriented]
+        B2[API Gateway x3]
+        B3[Auth Service x2]
+        B4[Chat Service x5]
+        B5[File Service x3]
+        B6[DB Primary + 2 Replicas]
+        B7[Redis Cluster x3]
+    end
+    
+    subgraph phase3 [엔터프라이즈<br/>10000+ 사용자<br/>$10000/month]
+        C1[Microservices]
+        C2[15 Different Services]
+        C3[Kubernetes 3 Clusters]
+        C4[Sharded DB Regions]
+        C5[Global Redis]
+        C6[Multi-region CDN]
+    end
+    
+    phase1 --> phase2
+    phase2 --> phase3
+    
+    classDef phaseStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef componentStyle fill:#f1f5f9,stroke:#475569,stroke-width:1px,color:#1e293b
+    
+    class A1,A2,A3,A4,B1,B2,B3,B4,B5,B6,B7,C1,C2,C3,C4,C5,C6 componentStyle
 ```
+
+핵심 포인트: 각 단계 전환 시 코드 변경 최소화
 
 ### 4. 팀 협업과 지식 공유 - 함께 성장하기
 

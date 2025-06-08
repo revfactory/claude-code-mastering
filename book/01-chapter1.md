@@ -101,19 +101,19 @@ AI 페어 프로그래밍:
 ### AI 개발 도구의 스펙트럼
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph LR
     subgraph matrix [" "]
         direction LR
         
         subgraph level1 ["기본 지원"]
-            A1["자동완성<br/><small>GitHub Copilot</small>"]
-            A2["코드 생성<br/><small>Tabnine</small>"]
+            A1["자동완성\nGitHub Copilot"]
+            A2["코드 생성\nTabnine"]
         end
         
         subgraph level2 ["고급 지원"]
-            B1["대화형 AI<br/><small>Claude Code</small>"]
-            B2["자율 에이전트<br/><small>Future Tech</small>"]
+            B1["대화형 AI\nClaude Code"]
+            B2["자율 에이전트\nFuture Tech"]
         end
         
         A1 -.->|진화| A2
@@ -173,7 +173,7 @@ AI는 도구가 아닌 동료입니다:
 전체 프로젝트 맥락을 이해합니다:
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#334155", "primaryBorderColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#334155", "primaryBorderColor": "#e2e8f0"}, "mindmap": {"htmlLabels": false, "useMaxWidth": false}}}%%
 mindmap
   root((맥락 이해))
     프로젝트 분석
@@ -199,27 +199,27 @@ mindmap
 ### GitHub Copilot과의 비교
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph LR
     subgraph comparison [" "]
         direction TB
         
         subgraph copilot ["GitHub Copilot"]
             direction TB
-            A1["인라인 자동완성<br/><small>간단한 제안</small>"]
-            A2["현재 파일 중심<br/><small>제한적 컨텍스트</small>"]
-            A3["코드 작성<br/><small>단일 기능</small>"]
-            A4["제한적 설정<br/><small>기본 옵션만</small>"]
-            A5["낮은 학습 곡선<br/><small>즉시 사용 가능</small>"]
+            A1["인라인 자동완성\n간단한 제안"]
+            A2["현재 파일 중심\n제한적 컨텍스트"]
+            A3["코드 작성\n단일 기능"]
+            A4["제한적 설정\n기본 옵션만"]
+            A5["낮은 학습 곡선\n즉시 사용 가능"]
         end
         
         subgraph claude ["Claude Code"]
             direction TB
-            B1["대화형 협업<br/><small>자연어 인터페이스</small>"]
-            B2["전체 프로젝트<br/><small>완전한 컨텍스트</small>"]
-            B3["전체 라이프사이클<br/><small>설계부터 배포까지</small>"]
-            B4["완전 커스터마이징<br/><small>CLAUDE.md 활용</small>"]
-            B5["적응형 학습<br/><small>점진적 마스터리</small>"]
+            B1["대화형 협업\n자연어 인터페이스"]
+            B2["전체 프로젝트\n완전한 컨텍스트"]
+            B3["전체 라이프사이클\n설계부터 배포까지"]
+            B4["완전 커스터마이징\nCLAUDE.md 활용"]
+            B5["적응형 학습\n점진적 마스터리"]
         end
         
         A1 -.->|vs| B1
@@ -247,22 +247,22 @@ graph LR
 ### ChatGPT와의 비교
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TB
     subgraph comparison [" "]
         direction TB
         
         subgraph high_integration ["높은 통합도"]
             direction LR
-            CC["Claude Code<br/><small>통합 AI 플랫폼</small><br/>전체 프로젝트 컨텍스트<br/>지속적 세션 유지"]
-            VS["VS Code<br/><small>전문 개발 도구</small><br/>강력한 IDE 기능<br/>제한적 AI 기능"]
-            CU["Cursor<br/><small>AI 강화 에디터</small><br/>중간 수준 통합<br/>향상된 컨텍스트"]
+            CC["Claude Code\n통합 AI 플랫폼\n전체 프로젝트 컨텍스트\n지속적 세션 유지"]
+            VS["VS Code\n전문 개발 도구\n강력한 IDE 기능\n제한적 AI 기능"]
+            CU["Cursor\nAI 강화 에디터\n중간 수준 통합\n향상된 컨텍스트"]
         end
         
         subgraph low_integration ["낮은 통합도"]
             direction LR
-            CG["ChatGPT<br/><small>기본 AI 도구</small><br/>웹 기반 대화<br/>컨텍스트 분리"]
-            CP["GitHub Copilot<br/><small>코드 완성 도구</small><br/>인라인 제안<br/>파일 단위 컨텍스트"]
+            CG["ChatGPT\n기본 AI 도구\n웹 기반 대화\n컨텍스트 분리"]
+            CP["GitHub Copilot\n코드 완성 도구\n인라인 제안\n파일 단위 컨텍스트"]
         end
         
         high_integration -.-> low_integration
@@ -327,26 +327,26 @@ claude "사용자 인증 기능을 만들어줘. React 프론트엔드, Node.js 
 Claude Code는 단순한 도구가 아닙니다. 이는 개발 방식의 패러다임 전환입니다.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 flowchart LR
     subgraph before ["전통적 개발 방식"]
         direction TB
-        A1["개발자가 모든 세부사항을<br/>직접 구현"]
-        A2["반복적인 작업에<br/>시간 소모"]
-        A3["새로운 기술 학습에<br/>높은 진입 장벽"]
-        A4["느린 프로토타이핑<br/>사이클"]
+        A1["개발자가 모든 세부사항을\n직접 구현"]
+        A2["반복적인 작업에\n시간 소모"]
+        A3["새로운 기술 학습에\n높은 진입 장벽"]
+        A4["느린 프로토타이핑\n사이클"]
     end
     
     subgraph transition ["전환점"]
-        T["Claude Code<br/>도입"]
+        T["Claude Code\n도입"]
     end
     
     subgraph after ["혁신적 개발 문화"]
         direction TB
-        B1["개발자는 '무엇을'<br/>만들지에 집중"]
-        B2["AI가 '어떻게'<br/>구현할지를 도움"]
-        B3["빠른 실험과<br/>검증 가능"]
-        B4["지속적인 학습과<br/>성장"]
+        B1["개발자는 '무엇을'\n만들지에 집중"]
+        B2["AI가 '어떻게'\n구현할지를 도움"]
+        B3["빠른 실험과\n검증 가능"]
+        B4["지속적인 학습과\n성장"]
     end
     
     before --> transition

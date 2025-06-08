@@ -2,6 +2,64 @@
 
 > "가장 좋은 학습은 실제 경험에서 나온다" - 존 듀이
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((조직별 활용 사례))
+    개발 조직
+      데이터 인프라 팀
+        지능형 장애 진단
+        자연어 워크플로우
+        신속한 온보딩
+      백엔드 개발팀
+        API 설계 및 최적화
+        마이크로서비스 아키텍처
+        성능 및 보안 강화
+      프론트엔드 팀
+        컴포넌트 라이브러리
+        사용자 경험 최적화
+        성능 모니터링
+    비즈니스 조직
+      마케팅 팀
+        콘텐츠 자동 생성
+        데이터 분석 및 인사이트
+        개인화 캠페인
+      세일즈 팀
+        고객 데이터 분석
+        세일즈 프로세스 자동화
+        리드 스코어링
+      운영 팀
+        업무 프로세스 최적화
+        리소스 계획 및 분석
+        비용 최적화
+    전문 서비스
+      법무 팀
+        계약서 검토 및 분석
+        컴플라이언스 모니터링
+        리스크 관리
+      디자인 팀
+        디자인 시스템 구축
+        프로토타이핑 자동화
+        사용자 리서치
+      HR 팀
+        인재 채용 최적화
+        직원 성과 분석
+        교육 프로그램 설계
+    새로운 역할
+      AI 트레이너
+        조직 내 AI 도입
+        베스트 프랙티스 전파
+        교육 및 문화 리더십
+      프로덕트 AI 매니저
+        AI 기능 제품 기획
+        기술-비즈니스 가교 역할
+        사용자 경험 최적화
+      AI 거버넌스 매니저
+        AI 윤리 및 컴플라이언스
+        리스크 관리 및 감사
+        정책 수립 및 실행
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -19,6 +77,60 @@ Claude Code는 단순한 개발 도구를 넘어서 조직 전반의 문제 해�
 ## 13.1 데이터 인프라 팀 - 운영 자동화의 선구자
 
 데이터 인프라 팀은 전사 데이터 파이프라인의 구축과 운영을 담당하며, Claude Code를 통해 복잡한 인프라 관리를 혁신적으로 개선했습니다. 특히 장애 대응과 운영 자동화 영역에서 놀라운 성과를 달성했습니다.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[데이터 인프라 팀] --> B[지능형 장애 진단]
+    A --> C[자연어 워크플로우]
+    A --> D[신속한 온보딩]
+    
+    subgraph diagnosis [지능형 장애 진단]
+        B --> E[스크린샷 분석]
+        E --> F[Pod IP 풀 고갈 감지]
+        E --> G[Node 메모리 압박 경고]
+        E --> H[Ingress 503 에러 증가]
+        
+        F --> I[IP 풀 확장 자동 명령]
+        G --> J[메모리 정리 스크립트]
+        H --> K[트래픽 분산 확인]
+    end
+    
+    subgraph workflow [자연어 워크플로우]
+        C --> L[비개발자 요청]
+        L --> M[BigQuery 데이터 추출]
+        M --> N[시간대별 집계 분석]
+        N --> O[Python 시각화 생성]
+        O --> P[인사이트 보고서 작성]
+    end
+    
+    subgraph onboarding [신속한 온보딩]
+        D --> Q[CLAUDE.md 가이드]
+        Q --> R[주요 시스템 구성]
+        Q --> S[일반적인 작업 패턴]
+        Q --> T[자주 사용하는 명령어]
+        
+        R --> U[Kafka + Spark + BigQuery]
+        S --> V[장애 대응 절차]
+        T --> W[kubectl 명령어 예시]
+    end
+    
+    subgraph outcomes [성과 지표]
+        I --> X[장애 복구 시간 80% 단축]
+        J --> Y[비개발자 자립성 300% 향상]
+        K --> Z[신입 온보딩 시간 70% 감소]
+    end
+    
+    classDef teamStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef processStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef toolStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef outcomeStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    class A teamStyle
+    class B,C,D processStyle
+    class E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W toolStyle
+    class X,Y,Z outcomeStyle
+```
 
 ### 핵심 활용 사례
 
@@ -1116,6 +1228,52 @@ claude "실험 결과를 체계적으로 기록하는 템플릿을 만들어줘:
 
 ### 법무 특화 도구 개발
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[법무팀 디지털 혁신] --> B[개인용 접근성 도구]
+    A --> C[전화 트리 시뮬레이션]
+    A --> D[G Suite 자동화]
+    
+    subgraph personal [개인용 도구]
+        B --> E[법률 문서 작성 앱]
+        E --> F[자동 완성 기능]
+        E --> G[템플릿 제안]
+        E --> H[판례 인용 포맷팅]
+        E --> I[버전 관리]
+    end
+    
+    subgraph routing [라우팅 시스템]
+        C --> J[문의 유형 분류]
+        C --> K[긴급도 평가]
+        C --> L[전문분야 매칭]
+        J --> M[계약/지적재산/노동/규정준수]
+        K --> N[즉시/당일/주간]
+        L --> O[변호사 자동 할당]
+    end
+    
+    subgraph automation [워크플로우 자동화]
+        D --> P[Google Sheets 연동]
+        D --> Q[Google Drive 통합]
+        D --> R[Gmail 자동화]
+        
+        P --> S[리뷰 요청 등록]
+        P --> T[진행 상태 추적]
+        Q --> U[문서 버전 관리]
+        Q --> V[승인 워크플로우]
+        R --> W[자동 알림]
+        R --> X[리포트 발송]
+    end
+    
+    classDef toolStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef processStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef featureStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    
+    class A,B,C,D toolStyle
+    class E,J,K,L,P,Q,R processStyle
+    class F,G,H,I,M,N,O,S,T,U,V,W,X featureStyle
+```
+
 **1. 개인용 접근성 도구**
 
 ```bash
@@ -1181,6 +1339,43 @@ Gmail 자동화:
 ```
 
 ### 시각 중심 프로토타이핑
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart LR
+    A[손그림 스케치] --> B[요구사항 분석]
+    B --> C[레이아웃 구조 설계]
+    C --> D[기능 동작 구현]
+    D --> E[스타일링 적용]
+    E --> F[최종 검토]
+    
+    subgraph feedback [피드백 루프]
+        G[팀원 테스트] --> H[피드백 수집]
+        H --> I[개선사항 식별]
+        I --> J[반복적 개선]
+        J --> G
+    end
+    
+    F --> G
+    J --> K[완성된 웹앱]
+    
+    subgraph requirements [핵심 요구사항]
+        L[실제 동작하는 버튼]
+        M[데이터 입력/저장]
+        N[모바일 친화적 레이아웃]
+        O[법무팀 브랜딩]
+    end
+    
+    C --> requirements
+    
+    classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef feedbackStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef requirementStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    
+    class A,B,C,D,E,F,K processStyle
+    class G,H,I,J feedbackStyle
+    class L,M,N,O requirementStyle
+```
 
 **1. 와이어프레임 → 작동하는 앱**
 
@@ -1287,6 +1482,57 @@ claude "아직 완벽하지 않지만 팀원들과 공유할 수 있는
 
 ### 활용 성숙도별 패턴
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    subgraph maturity [성숙도 단계]
+        A[초급: 도구 활용] --> B[중급: 워크플로우 통합]
+        B --> C[고급: 조직 혁신]
+    end
+    
+    subgraph beginner [초급 단계]
+        A --> D[단발성 작업 자동화]
+        A --> E[반복 업무 해결]
+        A --> F[개별 도구 학습]
+    end
+    
+    subgraph intermediate [중급 단계]
+        B --> G[전체 프로세스 분석]
+        B --> H[워크플로우 재설계]
+        B --> I[팀 협업 체계화]
+    end
+    
+    subgraph advanced [고급 단계]
+        C --> J[조직 문화 변화]
+        C --> K[AI-인간 협업 모델]
+        C --> L[전사 생산성 혁신]
+    end
+    
+    subgraph outcomes [성과 지표]
+        M[시간 절약<br/><small>30-50%</small>]
+        N[품질 향상<br/><small>에러 80% 감소</small>]
+        O[혁신 가속<br/><small>실험 주기 단축</small>]
+        P[문화 변화<br/><small>AI 네이티브 조직</small>]
+    end
+    
+    D --> M
+    E --> M
+    G --> N
+    H --> N
+    J --> O
+    K --> P
+    
+    classDef beginnerStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef intermediateStyle fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0c4a6e
+    classDef advancedStyle fill:#f0fdf4,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef outcomeStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,D,E,F beginnerStyle
+    class B,G,H,I intermediateStyle
+    class C,J,K,L advancedStyle
+    class M,N,O,P outcomeStyle
+```
+
 **1. 초급 (도구 활용) → 중급 (워크플로우 통합) → 고급 (조직 혁신)**
 
 ```bash
@@ -1338,6 +1584,56 @@ claude "AI와 인간이 협업하는 새로운 업무 방식을 설계해줘.
 ```
 
 **2. 팀 내 확산 전략**
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    subgraph adoption [확산 전략]
+        A[1단계: 얼리 어답터<br/><small>1-2명</small>] --> B[2단계: 점진적 확산<br/><small>팀의 50%</small>]
+        B --> C[3단계: 전체 도입<br/><small>팀의 100%</small>]
+    end
+    
+    subgraph early [얼리 어답터 단계]
+        A --> D[호기심 많은 팀원 선발]
+        A --> E[작은 성공 사례 만들기]
+        A --> F[사용 경험 문서화]
+        A --> G[노하우 축적]
+    end
+    
+    subgraph expansion [확산 단계]
+        B --> H[성공 사례 공유]
+        B --> I[데모 세션 진행]
+        B --> J[동료 멘토링]
+        B --> K[팀 회의 발표]
+    end
+    
+    subgraph integration [통합 단계]
+        C --> L[워크플로우 필수 통합]
+        C --> M[팀 표준 CLAUDE.md]
+        C --> N[정기 노하우 공유]
+        C --> O[지속적 개선]
+    end
+    
+    subgraph success [성공 요인]
+        P[리더십 지원]
+        Q[충분한 학습 시간]
+        R[실패 허용 문화]
+        S[성과 측정 체계]
+    end
+    
+    D --> P
+    E --> Q
+    F --> R
+    G --> S
+    
+    classDef stageStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef actionStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef successStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    
+    class A,B,C stageStyle
+    class D,E,F,G,H,I,J,K,L,M,N,O actionStyle
+    class P,Q,R,S successStyle
+```
 
 ```bash
 # 효과적인 팀 내 확산 패턴
