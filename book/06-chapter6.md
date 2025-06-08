@@ -2,6 +2,28 @@
 
 > "언어는 사고를 형성한다" - 벤자민 리 워프
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    전략 수립
+      언어별 최적화 전략
+      개발 환경 구성
+      도구 체인 선택
+    타입 시스템 활용
+      타입 안전성 보장
+      정적 분석 도구
+      런타임 검증
+    멀티 언어 프로젝트
+      언어 간 상호 운용성
+      API 인터페이스 설계
+      타입 공유 전략
+    언어 선택 가이드
+      요구사항 분석
+      성능 vs 생산성
+      팀 역량 고려
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -879,25 +901,32 @@ claude "Java 애플리케이션의 성능을 프로파일링하고 최적화해�
 - JIT 컴파일러 최적화"
 ```
 
-**엔터프라이즈급 Java 프로젝트 구조:**
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[src/main/java/com/company/app/] --> B[config/<br/><small>Spring 설정 클래스</small>]
+    A --> C[domain/<br/><small>비즈니스 영역</small>]
+    A --> D[infrastructure/<br/><small>외부 시스템 연동</small>]
+    A --> E[presentation/<br/><small>컨트롤러와 DTO</small>]
+    A --> F[shared/<br/><small>공통 유틸리티</small>]
+    A --> G[security/<br/><small>보안 설정</small>]
+    
+    C --> H[model/<br/><small>도메인 모델</small>]
+    C --> I[service/<br/><small>비즈니스 서비스</small>]
+    C --> J[repository/<br/><small>데이터 액세스</small>]
+    
+    K[resources/] --> L[application.yml<br/><small>환경별 설정</small>]
+    K --> M[logback.xml<br/><small>로깅 설정</small>]
+    K --> N[schema.sql<br/><small>데이터베이스 스키마</small>]
+    
+    classDef configStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef domainStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class B,D,E,F,G,H,I,J,L,M,N domainStyle
+    class A,C,K configStyle
+```
 
-```
-src/main/java/
-├── com/company/app/
-│   ├── config/          # Spring 설정 클래스
-│   ├── domain/          # 비즈니스 엔티티
-│   │   ├── model/       # 도메인 모델
-│   │   ├── service/     # 비즈니스 서비스
-│   │   └── repository/  # 데이터 액세스
-│   ├── infrastructure/  # 외부 시스템 연동
-│   ├── presentation/    # 컨트롤러와 DTO
-│   ├── shared/          # 공통 유틸리티
-│   └── security/        # 보안 설정
-└── resources/
-    ├── application.yml  # 환경별 설정
-    ├── logback.xml     # 로깅 설정
-    └── schema.sql      # 데이터베이스 스키마
-```
+**엔터프라이즈급 Java 프로젝트 구조:**
 
 ### Spring Boot 엔터프라이즈 패턴
 
@@ -1294,6 +1323,28 @@ Go는 단순함과 성능을 동시에 추구하는 언어로, 명시적이고 �
 
 Go 프로젝트의 성공은 명확한 패키지 구조와 의존성 관리에서 시작됩니다. Claude Code는 Go 커뮤니티의 표준 프로젝트 레이아웃과 Clean Architecture 원칙을 적용한 구조를 제안할 수 있습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[Go 프로젝트 구조] --> B[cmd/<br/><small>메인 애플리케이션<br/>진입점과 실행 파일</small>]
+    A --> C[internal/<br/><small>내부 패키지<br/>외부에서 import 불가</small>]
+    A --> D[pkg/<br/><small>공개 패키지<br/>외부에서 사용 가능</small>]
+    A --> E[api/<br/><small>API 정의<br/>OpenAPI, gRPC 스키마</small>]
+    A --> F[web/<br/><small>웹 애플리케이션<br/>정적 파일, 템플릿</small>]
+    A --> G[configs/<br/><small>설정 파일<br/>환경별 구성</small>]
+    
+    C --> H[handler/<br/><small>HTTP 핸들러</small>]
+    C --> I[service/<br/><small>비즈니스 로직</small>]
+    C --> J[repository/<br/><small>데이터 저장소</small>]
+    C --> K[domain/<br/><small>도메인 모델</small>]
+    
+    classDef publicStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef internalStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class B,D,E,F,G publicStyle
+    class C,H,I,J,K internalStyle
+```
+
 ```bash
 claude "Go 모듈을 사용하는 프로젝트 구조를 만들어줘.
 Clean Architecture를 적용하고, 
@@ -1483,19 +1534,68 @@ claude "이 프로젝트의 요구사항을 분석하고,
 
 ### 언어별 적합한 도메인
 
-| 언어 | 적합한 도메인 | 강점 |
-|------|-------------|------|
-| Python | 데이터 과학, AI/ML, 스크립팅 | 풍부한 라이브러리 |
-| JavaScript/TS | 웹 개발, 풀스택 | 유니버설 언어 |
-| Go | 마이크로서비스, DevOps | 단순함과 성능 |
-| Rust | 시스템 프로그래밍, WebAssembly | 안전성과 성능 |
-| Java/Kotlin | 엔터프라이즈, Android | 성숙한 생태계 |
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph languages [언어별 전문 분야]
+        A[Python<br/><small>데이터 과학, AI/ML<br/>스크립팅</small>] 
+        B[JavaScript/TS<br/><small>웹 개발<br/>풀스택</small>]
+        C[Go<br/><small>마이크로서비스<br/>DevOps</small>]
+        D[Rust<br/><small>시스템 프로그래밍<br/>WebAssembly</small>]
+        E[Java/Kotlin<br/><small>엔터프라이즈<br/>Android</small>]
+    end
+    
+    subgraph strengths [핵심 강점]
+        F[풍부한 라이브러리<br/>빠른 프로토타이핑]
+        G[유니버설 언어<br/>생태계 통합]
+        H[단순함과 성능<br/>동시성 모델]
+        I[안전성과 성능<br/>메모리 효율성]
+        J[성숙한 생태계<br/>플랫폼 안정성]
+    end
+    
+    A -.-> F
+    B -.-> G
+    C -.-> H
+    D -.-> I
+    E -.-> J
+    
+    classDef langStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef strengthStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D,E langStyle
+    class F,G,H,I,J strengthStyle
+```
 
 ## 마치며
 
 언어별 특성을 깊이 이해하고 활용하는 것은 Claude Code를 효과적으로 활용하는 핵심입니다. 각 프로그래밍 언어는 고유한 철학과 강점을 가지고 있으며, 이를 최대한 활용할 때 진정한 가치를 발휘할 수 있습니다.
 
 ### 핵심 원칙 요약
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((핵심 원칙))
+    언어 철학 존중
+      가치와 설계 원칙 이해
+      언어 고유 특성 반영
+      파라다임 일관성 유지
+    생태계 활용
+      표준 도구 적극 활용
+      검증된 라이브러리 사용
+      프레임워크 모범 사례
+      개발 효율성 극대화
+    관용구 따르기
+      커뮤니티 검증 패턴
+      일관된 코딩 스타일
+      팀 협업 향상
+      유지보수성 확보
+    강점 극대화
+      고유 장점 식별
+      적합한 아키텍처 적용
+      성능 특성 활용
+      문제 영역 최적화
+```
 
 1. **언어 철학 존중**: 각 언어가 추구하는 가치와 설계 원칙을 깊이 이해하고 코드에 반영
 2. **생태계 활용**: 언어별 표준 도구, 라이브러리, 프레임워크를 적극 활용하여 개발 효율성 극대화
