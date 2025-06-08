@@ -62,6 +62,8 @@ files=(
     "book/08-chapter8.md"
     "book/09-chapter9.md"
     "book/10-chapter10.md"
+    "book/11-chapter11.md"
+    "book/12-chapter12.md"
     "book/13-chapter13.md"
     "book/99-conclusion.md"
 )
