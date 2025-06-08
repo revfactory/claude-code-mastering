@@ -1017,6 +1017,11 @@ id="toc-파일-서비스-file-service">파일 서비스 (file-service)</a></li>
 <li><a href="#코드-리뷰" id="toc-코드-리뷰">코드 리뷰</a></li>
 <li><a href="#커밋-메시지" id="toc-커밋-메시지">커밋 메시지</a></li>
 <li><a href="#브랜치-전략-1" id="toc-브랜치-전략-1">브랜치 전략</a></li>
+</ul></li>
+<li><a href="#백엔드-개발" id="toc-백엔드-개발">10.3 백엔드 개발</a>
+<ul>
+<li><a href="#인증-시스템-구현" id="toc-인증-시스템-구현">인증 시스템
+구현</a></li>
 <li><a href="#데이터베이스-설계" id="toc-데이터베이스-설계">데이터베이스
 설계</a></li>
 <li><a href="#실시간-통신-구현" id="toc-실시간-통신-구현">실시간 통신
@@ -12263,15 +12268,12 @@ Closes #123</code></pre>
 <p>이 가이드는 지속적으로 업데이트되며, 모든 개발자는 이를 숙지하고
 준수해야 합니다. 최신 버전은 항상 프로젝트 루트의 CLAUDE.md 파일을
 참조하세요.</p>
-<pre><code>
-## 10.3 백엔드 개발
-
-### 인증 시스템 구현
-
-```bash
-claude &quot;JWT 기반 인증 시스템을 구현해줘.
-회원가입, 로그인, 토큰 갱신, 권한 미들웨어를 포함하고
-보안 베스트 프랙티스를 적용해줘&quot;</code></pre>
+<h2 id="백엔드-개발">10.3 백엔드 개발</h2>
+<h3 id="인증-시스템-구현">인증 시스템 구현</h3>
+<div class="sourceCode" id="cb325"><pre
+class="sourceCode bash"><code><span id="cb325-1"><a href="#cb325-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;JWT 기반 인증 시스템을 구현해줘.</span></span>
+<span id="cb325-2"><a href="#cb325-2" aria-hidden="true" tabindex="-1"></a><span class="st">회원가입, 로그인, 토큰 갱신, 권한 미들웨어를 포함하고</span></span>
+<span id="cb325-3"><a href="#cb325-3" aria-hidden="true" tabindex="-1"></a><span class="st">보안 베스트 프랙티스를 적용해줘&quot;</span></span></code></pre></div>
 <h3 id="데이터베이스-설계">데이터베이스 설계</h3>
 <div class="sourceCode" id="cb326"><pre
 class="sourceCode bash"><code><span id="cb326-1"><a href="#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="st">&quot;Prisma를 사용해서 데이터베이스 스키마를 설계해줘.</span></span>
@@ -12807,9 +12809,14 @@ class="sourceCode yaml"><code><span id="cb354-1"><a href="#cb354-1" aria-hidden=
 완성하는 현실적인 개발 계획을 통해 Claude Code와 함께하는 실전 개발을
 경험해봅시다.</p>
 <h3 id="프로젝트-개요와-목표">프로젝트 개요와 목표</h3>
-<p>CollabSpace MVP는 다음과 같은 핵심 기능을 포함해야 합니다. - 사용자
-인증과 워크스페이스 관리 - 실시간 채팅과 파일 공유 - 기본적인 프로젝트
-관리 (칸반 보드) - 모바일 반응형 UI - 안정적인 배포와 모니터링</p>
+<p>CollabSpace MVP는 다음과 같은 핵심 기능을 포함해야 합니다.</p>
+<ul>
+<li>사용자 인증과 워크스페이스 관리</li>
+<li>실시간 채팅과 파일 공유</li>
+<li>기본적인 프로젝트 관리 (칸반 보드)</li>
+<li>모바일 반응형 UI</li>
+<li>안정적인 배포와 모니터링</li>
+</ul>
 <h3 id="주차별-개발-계획">주차별 개발 계획</h3>
 <p><strong>1주차: 기반 구조 - 튼튼한 토대 만들기</strong></p>
 <p>첫 주는 전체 프로젝트의 성패를 좌우하는 중요한 시기입니다. 서두르지
@@ -13289,27 +13296,43 @@ class="sourceCode bash"><code><span id="cb365-1"><a href="#cb365-1" aria-hidden=
 지혜</h3>
 <h4 id="체계적-접근의-가치">1. 체계적 접근의 가치</h4>
 <p><strong>설계 → 구현 → 테스트 → 최적화 → 배포</strong>의 순차적 진행은
-단순한 프로세스가 아닌 리스크를 최소화하는 전략입니다. - <strong>초기
-설계 투자</strong>: 1주일의 설계가 4주의 재작업을 방지 - <strong>점진적
-복잡도 증가</strong>: 간단한 것부터 시작하여 자신감 구축 -
-<strong>지속적 검증</strong>: 매 단계마다 가정을 검증하고 방향 조정</p>
+단순한 프로세스가 아닌 리스크를 최소화하는 전략입니다.</p>
+<ul>
+<li><strong>초기 설계 투자</strong>: 1주일의 설계가 4주의 재작업을
+방지</li>
+<li><strong>점진적 복잡도 증가</strong>: 간단한 것부터 시작하여 자신감
+구축</li>
+<li><strong>지속적 검증</strong>: 매 단계마다 가정을 검증하고 방향
+조정</li>
+</ul>
 <h4 id="claude-code와의-효과적인-협업">2. Claude Code와의 효과적인
 협업</h4>
 <p>AI 페어 프로그래밍의 진정한 가치는 코드 생성이 아닌 <strong>사고의
-확장</strong>에 있습니다. - <strong>명확한 요구사항 전달</strong>:
-구체적일수록 더 나은 결과 - <strong>반복적 개선</strong>: 한 번에 완벽을
-기대하지 말고 점진적 개선 - <strong>컨텍스트 관리</strong>: 큰 그림을
-잃지 않으면서 세부사항 처리</p>
+확장</strong>에 있습니다.</p>
+<ul>
+<li><strong>명확한 요구사항 전달</strong>: 구체적일수록 더 나은
+결과</li>
+<li><strong>반복적 개선</strong>: 한 번에 완벽을 기대하지 말고 점진적
+개선</li>
+<li><strong>컨텍스트 관리</strong>: 큰 그림을 잃지 않으면서 세부사항
+처리</li>
+</ul>
 <h4 id="품질과-속도의-균형">3. 품질과 속도의 균형</h4>
-<p>빠른 개발과 높은 품질은 상충하지 않습니다. - <strong>자동화
-투자</strong>: 초기 자동화 설정이 후반부 속도 향상 - <strong>기술 부채
-관리</strong>: 의도적인 부채와 즉시 해결할 부분 구분 - <strong>지속
-가능한 페이스</strong>: 마라톤이지 스프린트가 아님</p>
+<p>빠른 개발과 높은 품질은 상충하지 않습니다.</p>
+<ul>
+<li><strong>자동화 투자</strong>: 초기 자동화 설정이 후반부 속도
+향상</li>
+<li><strong>기술 부채 관리</strong>: 의도적인 부채와 즉시 해결할 부분
+구분</li>
+<li><strong>지속 가능한 페이스</strong>: 마라톤이지 스프린트가 아님</li>
+</ul>
 <h4 id="실패에서-배우기">4. 실패에서 배우기</h4>
-<p>모든 버그와 장애는 학습의 기회입니다. - <strong>포스트모템
-문화</strong>: 비난 없는 원인 분석 - <strong>실패 자동화</strong>: 같은
-실수를 반복하지 않는 시스템 - <strong>지식 공유</strong>: 개인의 경험을
-팀의 자산으로</p>
+<p>모든 버그와 장애는 학습의 기회입니다.</p>
+<ul>
+<li><strong>포스트모템 문화</strong>: 비난 없는 원인 분석</li>
+<li><strong>실패 자동화</strong>: 같은 실수를 반복하지 않는 시스템</li>
+<li><strong>지식 공유</strong>: 개인의 경험을 팀의 자산으로</li>
+</ul>
 <h3 id="실무-적용-가이드---당신의-프로젝트에서">실무 적용 가이드 -
 당신의 프로젝트에서</h3>
 <h4 id="프로젝트-시작-전">프로젝트 시작 전</h4>
@@ -13358,17 +13381,32 @@ class="sourceCode bash"><code><span id="cb368-1"><a href="#cb368-1" aria-hidden=
 <p>Claude Code는 강력한 도구이지만, 결국 도구일 뿐입니다. 진정한 가치는
 여러분이 이 도구를 활용하여 <strong>사용자에게 가치를 전달</strong>하는
 데 있습니다.</p>
-<p><strong>기억하세요</strong> - 기술은 수단이지 목적이 아닙니다. -
-완벽한 코드보다 작동하는 제품이 중요합니다. - 혼자 가면 빨리 가지만,
-함께 가면 멀리 갑니다. - 매일 조금씩 나아지는 것이 혁명보다 가치
-있습니다.</p>
+<p><strong>기억하세요</strong></p>
+<ul>
+<li>기술은 수단이지 목적이 아닙니다.</li>
+<li>완벽한 코드보다 작동하는 제품이 중요합니다.</li>
+<li>혼자 가면 빨리 가지만, 함께 가면 멀리 갑니다.</li>
+<li>매일 조금씩 나아지는 것이 혁명보다 가치 있습니다.</li>
+</ul>
 <h3 id="다음-단계로">다음 단계로</h3>
 <p>이제 여러분은 Claude Code를 활용하여 실제 제품을 구축할 수 있는 모든
 지식과 경험을 갖추었습니다. 하지만 개인의 역량만으로는 한계가
 있습니다.</p>
-<p>다음 장에서는 이러한 개인적 역량을 <strong>팀 환경에서 효과적으로
-활용하고 확산</strong>하는 방법을 살펴보겠습니다. 함께 일하는 즐거움과
-시너지를 만드는 방법을 탐구해봅시다.</p>
+<p><strong>다음 장 미리보기 - 제11장: GitHub Actions와 Claude Code
+Action</strong></p>
+<p>다음 장에서는 개발 프로세스 자동화의 새로운 차원을 탐구합니다.</p>
+<ul>
+<li><strong>Claude Code Action 활용</strong>: PR에서
+<code>@claude</code> 멘션만으로 AI 기반 코드 리뷰와 자동 수정</li>
+<li><strong>워크플로우 자동화</strong>: GitHub Actions와 Claude의 완벽한
+통합으로 CI/CD 파이프라인 지능화</li>
+<li><strong>보안 운영</strong>: AWS Bedrock, Google Vertex AI 등
+엔터프라이즈급 클라우드 연동</li>
+<li><strong>커스텀 자동화</strong>: 팀 특화 워크플로우 설계와 성능
+최적화 전략</li>
+</ul>
+<p>개인 개발을 넘어서 팀 전체의 생산성을 혁신하는 방법을 함께
+살펴보겠습니다.</p>
 <p><strong>당신의 다음 프로젝트는 무엇인가요?</strong> 🚀</p>
 <h1 id="제11장-github-actions와-claude-code-action">제11장: GitHub
 Actions와 Claude Code Action</h1>
