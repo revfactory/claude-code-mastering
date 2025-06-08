@@ -2,6 +2,28 @@
 
 > "자동화의 힘은 반복을 제거하고 창의성을 해방시키는 것이다" - 마틴 파울러
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    CI/CD 통합
+      Headless 모드 활용
+      파이프라인 자동화
+      배포 전략 수립
+    자동 코드 리뷰
+      품질 게이트 구축
+      지능형 분석 시스템
+      팀 협업 강화
+    문서화 자동화
+      API 문서 생성
+      아키텍처 다이어그램
+      배포 가이드 작성
+    모니터링 대시보드
+      실시간 품질 추적
+      성능 메트릭 수집
+      알림 시스템 구축
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -23,6 +45,36 @@ Claude Code를 CI/CD 파이프라인에 통합하는 것은 단순한 도구 추
 ### 엔터프라이즈급 Headless 통합 전략
 
 Claude Code의 Headless 모드는 단순한 명령행 도구를 넘어서 엔터프라이즈급 자동화 생태계의 핵심 인프라로 기능합니다. 이 모드는 다양한 자동화 시나리오에 맞춰 유연하게 확장되며, 대규모 개발 조직의 복잡한 요구사항을 충족합니다.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[Headless 모드] --> B[환경 감지]
+    A --> C[컨텍스트 분석]
+    A --> D[전략 수립]
+    
+    B --> E[Production<br/><small>최고 품질 모델</small>]
+    B --> F[Staging<br/><small>표준 검증</small>]
+    B --> G[Development<br/><small>빠른 피드백</small>]
+    
+    C --> H[프로젝트 규모]
+    C --> I[기술 스택]
+    C --> J[팀 구조]
+    
+    D --> K[분석 깊이]
+    D --> L[우선순위 영역]
+    D --> M[리소스 할당]
+    
+    E --> N[종합 품질 분석]
+    F --> O[표준 검증 프로세스]
+    G --> P[빠른 피드백 루프]
+    
+    classDef envStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef analysisStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D envStyle
+    class E,F,G,H,I,J,K,L,M,N,O,P analysisStyle
+```
 
 **지능형 컨텍스트 인식 시스템:**
 
@@ -197,6 +249,59 @@ load_claude_config
 ## 9.2 지능형 자동 코드 리뷰 생태계
 
 ### GitHub Actions 엔터프라이즈 통합
+
+지능형 코드 리뷰 시스템은 단순한 정적 분석을 넘어서 프로젝트 맥락을 이해하고 적응하는 동적 분석 플랫폼입니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph trigger [트리거 이벤트]
+        A[Pull Request] 
+        B[Scheduled Analysis]
+        C[Manual Trigger]
+    end
+    
+    subgraph analysis [병렬 분석 엔진]
+        D[Security Scan<br/><small>OWASP, SANS</small>]
+        E[Performance Analysis<br/><small>복잡도, 메모리</small>]
+        F[Architecture Review<br/><small>SOLID, 패턴</small>]
+        G[Testing Coverage<br/><small>커버리지, 품질</small>]
+        H[Documentation<br/><small>API, 가이드</small>]
+    end
+    
+    subgraph integration [통합 및 결과]
+        I[Comprehensive Review]
+        J[PR Comment]
+        K[Dashboard Update]
+        L[Slack Notification]
+    end
+    
+    A --> D
+    A --> E
+    A --> F
+    A --> G
+    A --> H
+    B --> analysis
+    C --> analysis
+    
+    D --> I
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+    
+    I --> J
+    I --> K
+    I --> L
+    
+    classDef triggerStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef analysisStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef integrationStyle fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#166534
+    
+    class A,B,C triggerStyle
+    class D,E,F,G,H analysisStyle
+    class I,J,K,L integrationStyle
+```
 
 ```yaml
 # .github/workflows/claude-enterprise-review.yml
@@ -761,6 +866,47 @@ comprehensive-review:
 ## 9.3 엔터프라이즈급 테스트 자동화 파이프라인
 
 테스트 자동화는 단순한 코드 검증을 넘어서 전체 소프트웨어 품질 보장 체계의 핵심입니다. 현대적인 CI/CD 환경에서는 개발자가 코드를 작성하는 순간부터 프로덕션 배포까지 모든 단계에서 자동화된 품질 검증이 필요합니다.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    subgraph "코드 변경 감지"
+        A[Git Diff 분석] --> B[변경 유형 분류]
+        B --> C[영향 범위 평가]
+    end
+    
+    subgraph "지능형 테스트 생성"
+        D[단위 테스트] --> G[테스트 실행]
+        E[통합 테스트] --> G
+        F[E2E 테스트] --> G
+    end
+    
+    subgraph "품질 검증"
+        G --> H[커버리지 분석]
+        H --> I[성능 테스트]
+        I --> J[보안 스캔]
+    end
+    
+    subgraph "리포팅"
+        J --> K[테스트 리포트]
+        K --> L[품질 대시보드]
+        L --> M[알림 시스템]
+    end
+    
+    C --> D
+    C --> E  
+    C --> F
+    
+    classDef detectStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef testStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef qualityStyle fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#166534
+    classDef reportStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    class A,B,C detectStyle
+    class D,E,F,G testStyle
+    class H,I,J qualityStyle
+    class K,L,M reportStyle
+```
 
 ### 지능형 테스트 생성 시스템
 
