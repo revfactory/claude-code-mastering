@@ -2,6 +2,28 @@
 
 > "자동화는 개발자를 반복 작업에서 해방시켜 창의적 문제 해결에 집중할 수 있게 한다" - 데브옵스 철학
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    GitHub Actions 통합
+      Claude Code Action 활용
+      워크플로우 자동화
+      AI 기반 코드 리뷰
+    보안 운영
+      안전한 환경 구성
+      권한 관리
+      시크릿 보호
+    클라우드 연동
+      AWS Bedrock 통합
+      Google Vertex AI
+      다중 프로바이더 지원
+    커스텀 자동화
+      워크플로우 설계
+      성능 최적화
+      모니터링 체계
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -25,10 +47,19 @@ Claude Code Action은 GitHub의 이벤트 기반 시스템과 Claude AI를 연�
 
 Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력을 결합한 지능형 자동화 시스템입니다:
 
-```
-GitHub 이벤트 → Action 트리거 → Claude AI 분석 → 코드 변경 → GitHub 업데이트
-     ↓              ↓              ↓            ↓            ↓
-  PR/Issue → Context 수집 → 의도 파악 → 실행 계획 → 결과 반영
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart LR
+    A[GitHub 이벤트<br/><small>PR/Issue</small>] --> B[Action 트리거<br/><small>Context 수집</small>]
+    B --> C[Claude AI 분석<br/><small>의도 파악</small>]
+    C --> D[코드 변경<br/><small>실행 계획</small>]
+    D --> E[GitHub 업데이트<br/><small>결과 반영</small>]
+    
+    classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef actionStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,E processStyle
+    class B,C,D actionStyle
 ```
 
 **시스템 구성 요소:**
@@ -117,6 +148,47 @@ Claude Code Action을 효과적으로 활용하기 위해서는 무엇을 할 �
 
 Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 있습니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[Claude Code Action 능력] --> B[코드 분석]
+    A --> C[코드 구현]
+    A --> D[브랜치 관리]
+    A --> E[코드 리뷰]
+    A --> F[진행 추적]
+    
+    B --> B1[시간 복잡도 분석]
+    B --> B2[보안 취약점 확인]
+    B --> B3[스키마 정규화 평가]
+    
+    C --> C1[버그 수정]
+    C --> C2[기능 구현]
+    C --> C3[코드 리팩토링]
+    C --> C4[테스트 작성]
+    C --> C5[문서화]
+    
+    D --> D1[이슈 → 새 브랜치]
+    D --> D2[열린 PR → 직접 푸시]
+    D --> D3[닫힌 PR → 새 브랜치]
+    
+    E --> E1[성능 분석]
+    E --> E2[보안 검토]
+    E --> E3[가독성 평가]
+    E --> E4[영향도 분석]
+    
+    F --> F1[실시간 업데이트]
+    F --> F2[체크박스 진행상황]
+    F --> F3[최종 결과 요약]
+    
+    classDef mainStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    classDef categoryStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef itemStyle fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#64748b
+    
+    class A mainStyle
+    class B,C,D,E,F categoryStyle
+    class B1,B2,B3,C1,C2,C3,C4,C5,D1,D2,D3,E1,E2,E3,E4,F1,F2,F3 itemStyle
+```
+
 **1. 코드 분석과 질문 응답**
 ```bash
 # 코드 분석 요청 예시
@@ -158,6 +230,39 @@ Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 �
 ### Claude가 할 수 없는 일
 
 보안과 시스템 안정성을 위해 Claude Code Action에는 다음과 같은 제약사항이 있습니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[Claude Code Action 제약사항] --> B[GitHub 시스템 제한]
+    A --> C[보안 경계]
+    A --> D[실행 권한 제한]
+    A --> E[컨텍스트 범위 제한]
+    
+    B --> B1[PR 승인 불가<br/><small>보안상 승인 권한 없음</small>]
+    B --> B2[공식 리뷰 제출 불가<br/><small>GitHub 리뷰 시스템 제한</small>]
+    B --> B3[복수 댓글 작성 불가<br/><small>단일 댓글 업데이트만 가능</small>]
+    
+    C --> C1[다른 저장소 접근 불가<br/><small>트리거된 저장소만 접근</small>]
+    C --> C2[조직 정보 접근 불가<br/><small>조직 전체 권한 제한</small>]
+    C --> C3[외부 시스템 연동 제한<br/><small>MCP 서버 설정 필요</small>]
+    
+    D --> D1[임의 명령어 실행 불가<br/><small>allowed_tools 명시 필요</small>]
+    D --> D2[시스템 수준 변경 차단<br/><small>민감한 작업 제한</small>]
+    D --> D3[강제 푸시 불가<br/><small>Git 히스토리 보호</small>]
+    
+    E --> E1[CI/CD 로그 접근 불가<br/><small>별도 통합 설정 필요</small>]
+    E --> E2[빌드 상태 확인 제한<br/><small>MCP를 통한 우회 필요</small>]
+    E --> E3[실시간 모니터링 불가<br/><small>스냅샷 기반 작업</small>]
+    
+    classDef limitStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef categoryStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef mainStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    
+    class B1,B2,B3,C1,C2,C3,D1,D2,D3,E1,E2,E3 limitStyle
+    class B,C,D,E categoryStyle
+    class A mainStyle
+```
 
 **1. GitHub PR 리뷰 시스템 제한**
 - 공식적인 GitHub PR 리뷰 제출 불가
@@ -201,6 +306,67 @@ Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 �
 ### 제약사항 극복 전략
 
 이러한 제약사항들은 창의적인 워크플로우 설계로 극복할 수 있습니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    subgraph strategies [제약사항 극복 전략]
+        A[단계적 작업 분할]
+        B[MCP 서버 확장]
+        C[인간-AI 협업]
+        D[워크플로우 최적화]
+    end
+    
+    subgraph workflow [실행 워크플로우]
+        E[1단계: 기본 구조]
+        F[2단계: 핵심 기능]
+        G[3단계: 테스트 및 검증]
+        H[4단계: 문서화]
+    end
+    
+    subgraph integration [통합 전략]
+        I[MCP 서버 설정]
+        J[CI/CD 연동]
+        K[외부 API 통합]
+        L[모니터링 시스템]
+    end
+    
+    subgraph collaboration [협업 모델]
+        M[AI 자동화 영역]
+        N[인간 검토 영역]
+        O[공동 작업 영역]
+        P[승인 및 배포]
+    end
+    
+    A --> E
+    A --> F
+    A --> G
+    A --> H
+    
+    B --> I
+    B --> J
+    B --> K
+    B --> L
+    
+    C --> M
+    C --> N
+    C --> O
+    C --> P
+    
+    E -.-> F
+    F -.-> G
+    G -.-> H
+    
+    classDef strategyStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef workflowStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef integrationStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef collaborationStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    
+    class A,B,C,D strategyStyle
+    class E,F,G,H workflowStyle
+    class I,J,K,L integrationStyle
+    class M,N,O,P collaborationStyle
+```
 
 **1. 단계적 작업 분할**
 ```bash
@@ -277,6 +443,57 @@ Claude Code Action의 성공적인 도입을 위해서는 체계적인 설정과
 ### 빠른 시작: Claude CLI를 통한 자동 설정
 
 가장 효율적인 설정 방법은 Claude CLI의 자동 설치 기능을 활용하는 것입니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[Claude CLI 설치 시작] --> B[GitHub App 권한 요청]
+    B --> C[사용자 승인]
+    C --> D[Repository Secrets 생성]
+    D --> E[Workflow 파일 생성]
+    E --> F[초기 테스트 실행]
+    F --> G[설정 완료]
+    
+    subgraph auto [자동 설정 과정]
+        H[claude "/install-github-app"]
+        I[권한 검증]
+        J[템플릿 선택]
+        K[커스터마이징]
+        L[배포 및 테스트]
+    end
+    
+    subgraph manual [수동 설정 과정]
+        M[GitHub App 수동 설치]
+        N[권한 세부 조정]
+        O[시크릿 개별 설정]
+        P[워크플로우 커스텀 작성]
+        Q[단계별 테스트]
+    end
+    
+    A -.-> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L -.-> G
+    
+    A -.-> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
+    Q -.-> G
+    
+    classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef autoStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef manualStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef completeStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:3px,color:#5b21b6
+    
+    class A,B,C,D,E,F processStyle
+    class H,I,J,K,L autoStyle
+    class M,N,O,P,Q manualStyle
+    class G completeStyle
+```
 
 ```bash
 # Claude CLI를 통한 원클릭 설정
@@ -469,6 +686,66 @@ Pull Request는 코드 품질과 팀 협업의 핵심 지점입니다. Claude Co
 
 Claude Code Action은 컨텍스트를 이해하고 의미 있는 피드백을 제공하는 고급 코드 리뷰어입니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[PR 생성/업데이트] --> B[자동 분석 시작]
+    B --> C{변경 유형 감지}
+    
+    C -->|보안 관련| D[보안 리뷰 수행]
+    C -->|성능 관련| E[성능 분석 수행]
+    C -->|아키텍처 변경| F[아키텍처 리뷰 수행]
+    C -->|일반 기능| G[표준 코드 리뷰]
+    
+    D --> H[보안 취약점 검사]
+    D --> I[OWASP 가이드라인 검증]
+    D --> J[권한 및 인증 확인]
+    
+    E --> K[성능 병목 분석]
+    E --> L[메모리 사용량 검토]
+    E --> M[데이터베이스 쿼리 최적화]
+    
+    F --> N[설계 원칙 준수 확인]
+    F --> O[의존성 영향 분석]
+    F --> P[확장성 고려사항 검토]
+    
+    G --> Q[코드 품질 검사]
+    G --> R[가독성 개선 제안]
+    G --> S[테스트 커버리지 확인]
+    
+    H --> T[종합 리포트 생성]
+    I --> T
+    J --> T
+    K --> T
+    L --> T
+    M --> T
+    N --> T
+    O --> T
+    P --> T
+    Q --> T
+    R --> T
+    S --> T
+    
+    T --> U[개선 제안 제공]
+    U --> V[자동 수정 가능 여부 판단]
+    V -->|수정 가능| W[코드 자동 개선]
+    V -->|수동 필요| X[상세 가이드 제공]
+    
+    W --> Y[검증 및 테스트]
+    X --> Z[리뷰어 알림]
+    Y --> Z
+    
+    classDef triggerStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef analysisStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef reviewStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef outputStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B,C triggerStyle
+    class D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S analysisStyle
+    class T,U,V,W,X reviewStyle
+    class Y,Z outputStyle
+```
+
 **종합적 코드 분석과 리뷰:**
 
 ```bash
@@ -506,6 +783,63 @@ OWASP Top 10, 입력 검증, 권한 부여,
 ### 자동 코드 개선과 수정
 
 Claude는 문제를 발견하는 것을 넘어서 직접 해결책을 구현할 수 있습니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph detection [문제 감지]
+        A[코드 스멜 탐지]
+        B[보안 취약점 발견]
+        C[성능 병목 식별]
+        D[테스트 부족 확인]
+    end
+    
+    subgraph analysis [근본 원인 분석]
+        E[코드 구조 분석]
+        F[의존성 추적]
+        G[영향 범위 평가]
+        H[수정 우선순위 결정]
+    end
+    
+    subgraph solution [솔루션 설계]
+        I[최적 수정 방안 도출]
+        J[단계별 구현 계획]
+        K[테스트 전략 수립]
+        L[리스크 최소화 방안]
+    end
+    
+    subgraph implementation [자동 구현]
+        M[코드 수정 적용]
+        N[테스트 코드 생성]
+        O[문서 업데이트]
+        P[검증 및 확인]
+    end
+    
+    A --> E
+    B --> F
+    C --> G
+    D --> H
+    
+    E --> I
+    F --> J
+    G --> K
+    H --> L
+    
+    I --> M
+    J --> N
+    K --> O
+    L --> P
+    
+    classDef detectionStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef analysisStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef solutionStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef implementationStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B,C,D detectionStyle
+    class E,F,G,H analysisStyle
+    class I,J,K,L solutionStyle
+    class M,N,O,P implementationStyle
+```
 
 **즉시 적용 가능한 수정 요청:**
 
@@ -660,6 +994,62 @@ GitHub 이슈는 프로젝트 관리와 버그 추적의 중심입니다. Claude
 
 Claude는 이슈의 내용을 분석하여 자동으로 분류하고 적절한 담당자에게 할당할 수 있습니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[새로운 이슈 생성] --> B[Claude 자동 분석]
+    B --> C{이슈 유형 분류}
+    
+    C -->|버그 리포트| D[버그 분석 워크플로우]
+    C -->|기능 요청| E[기능 계획 워크플로우]
+    C -->|개선사항| F[개선 제안 워크플로우]
+    C -->|질문| G[지원 워크플로우]
+    
+    subgraph bugflow [버그 처리 프로세스]
+        D --> H[심각도 평가]
+        H --> I[재현 단계 분석]
+        I --> J[영향 범위 평가]
+        J --> K[자동 수정 가능성 판단]
+        K -->|수정 가능| L[즉시 수정 수행]
+        K -->|수동 필요| M[전문가 할당]
+    end
+    
+    subgraph featureflow [기능 처리 프로세스]
+        E --> N[요구사항 상세 분석]
+        N --> O[대안 설계 제안]
+        O --> P[기술적 실현 가능성 평가]
+        P --> Q[개발 일정 및 리소스 추정]
+        Q --> R[로드맵에 추가]
+    end
+    
+    subgraph supportflow [지원 프로세스]
+        G --> S[질문 내용 분석]
+        S --> T{기존 문서에서 해답 찾기}
+        T -->|해답 존재| U[자동 답변 제공]
+        T -->|새로운 질문| V[전문가 에스캼레이션]
+        U --> W[문서 업데이트 제안]
+    end
+    
+    L --> X[수정 확인 및 테스트]
+    M --> Y[담당자 알림]
+    R --> Y
+    V --> Y
+    W --> Z[이슈 종료]
+    X --> Z
+    
+    classDef inputStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef processStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef decisionStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef outputStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef completeStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:3px,color:#5b21b6
+    
+    class A,B inputStyle
+    class H,I,J,K,N,O,P,Q,S processStyle
+    class C,T decisionStyle
+    class L,M,R,U,V,W,X,Y outputStyle
+    class Z completeStyle
+```
+
 **자동 이슈 분석과 분류:**
 
 ```yaml
@@ -707,6 +1097,63 @@ jobs:
 ### 자동 버그 수정과 해결
 
 Claude는 이슈를 단순히 분석하는 것을 넘어서 직접 해결책을 구현할 수 있습니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart LR
+    subgraph diagnosis [버그 진단]
+        A[버그 리포트 분석]
+        B[재현 단계 검증]
+        C[오류 로그 추적]
+        D[규콙 코드 식별]
+    end
+    
+    subgraph analysis [근본 원인 분석]
+        E[코드 플로우 추적]
+        F[데이터 흐름 분석]
+        G[상태 변화 검사]
+        H[전체 시스템 영향 평가]
+    end
+    
+    subgraph solution [해결책 설계]
+        I[여러 수정 대안 발경]
+        J[각 대안의 장단점 분석]
+        K[최적 솔루션 선택]
+        L[수정 범위 최소화]
+    end
+    
+    subgraph implementation [구현과 검증]
+        M[코드 수정 적용]
+        N[단위 테스트 생성]
+        O[회귀 테스트 수행]
+        P[수정 효과 검증]
+    end
+    
+    A --> E
+    B --> F
+    C --> G
+    D --> H
+    
+    E --> I
+    F --> J
+    G --> K
+    H --> L
+    
+    I --> M
+    J --> N
+    K --> O
+    L --> P
+    
+    classDef diagnosisStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef analysisStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef solutionStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef implementationStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B,C,D diagnosisStyle
+    class E,F,G,H analysisStyle
+    class I,J,K,L solutionStyle
+    class M,N,O,P implementationStyle
+```
 
 **즉시 수정 가능한 버그 처리:**
 
