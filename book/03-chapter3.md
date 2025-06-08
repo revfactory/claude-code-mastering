@@ -4,28 +4,42 @@
 
 이 장에서는 Claude Code의 핵심 기능들을 체계적으로 학습하겠습니다. **실습 중심의 예제**를 통해 일상적인 개발 업무에 Claude Code를 효과적으로 적용하는 방법을 익히겠습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["기본 명령어 구조와 옵션"] --> B["효율적인 파일 탐색과 분석"]
+    B --> C["코드 작성, 수정, 리팩토링"]
+    C --> D["테스트 및 디버깅 전략"]
+    D --> E["Git 연동과 버전 관리"]
+    E --> F["실전 프로젝트 예제"]
+    
+    classDef chapterStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D,E,F chapterStyle
+```
+
 이 장에서 다루는 내용:
-1. 기본 명령어 구조와 옵션
-2. 효율적인 파일 탐색과 분석
-3. 코드 작성, 수정, 리팩토링
-4. 테스트 및 디버깅 전략
-5. Git 연동과 버전 관리
-6. 실전 프로젝트 예제
 
 ## 3.1 기본 명령어 구조
 
 ### 명령어 해부학
 
-Claude Code 명령어의 구조는 직관적이면서도 강력합니다:
-
-```bash
-claude [옵션] [명령/질문]
-  ^      ^         ^
-  |      |         |
-  |      |         +-- 자연어로 작성하는 요청
-  |      +------------ 동작 방식을 제어하는 플래그
-  +------------------ 기본 명령어
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph structure ["Claude Code 명령어 구조"]
+        A["claude<br/><small>기본 명령어</small>"] --> B["[옵션]<br/><small>동작 방식 제어 플래그</small>"]
+        B --> C["[명령/질문]<br/><small>자연어로 작성하는 요청</small>"]
+    end
+    
+    classDef commandStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef optionStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A commandStyle
+    class B,C optionStyle
 ```
+
+Claude Code 명령어의 구조는 직관적이면서도 강력합니다:
 
 ### 주요 옵션들
 
@@ -94,43 +108,24 @@ claude "버그를 찾아서 수정하고, 테스트도 작성한 다음, 커밋 
 
 새로운 프로젝트에 투입되었을 때 빠르게 전체 구조를 파악하는 것은 중요합니다. Claude Code를 활용하면 효율적으로 코드베이스를 탐색할 수 있습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["전체 구조 파악 전략"]
+    
+    A --> B["프로젝트 개요 파악<br/><small>• 구조 트리 시각화<br/>• 기술 스택 분석</small>"]
+    A --> C["핵심 디렉토리 탐색<br/><small>• src 폴더 상세 분석<br/>• 설정 파일 분류</small>"]
+    A --> D["파일 패턴 분석<br/><small>• 파일 타입별 그룹핑<br/>• 테스트 구조 파악</small>"]
+    A --> E["최근 활동 추적<br/><small>• 변경사항 분석<br/>• 핵심 로직 위치 파악</small>"]
+    
+    classDef strategyStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A strategyStyle
+    class B,C,D,E stepStyle
+```
+
 **전체 구조 파악 전략:**
-
-1. **프로젝트 개요 파악**
-```bash
-# 전체 프로젝트 구조를 시각적으로 파악
-claude "프로젝트 구조를 트리 형태로 보여주고, 각 디렉토리의 역할을 설명해줘"
-
-# 프로젝트의 기술 스택 파악
-claude "이 프로젝트에서 사용하는 주요 기술과 프레임워크를 분석해줘"
-```
-
-2. **핵심 디렉토리 탐색**
-```bash
-# 특정 디렉토리의 상세 구조 파악
-claude "src 폴더 안의 구조를 상세히 분석하고, 주요 모듈들의 관계를 설명해줘"
-
-# 설정 파일들 위치 파악
-claude "프로젝트의 모든 설정 파일들을 찾아서 용도별로 분류해줘"
-```
-
-3. **파일 패턴 분석**
-```bash
-# 특정 파일 타입 찾기와 분석
-claude "모든 TypeScript 파일을 찾아서 모듈별로 그룹핑해줘"
-
-# 테스트 파일 구조 파악
-claude "테스트 파일들의 위치와 구조를 분석해줘"
-```
-
-4. **최근 활동 추적**
-```bash
-# 최근 변경사항으로 현재 작업 파악
-claude "최근 24시간 내에 수정된 파일들을 보여주고, 어떤 기능을 개발 중인지 추측해줘"
-
-# 활발히 개발되는 영역 파악
-claude "가장 자주 수정되는 파일들을 찾아서 핵심 비즈니스 로직이 어디에 있는지 분석해줘"
-```
 
 ### 효율적인 파일 읽기
 
@@ -407,101 +402,38 @@ claude "프로젝트의 PR 템플릿에 맞춰서 설명을 작성해줘"
 
 앞서 학습한 기본 사용법들을 종합적으로 활용하여 실제 프로젝트를 구축해보겠습니다. Todo 애플리케이션을 단계별로 개발하면서 Claude Code의 실전 활용법을 익혀봅시다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph goals ["프로젝트 목표"]
+        A["모던한 기술 스택 활용<br/><small>React, TypeScript, Vite</small>"]
+        B["완성도 높은 사용자 경험 제공<br/><small>반응형, 접근성, 애니메이션</small>"]
+        C["전체 개발 주기 경험<br/><small>테스트와 배포까지</small>"]
+    end
+    
+    classDef goalStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class A,B,C goalStyle
+```
+
 **프로젝트 목표:**
-- 모던한 기술 스택 활용 (React, TypeScript, Vite)
-- 완성도 높은 사용자 경험 제공
-- 테스트와 배포까지 전체 개발 주기 경험
 
-### 1단계: 프로젝트 설정 및 구조화
-
-```bash
-# 프로젝트 생성 및 초기 설정
-claude "React와 TypeScript로 Todo 앱 프로젝트를 생성해줘. 
-Vite를 사용하고, ESLint와 Prettier도 설정해줘. 
-그리고 프로젝트 구조도 모범 사례에 맞게 구성해줘"
-
-# 결과 확인
-claude "생성된 프로젝트 구조를 보여주고, 각 디렉토리의 역할을 설명해줘"
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["1단계: 프로젝트 설정<br/><small>React, TypeScript, Vite 구성</small>"] --> B["2단계: 컴포넌트 개발<br/><small>타입 정의, UI 컴포넌트 생성</small>"]
+    B --> C["3단계: 상태 관리<br/><small>Context API, 커스텀 훅</small>"]
+    C --> D["4단계: 스타일링<br/><small>Tailwind CSS, 반응형, 접근성</small>"]
+    D --> E["5단계: 테스트<br/><small>유닛 테스트, 통합 테스트</small>"]
+    E --> F["6단계: 배포 준비<br/><small>빌드 최적화, CI/CD, 모니터링</small>"]
+    
+    classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef currentStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    
+    class A,B,C,D,E,F stepStyle
 ```
 
-### 2단계: 컴포넌트 개발 - 컴포넌트 주도 개발
-
-```bash
-# 타입 정의부터 시작
-claude "Todo 앱에 필요한 모든 TypeScript 타입과 인터페이스를 먼저 정의해줘. 
-Todo, TodoList, Filter 등이 필요해"
-
-# 컴포넌트 생성
-claude "TodoList, TodoItem, AddTodo, TodoFilter 컴포넌트를 만들어줘. 
-각 컴포넌트는 단일 책임 원칙을 따르고, props 타입을 명확히 정의해야 해"
-
-# 컴포넌트 연결
-claude "만든 컴포넌트들을 App.tsx에서 조합해서 전체 UI를 구성해줘"
-```
-
-### 3단계: 상태 관리 - 확장 가능한 구조
-
-```bash
-# Context API 설정
-claude "Context API를 사용해서 Todo 상태 관리를 구현해줘. 
-다음 기능들이 필요해:
-- Todo 추가/수정/삭제
-- 완료 상태 토글
-- 필터링 (전체/완료/미완료)
-- 로컬 스토리지 연동"
-
-# 커스텀 훅 생성
-claude "상태 관리 로직을 useTodos 커스텀 훅으로 추상화해줘"
-```
-
-### 4단계: 스타일링 - 사용자 경험 향상
-
-```bash
-# Tailwind CSS 설정 및 테마
-claude "Tailwind CSS를 설정하고, 커스텀 컬러 팔레트를 정의해줘. 
-라이트/다크 모드를 지원하도록 설정해줘"
-
-# 컴포넌트 스타일링
-claude "모든 컴포넌트에 Tailwind를 사용해서 모던하고 반응형인 디자인을 적용해줘. 
-애니메이션과 트랜지션도 추가해서 부드러운 사용자 경험을 만들어줘"
-
-# 접근성 개선
-claude "키보드 네비게이션과 스크린 리더 지원을 추가해줘"
-```
-
-### 5단계: 테스트 - 품질 보증
-
-```bash
-# 테스트 환경 설정
-claude "Jest와 React Testing Library를 설정하고, 테스트 유틸리티를 만들어줘"
-
-# 유닛 테스트
-claude "각 컴포넌트와 커스텀 훅에 대한 유닛 테스트를 작성해줘. 
-엣지 케이스도 포함해야 해"
-
-# 통합 테스트
-claude "사용자 시나리오 기반의 통합 테스트를 작성해줘:
-- Todo 추가하고 목록에 표시되는지 확인
-- Todo 완료 처리하고 필터링 동작 확인
-- 로컬 스토리지에 저장되고 복원되는지 확인"
-```
-
-### 6단계: 배포 준비 - 프로덕션 최적화
-
-```bash
-# 빌드 최적화
-claude "프로덕션 빌드를 위한 최적화를 수행해줘:
-- 코드 스플리팅 설정
-- 번들 크기 최적화
-- 이미지 최적화
-- PWA 설정 추가"
-
-# 배포 설정
-claude "Vercel 배포를 위한 설정을 만들어줘. 
-GitHub Actions를 사용한 CI/CD 파이프라인도 구성해줘"
-
-# 모니터링 설정
-claude "Sentry를 통한 에러 모니터링과 Google Analytics를 추가해줘"
+### Todo 앱 개발 단계별 가이드
 ```
 
 **프로젝트 완성 체크리스트:**
