@@ -19,8 +19,8 @@ cat > "$COMPLETE_FILE" << 'EOF'
 ---
 title: "Claude Code 마스터하기"
 subtitle: "AI 페어 프로그래밍의 혁명"
-author: "Claude & Human Collaboration"
-date: "2024년 12월"
+author: "황민호 (robin.hwang@kakaocorp.com)"
+date: "2025년 6월"
 version: "1.0"
 lang: ko
 fontsize: 11pt
@@ -34,8 +34,8 @@ toc: true
 # Claude Code 마스터하기
 ## AI 페어 프로그래밍의 혁명
 
-**저자**: Claude & Human Collaboration  
-**출판일**: 2024년 12월  
+**저자**: 황민호 (robin.hwang@kakaocorp.com)  
+**출판일**: 2025년 6월  
 **버전**: 1.0  
 
 ---
@@ -92,8 +92,32 @@ pandoc "$COMPLETE_FILE" \
     --metadata title="Claude Code 마스터하기" \
     --output "output/complete/claude-code-mastering-complete.html"
 
-# Mermaid 지원 추가
-echo "🎨 Mermaid 다이어그램 지원 추가 중..."
+# Mermaid 지원 추가 및 HTML 정리
+echo "🎨 Mermaid 다이어그램 지원 추가 및 HTML 구조 정리 중..."
+python3 -c "
+import re
+import sys
+
+# HTML 파일 읽기
+with open('output/complete/claude-code-mastering-complete.html', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# 1. Mermaid 코드 블록만 찾아서 변환 (%%{init으로 시작하는 것들만)
+pattern = r'<pre class=\"mermaid\"><code>(%%\{init:.*?)</code></pre>'
+replacement = r'<div class=\"mermaid\">\1</div>'
+content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+# 2. 중복된 코드 태그 제거 (예: class=\"sourceCode bash\"><code class=\"sourceCode bash\")
+pattern = r'class=\"sourceCode ([^\"]+)\"><code class=\"sourceCode \1\">'
+replacement = r'class=\"sourceCode \1\"><code>'
+content = re.sub(pattern, replacement, content)
+
+# 파일에 다시 쓰기
+with open('output/complete/claude-code-mastering-complete.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+"
+
+# Mermaid 스크립트 추가
 sed -i '' 's|</body>|<!-- Mermaid 다이어그램 렌더링 -->\
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>\
 <script>\

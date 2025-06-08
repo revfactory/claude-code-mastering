@@ -1,8 +1,8 @@
 ---
 title: "Claude Code 마스터하기"
 subtitle: "AI 페어 프로그래밍의 혁명"
-author: "Claude & Human Collaboration"
-date: "2024년 12월"
+author: "황민호 (robin.hwang@kakaocorp.com)"
+date: "2025년 6월"
 version: "1.0"
 lang: ko
 fontsize: 11pt
@@ -16,8 +16,8 @@ toc: true
 # Claude Code 마스터하기
 ## AI 페어 프로그래밍의 혁명
 
-**저자**: Claude & Human Collaboration  
-**출판일**: 2024년 12월  
+**저자**: 황민호 (robin.hwang@kakaocorp.com)  
+**출판일**: 2025년 6월  
 **버전**: 1.0  
 
 ---
