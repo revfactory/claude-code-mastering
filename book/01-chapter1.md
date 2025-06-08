@@ -47,6 +47,7 @@ Claude Code는 이런 발전의 연장선상에 있는 혁신적인 도구입니
 통합 개발 환경(IDE)은 지난 수십 년간 꾸준히 발전해왔습니다:
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 timeline
     title IDE 진화의 역사
     
