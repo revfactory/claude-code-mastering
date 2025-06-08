@@ -38,8 +38,8 @@ jobs:
       - name: 정적 파일 업로드
         uses: actions/upload-pages-artifact@v3
         with:
-          # 전체 저장소를 정적 사이트로 배포
-          path: '.'
+          # docs 폴더를 정적 사이트로 배포
+          path: './docs'
       
       - name: GitHub Pages 배포
         id: deployment

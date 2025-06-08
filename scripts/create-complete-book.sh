@@ -6,13 +6,13 @@ set -e
 echo "📚 Claude Code 마스터하기 - 완전한 책 생성 시작..."
 
 # 출력 디렉토리 생성
-mkdir -p output/complete
+mkdir -p docs
 
-# CSS 파일을 루트에 복사 (상대 경로 참조를 위해)
-cp output/style.css ./style.css
+# CSS 파일을 docs 폴더에 복사
+cp output/style.css docs/style.css
 
 # 통합 마크다운 파일 생성
-COMPLETE_FILE="output/complete/claude-code-mastering-complete.md"
+COMPLETE_FILE="docs/claude-code-mastering-complete.md"
 
 # 표지 생성
 cat > "$COMPLETE_FILE" << 'EOF'
@@ -94,7 +94,7 @@ pandoc "$COMPLETE_FILE" \
     --toc \
     --toc-depth=3 \
     --metadata title="Claude Code 마스터하기" \
-    --output "output/complete/claude-code-mastering-complete.html"
+    --output "docs/claude-code-mastering-complete.html"
 
 # Mermaid 지원 추가 및 HTML 정리
 echo "🎨 Mermaid 다이어그램 지원 추가 및 HTML 구조 정리 중..."
@@ -103,7 +103,7 @@ import re
 import sys
 
 # HTML 파일 읽기
-with open('output/complete/claude-code-mastering-complete.html', 'r', encoding='utf-8') as f:
+with open('docs/claude-code-mastering-complete.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # 1. Mermaid 코드 블록만 찾아서 변환 (%%{init으로 시작하는 것들만)
@@ -117,7 +117,7 @@ replacement = r'class=\"sourceCode \1\"><code>'
 content = re.sub(pattern, replacement, content)
 
 # 파일에 다시 쓰기
-with open('output/complete/claude-code-mastering-complete.html', 'w', encoding='utf-8') as f:
+with open('docs/claude-code-mastering-complete.html', 'w', encoding='utf-8') as f:
     f.write(content)
 "
 
@@ -148,26 +148,30 @@ sed -i '' 's|</body>|<!-- Mermaid 다이어그램 렌더링 -->\
 </script>\
 </body>|' "output/complete/claude-code-mastering-complete.html"
 
-echo "✅ HTML 생성 완료: output/complete/claude-code-mastering-complete.html"
+echo "✅ HTML 생성 완료: docs/claude-code-mastering-complete.html"
 
 # PDF 생성 (Puppeteer 사용)
 echo "📄 PDF 생성 중..."
 node scripts/html-to-pdf.js \
-    "output/complete/claude-code-mastering-complete.html" \
-    "output/complete/claude-code-mastering-complete.pdf"
+    "docs/claude-code-mastering-complete.html" \
+    "docs/claude-code-mastering-complete.pdf"
 
-echo "✅ PDF 생성 완료: output/complete/claude-code-mastering-complete.pdf"
+echo "✅ PDF 생성 완료: docs/claude-code-mastering-complete.pdf"
 
 # 파일 크기 확인
 echo ""
 echo "📊 생성된 파일 정보:"
-ls -lh output/complete/
+ls -lh docs/
 echo ""
 echo "💾 파일 크기:"
-du -h output/complete/*
+du -h docs/*
 
 echo ""
 echo "🎉 완전한 책 생성 완료!"
-echo "📍 위치: output/complete/"
-echo "📖 PDF: output/complete/claude-code-mastering-complete.pdf"
-echo "🌐 HTML: output/complete/claude-code-mastering-complete.html"
+echo "📍 위치: docs/"
+echo "📖 PDF: docs/claude-code-mastering-complete.pdf"
+echo "🌐 HTML: docs/claude-code-mastering-complete.html"
+
+# index.html 업데이트
+echo "📋 index.html 업데이트 중..."
+cp docs/claude-code-mastering-complete.html docs/index.html

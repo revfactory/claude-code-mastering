@@ -39,8 +39,12 @@
 ```
 claude-code-mastering/
 ├── 📄 README.md                              # 이 파일
-├── 📄 index.html                             # GitHub Pages 메인 페이지
-├── 📄 style.css                              # CSS 스타일
+├── 📁 docs/                                  # GitHub Pages 배포 파일들
+│   ├── 📄 index.html                         # GitHub Pages 메인 페이지
+│   ├── 📄 claude-code-mastering-complete.html  # 전체 책 HTML
+│   ├── 📄 claude-code-mastering-complete.md    # 통합 마크다운
+│   ├── 📄 claude-code-mastering-complete.pdf   # 전체 책 PDF
+│   └── 📄 style.css                          # HTML/PDF 스타일
 ├── 📁 book/                                  # 완성된 책 내용 (마크다운)
 │   ├── 📄 00-preface.md                      # 서문
 │   ├── 📄 01-chapter1.md                     # 제1장: Claude Code란 무엇인가?
@@ -67,14 +71,10 @@ claude-code-mastering/
 │   ├── 📄 claude-code-best-practices-ko.md   # 원본 베스트 프랙티스
 │   ├── 📄 claude-code-book-outline.md        # 책 목차 구성
 │   └── 📄 usecase.md                         # 활용 사례 초안
-└── 📁 output/                                # 생성된 결과물
-    ├── 📁 complete/                          # 완전한 책 버전
-    │   ├── 📄 claude-code-mastering-complete.html  # 전체 책 HTML
-    │   ├── 📄 claude-code-mastering-complete.md    # 통합 마크다운
-    │   └── 📄 claude-code-mastering-complete.pdf   # 전체 책 PDF
+└── 📁 output/                                # 임시 생성 파일들
     ├── 📁 html/                              # 개별 HTML 버전 (미사용)
     ├── 📁 pdf/                               # 개별 PDF 버전 (미사용)
-    └── 📄 style.css                          # HTML/PDF 스타일
+    └── 📄 style.css                          # 기본 스타일 (Pandoc 생성용)
 ```
 
 ## 🚀 빠른 시작
@@ -86,8 +86,8 @@ claude-code-mastering/
 - [📖 개별 장 마크다운](book/) - GitHub에서 읽기
 
 **다운로드해서 읽기:**
-- [📄 전체 책 PDF](output/complete/claude-code-mastering-complete.pdf) - 오프라인 읽기용
-- [📄 전체 책 HTML](output/complete/claude-code-mastering-complete.html) - 로컬 HTML 버전
+- [📄 전체 책 PDF](docs/claude-code-mastering-complete.pdf) - 오프라인 읽기용
+- [📄 전체 책 HTML](docs/claude-code-mastering-complete.html) - 로컬 HTML 버전
 
 ### 🔧 책 생성
 
@@ -113,10 +113,10 @@ chmod +x scripts/create-complete-book.sh
 ./scripts/create-complete-book.sh
 
 # 3. 생성된 파일들 확인
-# - output/complete/claude-code-mastering-complete.html  (전체 책 HTML)
-# - output/complete/claude-code-mastering-complete.pdf   (전체 책 PDF)
-# - output/complete/claude-code-mastering-complete.md    (통합 마크다운)
-# - index.html (GitHub Pages용 - 자동 업데이트)
+# - docs/claude-code-mastering-complete.html  (전체 책 HTML)
+# - docs/claude-code-mastering-complete.pdf   (전체 책 PDF)
+# - docs/claude-code-mastering-complete.md    (통합 마크다운)
+# - docs/index.html (GitHub Pages용 - 자동 업데이트)
 ```
 
 **참고사항:**
