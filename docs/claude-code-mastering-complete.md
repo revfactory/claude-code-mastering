@@ -145,8 +145,8 @@ Claude Code는 이런 발전의 연장선상에 있는 혁신적인 도구입니
 먼저 Claude Code가 왜 필요한지 이해하기 위해, 현재 개발자들이 직면한 주요 어려움들을 살펴보겠습니다.
 
 **1. 폭발적으로 증가하는 복잡성**
-
 현대의 소프트웨어는 정말 복잡해졌습니다. 예를 들어
+
 - 평범한 웹 애플리케이션도 100개 이상의 라이브러리에 의존합니다.
 - 마이크로서비스 환경에서는 수십 개의 독립적인 서비스를 관리해야 합니다.
 - 한 명의 개발자가 프론트엔드, 백엔드, 데이터베이스, DevOps까지 모두 알아야 하는 풀스택 시대입니다.
@@ -154,8 +154,8 @@ Claude Code는 이런 발전의 연장선상에 있는 혁신적인 도구입니
 이런 복잡성 때문에 새로운 프로젝트를 시작할 때마다 어디서부터 시작해야 할지 막막함을 느끼는 개발자들이 많습니다.
 
 **2. 끊임없이 변화하는 기술 스택**
-
 기술 변화의 속도도 정말 빠릅니다.
+
 - JavaScript 생태계에서는 매년 새로운 프레임워크가 등장합니다.
 - AWS만 해도 200개가 넘는 서비스를 제공하고 있습니다.
 - 각 프로그래밍 언어마다 고유한 철학과 생태계를 가지고 있어서 학습 부담이 큽니다.
@@ -163,8 +163,8 @@ Claude Code는 이런 발전의 연장선상에 있는 혁신적인 도구입니
 빠르게 변화하는 기술 환경에서 지속적인 학습과 적응이 필요한 상황입니다.
 
 **3. 반복적이고 지루한 작업들**
-
 개발을 하다 보면 창의적인 부분보다는 반복적인 작업에 시간을 많이 쓰게 됩니다.
+
 - 매번 똑같은 형태의 보일러플레이트 코드 작성
 - 비슷비슷한 CRUD 기능들의 반복 구현
 - 귀찮지만 꼭 필요한 문서화와 주석 작성
@@ -217,13 +217,14 @@ timeline
 ## 1.2 AI 페어 프로그래밍의 등장
 
 ### 페어 프로그래밍의 재정의
+**전통적인 페어 프로그래밍**
 
-전통적인 페어 프로그래밍
 - 두 명의 개발자가 하나의 컴퓨터 앞에 앉아 작업
 - 한 명은 코드를 작성(Driver), 다른 한 명은 검토(Navigator)
 - 지식 공유와 코드 품질 향상이 목적
 
-AI 페어 프로그래밍
+**AI 페어 프로그래밍**
+
 - 개발자와 AI가 대화하며 협업
 - AI는 24시간 사용 가능한 시니어 개발자 역할
 - 즉각적인 피드백과 다양한 관점 제공
@@ -394,6 +395,7 @@ graph LR
 ```
 
 **2. 멀티모달 입력 지원**
+
 - 디자인 스크린샷을 보고 UI 구현
 - 다이어그램을 코드로 변환
 - 에러 스크린샷으로 디버깅
@@ -567,38 +569,78 @@ claude --version
 
 ### Windows에서 설치하기
 
-Windows에서도 간단하게 설치할 수 있습니다.
+Windows에서는 WSL 2(Windows Subsystem for Linux)를 통해 Claude Code를 설치하는 것이 권장됩니다. 현재 Claude Code는 Windows 네이티브 클라이언트를 지원하지 않으므로, Linux 환경이 필요합니다.
 
-**방법 1: npm을 통한 설치 (권장)**
+**시스템 요구사항**
 
-> **중요**: Windows에서는 PowerShell을 **관리자 권한**으로 실행해야 합니다.
-> - `Win + X`를 누르고 "Windows PowerShell(관리자)" 선택
-> - 또는 시작 메뉴에서 PowerShell을 우클릭 → "관리자 권한으로 실행"
+| 항목 | 최소 조건 |
+|------|-----------|
+| OS | Windows 10 (21H2) 또는 Windows 11 + WSL 2 |
+| RAM | 4GB 이상 |
+| 네트워크 | 인터넷 연결 (OAuth 인증 및 API 호출) |
+| 소프트웨어 | WSL 2, Node.js 18+, Git(선택사항) |
+
+**1단계: WSL 2 설치**
+
+PowerShell을 **관리자 권한**으로 실행하고 다음 명령어를 입력하세요.
 
 ```powershell
+# WSL 설치 (Ubuntu 22.04 LTS 기본 포함)
+wsl --install
+
+# 설치 후 시스템 재부팅
+```
+
+기존에 WSL 1을 사용하고 있다면 다음과 같이 업그레이드하세요.
+
+```powershell
+# WSL 2로 업그레이드
+wsl --set-version Ubuntu 2
+
+# 설치 상태 확인
+wsl --status
+wsl --list --verbose
+```
+
+**2단계: Node.js 설치 (WSL 내부)**
+
+WSL 터미널(Ubuntu)을 열고 NVM을 통해 Node.js를 설치하세요.
+
+```bash
+# NVM 설치
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# 변경사항 적용
+source ~/.bashrc
+
+# Node.js 18 LTS 설치 및 사용
+nvm install 18
+nvm use 18
+
+# 설치 확인
+node --version
+npm --version
+```
+
+> **중요**: `which node` 명령 실행 시 경로가 `/home/<username>/.nvm/...`으로 표시되어야 합니다. `/mnt/c/...` 경로가 나타나면 Windows와 경로가 충돌하는 상황이므로 위 과정을 다시 진행하세요.
+
+**3단계: Claude Code 설치**
+
+```bash
 # Claude Code 설치
 npm install -g @anthropic-ai/claude-code
 
-# 설치 확인 (버전이 출력되면 성공!)
+# 설치 확인
 claude --version
 ```
 
-**방법 2: Windows 설치 프로그램 사용**
+**설치 오류 해결**
 
-1. Claude Code 공식 사이트에서 Windows 설치 프로그램(.exe) 다운로드
-2. 다운로드한 파일 실행
-3. 설치 마법사 지시에 따라 진행
-4. 시스템 PATH에 자동으로 추가됨
-
-**Windows 특화 설정**
-
-```powershell
-# Windows Defender 예외 추가 (성능 향상)
-Add-MpPreference -ExclusionPath "$env:APPDATA\claude-code"
-
-# 긴 경로 지원 활성화
-git config --system core.longpaths true
-```
+| 오류 | 해결방법 |
+|------|----------|
+| `OS detection failed` | `npm config set os linux` 실행 후 `npm install -g @anthropic-ai/claude-code --force --no-os-check` |
+| `exec: node: not found` | Node.js 설치 재확인, `which node` 경로 점검 |
+| 권한 오류 | `npm config set prefix '~/.npm-global'` 실행 후 재설치 |
 
 ### Linux (Ubuntu/Debian)에서 설치하기
 

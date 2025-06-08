@@ -95,38 +95,78 @@ claude --version
 
 ### Windows에서 설치하기
 
-Windows에서도 간단하게 설치할 수 있습니다.
+Windows에서는 WSL 2(Windows Subsystem for Linux)를 통해 Claude Code를 설치하는 것이 권장됩니다. 현재 Claude Code는 Windows 네이티브 클라이언트를 지원하지 않으므로, Linux 환경이 필요합니다.
 
-**방법 1: npm을 통한 설치 (권장)**
+**시스템 요구사항**
 
-> **중요**: Windows에서는 PowerShell을 **관리자 권한**으로 실행해야 합니다.
-> - `Win + X`를 누르고 "Windows PowerShell(관리자)" 선택
-> - 또는 시작 메뉴에서 PowerShell을 우클릭 → "관리자 권한으로 실행"
+| 항목 | 최소 조건 |
+|------|-----------|
+| OS | Windows 10 (21H2) 또는 Windows 11 + WSL 2 |
+| RAM | 4GB 이상 |
+| 네트워크 | 인터넷 연결 (OAuth 인증 및 API 호출) |
+| 소프트웨어 | WSL 2, Node.js 18+, Git(선택사항) |
+
+**1단계: WSL 2 설치**
+
+PowerShell을 **관리자 권한**으로 실행하고 다음 명령어를 입력하세요.
 
 ```powershell
+# WSL 설치 (Ubuntu 22.04 LTS 기본 포함)
+wsl --install
+
+# 설치 후 시스템 재부팅
+```
+
+기존에 WSL 1을 사용하고 있다면 다음과 같이 업그레이드하세요.
+
+```powershell
+# WSL 2로 업그레이드
+wsl --set-version Ubuntu 2
+
+# 설치 상태 확인
+wsl --status
+wsl --list --verbose
+```
+
+**2단계: Node.js 설치 (WSL 내부)**
+
+WSL 터미널(Ubuntu)을 열고 NVM을 통해 Node.js를 설치하세요.
+
+```bash
+# NVM 설치
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# 변경사항 적용
+source ~/.bashrc
+
+# Node.js 18 LTS 설치 및 사용
+nvm install 18
+nvm use 18
+
+# 설치 확인
+node --version
+npm --version
+```
+
+> **중요**: `which node` 명령 실행 시 경로가 `/home/<username>/.nvm/...`으로 표시되어야 합니다. `/mnt/c/...` 경로가 나타나면 Windows와 경로가 충돌하는 상황이므로 위 과정을 다시 진행하세요.
+
+**3단계: Claude Code 설치**
+
+```bash
 # Claude Code 설치
 npm install -g @anthropic-ai/claude-code
 
-# 설치 확인 (버전이 출력되면 성공!)
+# 설치 확인
 claude --version
 ```
 
-**방법 2: Windows 설치 프로그램 사용**
+**설치 오류 해결**
 
-1. Claude Code 공식 사이트에서 Windows 설치 프로그램(.exe) 다운로드
-2. 다운로드한 파일 실행
-3. 설치 마법사 지시에 따라 진행
-4. 시스템 PATH에 자동으로 추가됨
-
-**Windows 특화 설정**
-
-```powershell
-# Windows Defender 예외 추가 (성능 향상)
-Add-MpPreference -ExclusionPath "$env:APPDATA\claude-code"
-
-# 긴 경로 지원 활성화
-git config --system core.longpaths true
-```
+| 오류 | 해결방법 |
+|------|----------|
+| `OS detection failed` | `npm config set os linux` 실행 후 `npm install -g @anthropic-ai/claude-code --force --no-os-check` |
+| `exec: node: not found` | Node.js 설치 재확인, `which node` 경로 점검 |
+| 권한 오류 | `npm config set prefix '~/.npm-global'` 실행 후 재설치 |
 
 ### Linux (Ubuntu/Debian)에서 설치하기
 
