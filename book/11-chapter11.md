@@ -26,12 +26,13 @@ mindmap
 
 ## 학습 목표
 
-이 장을 완료하면 다음을 할 수 있습니다
-- Claude Code Action을 활용한 GitHub 워크플로우 자동화를 구축할 수 있습니다
-- 풀 리퀘스트와 이슈에서 AI 기반 코드 리뷰와 개선을 자동화할 수 있습니다
-- 보안을 고려한 GitHub Actions 환경에서 Claude Code를 안전하게 운영할 수 있습니다
-- 다양한 클라우드 프로바이더(AWS Bedrock, Google Vertex AI)와 연동할 수 있습니다
-- 커스텀 자동화 워크플로우를 설계하고 최적화할 수 있습니다
+이 장을 완료하면 다음을 할 수 있습니다.
+
+- Claude Code Action을 활용한 GitHub 워크플로우 자동화를 구축할 수 있습니다.
+- 풀 리퀘스트와 이슈에서 AI 기반 코드 리뷰와 개선을 자동화할 수 있습니다.
+- 보안을 고려한 GitHub Actions 환경에서 Claude Code를 안전하게 운영할 수 있습니다.
+- 다양한 클라우드 프로바이더(AWS Bedrock, Google Vertex AI)와 연동할 수 있습니다.
+- 커스텀 자동화 워크플로우를 설계하고 최적화할 수 있습니다.
 
 ## 개요
 
@@ -45,7 +46,7 @@ Claude Code Action은 GitHub의 이벤트 기반 시스템과 Claude AI를 연�
 
 ### 핵심 아키텍처와 동작 원리
 
-Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력을 결합한 지능형 자동화 시스템입니다
+Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력을 결합한 지능형 자동화 시스템입니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -123,7 +124,7 @@ on:
 
 ### 상황 인식 AI 상호작용
 
-Claude Code Action은 단순한 키워드 매칭을 넘어서 맥락을 이해하고 적절한 행동을 결정합니다
+Claude Code Action은 단순한 키워드 매칭을 넘어서 맥락을 이해하고 적절한 행동을 결정합니다.
 
 ```bash
 # 다양한 상호작용 패턴
@@ -146,7 +147,7 @@ Claude Code Action을 효과적으로 활용하기 위해서는 무엇을 할 �
 
 ### Claude가 할 수 있는 일
 
-Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 있습니다
+Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -198,6 +199,7 @@ graph TD
 ```
 
 **2. 코드 변경과 구현**
+
 - 간단한 버그 수정부터 중간 규모의 기능 구현
 - 리팩토링과 코드 개선
 - 테스트 코드 작성
@@ -211,6 +213,7 @@ graph TD
 ```
 
 **3. 스마트한 브랜치 관리**
+
 - **이슈에서 트리거**: 항상 새 브랜치 생성
 - **열린 PR에서 트리거**: 기존 PR 브랜치에 직접 푸시
 - **닫힌 PR에서 트리거**: 새 브랜치 생성 (원본이 더 이상 활성화되지 않음)
@@ -223,13 +226,14 @@ graph TD
 ```
 
 **5. 단일 댓글 업데이트**
+
 - 모든 작업 진행상황을 하나의 댓글에서 실시간 업데이트
 - 체크박스로 진행상황 시각화
 - 최종 결과와 요약 제공
 
 ### Claude가 할 수 없는 일
 
-보안과 시스템 안정성을 위해 Claude Code Action에는 다음과 같은 제약사항이 있습니다
+보안과 시스템 안정성을 위해 Claude Code Action에는 다음과 같은 제약사항이 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -265,6 +269,7 @@ graph TD
 ```
 
 **1. GitHub PR 리뷰 시스템 제한**
+
 - 공식적인 GitHub PR 리뷰 제출 불가
 - PR 승인 권한 없음 (보안상 이유)
 - 여러 개의 별도 댓글 작성 불가
@@ -276,11 +281,13 @@ graph TD
 ```
 
 **2. 컨텍스트 범위 제한**
+
 - 트리거된 저장소와 PR/이슈 컨텍스트로만 작업 범위 한정
 - 다른 저장소나 외부 시스템 접근 불가
 - 조직 전체 정보 접근 불가
 
 **3. 명령어 실행 제한**
+
 - 기본적으로 임의의 Bash 명령어 실행 불가
 - `allowed_tools` 설정을 통해 명시적으로 허용해야 함
 - 시스템 수준 변경이나 민감한 작업 차단
@@ -294,18 +301,20 @@ graph TD
 ```
 
 **4. CI/CD 시스템 통합 제한**
+
 - 빌드 로그나 테스트 결과에 직접 접근 불가
 - CI 시스템 상태 확인 불가
 - 별도 MCP 서버 설정 없이는 외부 시스템 연동 제한
 
 **5. 고급 Git 작업 제한**
+
 - 브랜치 병합, 리베이스 등 복잡한 Git 작업 불가
 - 커밋 푸시를 넘어서는 브랜치 조작 불가
 - Git 히스토리 수정이나 강제 푸시 불가
 
 ### 제약사항 극복 전략
 
-이러한 제약사항들은 창의적인 워크플로우 설계로 극복할 수 있습니다
+이러한 제약사항들은 창의적인 워크플로우 설계로 극복할 수 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -442,64 +451,13 @@ Claude Code Action의 성공적인 도입을 위해서는 체계적인 설정과
 
 ### 빠른 시작: Claude CLI를 통한 자동 설정
 
-가장 효율적인 설정 방법은 Claude CLI의 자동 설치 기능을 활용하는 것입니다
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
-flowchart TD
-    A[Claude CLI 설치 시작] --> B[GitHub App 권한 요청]
-    B --> C[사용자 승인]
-    C --> D[Repository Secrets 생성]
-    D --> E[Workflow 파일 생성]
-    E --> F[초기 테스트 실행]
-    F --> G[설정 완료]
-    
-    subgraph auto [자동 설정 과정]
-        H[claude "/install-github-app"]
-        I[권한 검증]
-        J[템플릿 선택]
-        K[커스터마이징]
-        L[배포 및 테스트]
-    end
-    
-    subgraph manual [수동 설정 과정]
-        M[GitHub App 수동 설치]
-        N[권한 세부 조정]
-        O[시크릿 개별 설정]
-        P[워크플로우 커스텀 작성]
-        Q[단계별 테스트]
-    end
-    
-    A -.-> H
-    H --> I
-    I --> J
-    J --> K
-    K --> L
-    L -.-> G
-    
-    A -.-> M
-    M --> N
-    N --> O
-    O --> P
-    P --> Q
-    Q -.-> G
-    
-    classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
-    classDef autoStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
-    classDef manualStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
-    classDef completeStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:3px,color:#5b21b6
-    
-    class A,B,C,D,E,F processStyle
-    class H,I,J,K,L autoStyle
-    class M,N,O,P,Q manualStyle
-    class G completeStyle
-```
+가장 효율적인 설정 방법은 Claude CLI의 자동 설치 기능을 활용하는 것입니다.
 
 ```bash
 # Claude CLI를 통한 원클릭 설정
 claude "/install-github-app"
 
-# 이 명령은 다음을 자동으로 수행합니다
+# 이 명령은 다음을 자동으로 수행합니다.
 # 1. GitHub App 권한 설정
 # 2. Repository secrets 생성
 # 3. Workflow 파일 생성
@@ -520,7 +478,7 @@ claude "Claude CLI의 /install-github-app 명령이 수행하는 작업을 단�
 
 ### 수동 설정: 엔터프라이즈 환경을 위한 세밀한 제어
 
-보안 요구사항이 높은 조직이나 특별한 설정이 필요한 경우 수동 설정을 통해 더 세밀한 제어가 가능합니다
+보안 요구사항이 높은 조직이나 특별한 설정이 필요한 경우 수동 설정을 통해 더 세밀한 제어가 가능합니다.
 
 **1단계: GitHub App 설치와 권한 설정**
 
@@ -632,11 +590,11 @@ jobs:
           
           # 커스텀 지침
           custom_instructions: |
-            당신은 우리 조직의 엔터프라이즈 개발 표준을 준수해야 합니다
-            - 모든 변경사항은 단위 테스트를 포함해야 합니다
-            - 보안 모범 사례를 적용해야 합니다
-            - 성능 영향을 고려해야 합니다
-            - 코드 리뷰 가이드라인을 따라야 합니다
+            당신은 우리 조직의 엔터프라이즈 개발 표준을 준수해야 합니다.
+            - 모든 변경사항은 단위 테스트를 포함해야 합니다.
+            - 보안 모범 사례를 적용해야 합니다.
+            - 성능 영향을 고려해야 합니다.
+            - 코드 리뷰 가이드라인을 따라야 합니다.
             
           # 환경 변수
           claude_env: |
@@ -684,7 +642,7 @@ Pull Request는 코드 품질과 팀 협업의 핵심 지점입니다. Claude Co
 
 ### 지능형 코드 리뷰 시스템
 
-Claude Code Action은 컨텍스트를 이해하고 의미 있는 피드백을 제공하는 고급 코드 리뷰어입니다
+Claude Code Action은 컨텍스트를 이해하고 의미 있는 피드백을 제공하는 고급 코드 리뷰어입니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -782,7 +740,7 @@ OWASP Top 10, 입력 검증, 권한 부여,
 
 ### 자동 코드 개선과 수정
 
-Claude는 문제를 발견하는 것을 넘어서 직접 해결책을 구현할 수 있습니다
+Claude는 문제를 발견하는 것을 넘어서 직접 해결책을 구현할 수 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -913,7 +871,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           direct_prompt: |
             이 PR에서 보안 관련 변경사항을 발견했습니다. 
-            포괄적인 보안 리뷰를 수행해주세요:
+            포괄적인 보안 리뷰를 수행해주세요
             
             1. 인증과 권한 부여 로직 검증
             2. 입력 검증과 SQL 인젝션 방지 확인
@@ -992,7 +950,7 @@ GitHub 이슈는 프로젝트 관리와 버그 추적의 중심입니다. Claude
 
 ### 지능형 이슈 분류와 라우팅
 
-Claude는 이슈의 내용을 분석하여 자동으로 분류하고 적절한 담당자에게 할당할 수 있습니다
+Claude는 이슈의 내용을 분석하여 자동으로 분류하고 적절한 담당자에게 할당할 수 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -1096,7 +1054,7 @@ jobs:
 
 ### 자동 버그 수정과 해결
 
-Claude는 이슈를 단순히 분석하는 것을 넘어서 직접 해결책을 구현할 수 있습니다
+Claude는 이슈를 단순히 분석하는 것을 넘어서 직접 해결책을 구현할 수 있습니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -1384,9 +1342,9 @@ claude "Claude Code Action을 위한 RBAC 시스템을 설계해줘.
     custom_instructions: |
       보안 지침
       1. 절대로 시크릿이나 패스워드를 코드에 하드코딩하지 마세요
-      2. 모든 외부 입력은 검증해야 합니다
+      2. 모든 외부 입력은 검증해야 합니다.
       3. 민감한 정보는 로그에 남기지 마세요
-      4. 보안 관련 변경사항은 별도 승인이 필요합니다
+      4. 보안 관련 변경사항은 별도 승인이 필요합니다.
       5. 데이터베이스 연결 정보는 환경 변수로만 관리하세요
 ```
 
@@ -1465,7 +1423,7 @@ jobs:
 
 ### AWS Bedrock 통합
 
-AWS Bedrock을 통한 Claude 접근은 AWS의 보안 및 규정 준수 기능을 활용할 수 있게 해줍니다
+AWS Bedrock을 통한 Claude 접근은 AWS의 보안 및 규정 준수 기능을 활용할 수 있게 해줍니다.
 
 **OIDC 기반 Bedrock 설정**
 
@@ -1744,7 +1702,7 @@ Claude Code Action의 진정한 가치는 조직의 특수한 요구사항에 �
 
 ### MCP 서버 통합과 확장
 
-MCP(Model Context Protocol)는 Claude의 기능을 확장하는 표준화된 방법입니다. 조직의 내부 시스템, 데이터베이스, API와의 통합을 통해 Claude가 더 풍부한 컨텍스트로 작업할 수 있게 합니다
+MCP(Model Context Protocol)는 Claude의 기능을 확장하는 표준화된 방법입니다. 조직의 내부 시스템, 데이터베이스, API와의 통합을 통해 Claude가 더 풍부한 컨텍스트로 작업할 수 있게 합니다.
 
 **기본 MCP 서버 통합**
 
@@ -2169,7 +2127,7 @@ API 호출 최적화
 name: Adaptive Resource Management
 on:
   schedule:
-    - cron: '0 */6 * * *'  # 6시간마다
+    - cron: '0 */6 * * *'  # 6시간마다.
 
 jobs:
   resource-optimization:

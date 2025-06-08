@@ -136,6 +136,7 @@ chmod +x scripts/create-complete-book.sh
 이 프로젝트는 오픈소스입니다! 기여를 환영합니다.
 
 **기여 방법**
+
 1. 📝 오타나 개선사항 발견 시 Issue 등록
 2. 🔀 Pull Request로 직접 수정 제안
 3. 🌟 별표를 눌러 프로젝트 응원

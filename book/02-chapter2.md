@@ -23,6 +23,7 @@
 설치 전 시스템 환경을 확인하겠습니다. 터미널을 열고 다음 명령어들을 실행하여 필요한 도구들이 설치되어 있는지 확인하세요.
 
 **터미널 실행 방법**
+
 - **Mac**: `Cmd + Space` → "터미널" 검색
 - **Windows**: `Win + R` → "cmd" 입력
 - **Linux**: `Ctrl + Alt + T`
@@ -39,6 +40,7 @@ git --version
 ```
 
 **Node.js가 설치되어 있지 않거나 버전이 낮다면**
+
 1. [Node.js 공식 사이트](https://nodejs.org)에서 LTS 버전을 다운로드하세요
 2. 또는 패키지 매니저를 사용하세요
    - **Mac**: `brew install node` (Homebrew 필요)
@@ -57,7 +59,7 @@ macOS에서는 두 가지 설치 방법을 제공합니다.
 
 **방법 1: npm을 통한 설치 (권장)**
 
-가장 간단하고 안정적인 방법입니다
+가장 간단하고 안정적인 방법입니다.
 
 ```bash
 # Claude Code 설치
@@ -155,6 +157,7 @@ sudo chmod +x /usr/local/bin/claude
 Claude Code를 사용하려면 API 키 설정이 필요합니다. 무료 사용량으로 시작할 수 있습니다.
 
 **1단계: API 키 발급받기**
+
 1. [Anthropic Console](https://console.anthropic.com)에 접속하세요
 2. 계정을 만들거나 로그인하세요
 3. "API Keys" 섹션에서 새 키를 생성하세요
@@ -255,6 +258,7 @@ Claude Code의 모든 설정은 홈 디렉토리의 설정 파일에서 관리�
 ```
 
 **주요 설정 옵션 설명**
+
 - `default_model`: 작업 유형에 따라 적절한 모델 선택 (opus: 복잡한 작업, sonnet: 일반 작업, haiku: 빠른 응답)
 - `auto_commit`: 코드 변경 시 자동으로 Git 커밋할지 결정
 - `permissions`: 보안을 위해 필요한 권한만 활성화하는 것을 권장
@@ -369,13 +373,14 @@ Claude Code 설치 및 초기 사용 과정에서 발생할 수 있는 일반적
 
 ### 자주 발생하는 문제와 해결 방법
 
-다음은 Claude Code 사용자들이 가장 자주 경험하는 문제들과 검증된 해결 방법들입니다
+다음은 Claude Code 사용자들이 가장 자주 경험하는 문제들과 검증된 해결 방법들입니다.
 
 **1. "command not found: claude"**
 
 이 오류는 Claude Code가 설치되었지만 시스템 PATH에 등록되지 않았을 때 발생합니다.
 
 **원인 분석**
+
 - npm 전역 설치 경로가 PATH에 포함되지 않음
 - 잘못된 설치 경로
 - Shell 환경 변수 설정 문제
@@ -394,6 +399,7 @@ claude --version
 ```
 
 **추가 해결책**
+
 - macOS에서 `.zshrc` 파일 수정 필요할 수 있음
 - Windows에서는 시스템 환경 변수에서 PATH 수정
 
@@ -402,6 +408,7 @@ claude --version
 이 오류는 npm 전역 설치 시 권한 문제로 발생합니다. 특히 Linux나 macOS에서 자주 나타납니다.
 
 **원인 분석**
+
 - npm 전역 디렉토리에 대한 쓰기 권한 부족
 - sudo로 설치했을 때 소유권 문제
 - 시스템 보호된 디렉토리에 설치 시도
@@ -443,6 +450,7 @@ claude config set max_retries 3
 ```
 
 **예방 방법**
+
 - 대용량 작업 시 작은 단위로 분할하여 실행
 - `--rate-limit` 옵션 사용하여 요청 속도 조절
 - API 사용량 모니터링으로 제한 사전 파악
@@ -452,6 +460,7 @@ claude config set max_retries 3
 기업 환경에서 자체 인증서를 사용하거나 네트워크 보안 정책으로 인해 SSL 인증서 검증에 실패할 때 발생합니다.
 
 **원인 분석**
+
 - 회사 방화벽의 SSL 검사
 - 자체 서명된 인증서 사용
 - 오래된 시스템의 인증서 저장소 문제
@@ -472,6 +481,7 @@ claude config set ca_bundle /path/to/company-cert.pem
 ```
 
 **보안 고려사항**
+
 - `NODE_TLS_REJECT_UNAUTHORIZED=0`은 보안 위험이 있으므로 임시로만 사용
 - 가능하면 IT 부서와 협력하여 적절한 인증서 설정
 
@@ -495,6 +505,7 @@ claude config set cache_max_size 100
 ```
 
 **캐시 활용 팁**
+
 - 동일한 코드를 반복 분석할 때 유용
 - 큰 프로젝트에서 점진적 작업 시 효과적
 - 캐시 무효화: `claude cache clear`
@@ -625,7 +636,7 @@ Claude Code와 함께 첫 번째 프로젝트를 성공적으로 만들었습니
 - 실제 프로젝트 생성 경험
 
 **다음 장 미리보기**
-제3장에서는 Claude Code의 핵심 기능들을 체계적으로 학습합니다
+제3장에서는 Claude Code의 핵심 기능들을 체계적으로 학습합니다.
 - **파일 시스템 탐색**: 프로젝트 구조 파악과 효율적인 코드 분석
 - **코드 작성과 수정**: 자연어를 통한 정교한 코드 생성과 리팩토링
 - **테스트와 디버깅**: 품질 높은 코드를 위한 검증과 문제 해결

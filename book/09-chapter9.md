@@ -26,11 +26,12 @@ mindmap
 
 ## 학습 목표
 
-이 장을 완료하면 다음을 할 수 있습니다
-- Claude Code를 CI/CD 파이프라인에 통합하여 자동화된 개발 프로세스를 구축할 수 있습니다
-- Headless 모드를 활용하여 자동 코드 리뷰와 품질 검사 시스템을 구현할 수 있습니다
-- 문서 자동 생성과 배포 프로세스 자동화를 설정할 수 있습니다
-- 품질 게이트와 통합 대시보드를 구축하여 지속적인 모니터링을 수행할 수 있습니다
+이 장을 완료하면 다음을 할 수 있습니다.
+
+- Claude Code를 CI/CD 파이프라인에 통합하여 자동화된 개발 프로세스를 구축할 수 있습니다.
+- Headless 모드를 활용하여 자동 코드 리뷰와 품질 검사 시스템을 구현할 수 있습니다.
+- 문서 자동 생성과 배포 프로세스 자동화를 설정할 수 있습니다.
+- 품질 게이트와 통합 대시보드를 구축하여 지속적인 모니터링을 수행할 수 있습니다.
 
 ## 개요
 
@@ -250,7 +251,7 @@ load_claude_config
 
 ### GitHub Actions 엔터프라이즈 통합
 
-지능형 코드 리뷰 시스템은 단순한 정적 분석을 넘어서 프로젝트 맥락을 이해하고 적응하는 동적 분석 플랫폼입니다
+지능형 코드 리뷰 시스템은 단순한 정적 분석을 넘어서 프로젝트 맥락을 이해하고 적응하는 동적 분석 플랫폼입니다.
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -1495,7 +1496,7 @@ claude --headless \
 
 ## 종합 CLAUDE.md 예시 - CI/CD 통합 환경
 
-복잡한 CI/CD 환경에서 Claude Code를 최대한 활용하기 위한 종합적인 설정 예시입니다
+복잡한 CI/CD 환경에서 Claude Code를 최대한 활용하기 위한 종합적인 설정 예시입니다.
 
 ```markdown
 # CI/CD 통합 개발 환경 가이드
