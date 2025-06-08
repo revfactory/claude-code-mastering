@@ -253,7 +253,7 @@ export const ComponentName: React.FC<ComponentProps> = (props) => {
 
 프로젝트에서 사용하는 프로그래밍 언어별로 일관된 코딩 스타일을 정의해야 합니다. 이는 단순한 포매팅 규칙을 넘어서 코드의 가독성과 유지보수성을 높이는 핵심 요소입니다.
 
-```markdown
+````markdown
 ## 코딩 스타일
 
 ### TypeScript/JavaScript
@@ -304,7 +304,7 @@ import { UserService } from '@/services';
 import { Button } from '../components';
 import './styles.css';
 ```
-```
+````
 
 ### 코드 품질 기준
 
@@ -358,7 +358,6 @@ const validateToken = (token: string): boolean => {
   return jwt.verify(token, SECRET_KEY);
 }
 ```
-```
 
 ## 4.4 개발 환경 자동화
 
@@ -375,7 +374,6 @@ const validateToken = (token: string): boolean => {
 - VS Code + 추천 확장 프로그램
 
 ### 초기 설정 스크립트
-```bash
 # 의존성 설치
 pnpm install
 
@@ -394,34 +392,10 @@ pnpm dev
 - 자동 포매팅 (저장 시)
 - ESLint 자동 수정
 - 추천 확장 프로그램 설치 알림
-```
-
-### 자동화 스크립트
-
-반복적인 작업을 자동화하여 개발 효율성을 높이는 스크립트들을 정의합니다. 각 스크립트의 용도와 사용 시나리오를 명확히 설명합니다.
-
-```markdown
-## 자동화 스크립트
-
-### 자주 사용하는 명령어
-```json
-{
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "test": "jest --watch",
-    "test:ci": "jest --ci --coverage",
-    "lint": "eslint . --fix",
-    "type-check": "tsc --noEmit",
-    "pre-commit": "lint-staged",
-    "generate:component": "plop component",
-    "analyze": "ANALYZE=true next build"
-  }
-}
-```
 
 ### 코드 생성 템플릿
 `pnpm generate:component` 실행 시
+
 1. 컴포넌트 이름 입력
 2. 컴포넌트 타입 선택 (일반/페이지/레이아웃)
 3. 자동으로 파일 생성
@@ -431,6 +405,7 @@ pnpm dev
    - index.ts
 
 ### Git Hooks
+
 - pre-commit: 린트 및 포매팅 검사
 - commit-msg: 커밋 메시지 형식 검증
 - pre-push: 테스트 실행
@@ -463,13 +438,11 @@ pnpm dev
 - 최소 1명의 승인 필요
 - 모든 CI 체크 통과
 - 충돌 해결 완료
-```
 
 ### 브랜치 전략
 
 체계적인 Git 브랜치 관리를 위한 전략과 규칙을 정의합니다. Git Flow를 기반으로 한 실용적인 브랜치 전략을 소개합니다.
 
-```markdown
 ## Git 브랜치 전략
 
 ### 브랜치 명명 규칙
@@ -479,14 +452,12 @@ pnpm dev
 - refactor/대상: 리팩토링
 
 ### 브랜치 플로우
-```
 main
   ├── develop
   │     ├── feature/user-auth
   │     ├── feature/payment
   │     └── fix/123
   └── hotfix/critical-bug
-```
 
 ### 머지 전략
 - feature → develop: Squash merge
@@ -494,44 +465,43 @@ main
 - hotfix → main: Cherry-pick
 ```
 
-### 팀 커뮤니케이션
 
-효율적인 팀 협업을 위한 커뮤니케이션 및 문서화 규칙을 수립합니다. 비동기 커뮤니케이션과 문서화를 통한 지식 공유를 강조합니다.
-
-```markdown
 ## 팀 커뮤니케이션
 
 ### 이슈 템플릿
 버그 리포트
+
 - 재현 단계
 - 예상 동작
 - 실제 동작
 - 환경 정보
 
 기능 요청
+
 - 사용자 스토리
 - 수락 기준
 - 기술적 고려사항
 
 ### 일일 스탠드업
 매일 오전 10시, 다음 내용 공유
+
 1. 어제 한 일
 2. 오늘 할 일
 3. 블로커
 
 ### 기술 결정 기록
 `docs/adr/` 디렉토리에 Architecture Decision Records 작성
+
 - 배경
 - 고려한 옵션들
 - 결정 사항
 - 결과
-```
 
 ## 실전 예제: 대규모 전자상거래 프로젝트
 
 실제 프로덕션 환경에서 사용할 수 있는 체계적이고 포괄적인 CLAUDE.md 예시를 살펴보겠습니다.
 
-```markdown
+````markdown
 # E-Commerce Project Guidelines for Claude Code
 
 ## 프로젝트 개요
@@ -602,7 +572,7 @@ interface Order {
 - 마이크로서비스 경계 준수
 - 비동기 처리 우선
 - 에러 로깅 필수
-```
+````
 
 ## 프로 팁: CLAUDE.md 최적화
 
@@ -624,7 +594,7 @@ interface Order {
 
 ## 💡 권장사항
 - 새로운 라이브러리 도입 전 팀 논의
-- 성능 최적화는 측정 후 진행
+- 성능 최적화는 측정 후 진행 
 ```
 
 ### 2. 동적 업데이트
@@ -641,7 +611,6 @@ claude "CLAUDE.md 파일이 업데이트되었어.
 
 다양한 개발 환경에 따른 다른 설정을 체계적으로 관리할 수 있습니다.
 
-```markdown
 ## 환경별 설정
 
 ### 개발 환경
@@ -653,13 +622,12 @@ claude "CLAUDE.md 파일이 업데이트되었어.
 - 로그 레벨: ERROR
 - 실제 데이터만 사용
 - 에러 메시지 일반화
-```
+
 
 ### 4. 지속적 개선과 버전 관리
 
 CLAUDE.md 자체도 소프트웨어처럼 버전 관리하고 지속적으로 개선해야 합니다.
 
-```markdown
 ## CLAUDE.md 버전 관리
 
 ### v2.1.0 (2024-03-15)
@@ -678,7 +646,7 @@ CLAUDE.md 자체도 소프트웨어처럼 버전 관리하고 지속적으로 �
 #### 주요 변경
 - 마이크로서비스 아키텍처로 전환
 - 새로운 브랜치 전략 (Git Flow → GitHub Flow)
-```
+
 
 **개선 사이클 예시**
 ```bash
@@ -714,16 +682,19 @@ claude "최근 발생한 버그들을 분석해서
 ### 실무 적용 로드맵
 
 **1단계: 기본 CLAUDE.md 작성 (1주)**
+
 - 프로젝트 구조와 기본 코딩 스타일 정의
 - 필수 보안 규칙과 품질 기준 설정
 - 팀 커밋 메시지 규칙 통일
 
 **2단계: 환경별 설정 분리 (2주)**
+
 - 개발/스테이징/프로덕션 환경별 규칙 세분화
 - 자동화 스크립트와 CI/CD 설정 통합
 - 코드 리뷰 프로세스 표준화
 
 **3단계: 고도화와 최적화 (지속적)**
+
 - 팀 피드백을 바탕으로 한 규칙 개선
 - 성능 메트릭 기반의 품질 기준 조정
 - 새로운 기술 도입 시 가이드라인 업데이트

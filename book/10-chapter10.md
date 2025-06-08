@@ -337,7 +337,7 @@ frontend:
   testing: "Vitest + Testing Library + Playwright"
   bundler: "Turbopack (Next.js built-in)"
   
-  선택_근거
+  선택_근거:
     - "Next.js 14: App Router의 서버 컴포넌트로 성능 최적화"
     - "TypeScript: 대규모 팀 개발에서 타입 안전성 보장"
     - "Tailwind CSS: 일관된 디자인 시스템과 빠른 프로토타이핑"
@@ -356,7 +356,7 @@ backend:
   api_documentation: "OpenAPI 3.0 + Swagger"
   testing: "Jest + Supertest"
   
-  선택_근거
+  선택_근거:
     - "Node.js: 프론트엔드와 동일 언어로 팀 효율성 극대화"
     - "Fastify: Express 대비 2배 성능, 플러그인 생태계 우수"
     - "Prisma: 타입 안전한 데이터베이스 액세스, 마이그레이션 관리 우수"
@@ -371,7 +371,7 @@ database:
   message_queue: "Redis Streams"
   object_storage: "MinIO (S3 compatible)"
   
-  선택_근거
+  선택_근거:
     - "PostgreSQL: ACID 보장, JSON 지원, 확장성 우수"
     - "Redis: 고성능 캐싱, pub/sub, 스트림 처리 모두 지원"
     - "Elasticsearch: 전문 검색, 실시간 분석, 자동 완성 최적화"
@@ -389,7 +389,7 @@ infrastructure:
   ci_cd: "GitLab CI + ArgoCD"
   cloud: "AWS (multi-AZ deployment)"
   
-  선택_근거
+  선택_근거:
     - "Kubernetes: 컨테이너 오케스트레이션 표준, 멀티 클라우드 지원"
     - "Istio: 서비스 메시로 보안, 관찰성, 트래픽 관리 통합"
     - "Kong: 엔터프라이즈급 API 게이트웨이, 플러그인 생태계"
@@ -404,12 +404,12 @@ development:
   testing: "Jest + Playwright + k6"
   documentation: "Storybook + Docusaurus"
   
-  선택_근거
+  선택_근거:
     - "pnpm: npm 대비 3배 빠른 설치 속도, 디스크 공간 절약"
     - "Turborepo: 모노레포 빌드 최적화, 캐싱으로 CI 시간 단축"
 
 # 보안 스택
-security
+security:
   authentication: "OAuth 2.0 + OpenID Connect"
   authorization: "RBAC + ABAC hybrid"
   secrets_management: "HashiCorp Vault"
@@ -496,8 +496,8 @@ claude "기술 스택 검증을 위한 프로토타입을 만들어줘.
 5. **일관된 도구**: 린팅, 테스팅, 포매팅 도구의 통일된 설정
 
 **Turborepo 선택 이유**
+Turborepo는 현재 가장 진보된 모노레포 도구 중 하나로, 다음과 같은 특징을 제공합니다.
 
-Turborepo는 현재 가장 진보된 모노레포 도구 중 하나로, 다음과 같은 특징을 제공합니다:
 - **지능형 캐싱**: 이전 빌드 결과를 캐시하여 빌드 시간 대폭 단축
 - **병렬 실행**: 독립적인 작업들을 병렬로 처리하여 효율성 극대화
 - **원격 캐싱**: 팀원 간 빌드 캐시 공유로 전체 팀 생산성 향상
@@ -865,7 +865,7 @@ claude "CollabSpace 프로젝트를 위한 포괄적인 CLAUDE.md를 작성해�
 
 **생성된 포괄적인 CLAUDE.md**
 
-```markdown
+````markdown
 # CollabSpace 엔터프라이즈 협업 플랫폼 개발 가이드
 
 ## 프로젝트 개요
@@ -1028,7 +1028,6 @@ src/
 ## 서비스별 특화 가이드라인
 
 ### 인증 서비스 (auth-service)
-```typescript
 // JWT 토큰 처리
 - Access Token: 15분 만료
 - Refresh Token: 7일 만료
@@ -1040,10 +1039,8 @@ src/
 - 비밀번호 정책: 최소 12자, 대소문자+숫자+특수문자
 - 2FA 지원 (TOTP)
 - 계정 잠금: 5회 실패 시 15분 잠금
-```
 
 ### 실시간 통신 서비스 (chat-service)
-```typescript
 // Socket.io 이벤트 네이밍
 - 서버 → 클라이언트: `<entity>:<action>` (예: `message:created`)
 - 클라이언트 → 서버: `<action>:<entity>` (예: `create:message`)
@@ -1059,10 +1056,8 @@ src/
 - 배치 처리: 100ms 디바운싱
 - 최대 메시지 크기: 10KB
 - 파일 첨부: 별도 업로드 후 참조
-```
 
 ### 파일 서비스 (file-service)
-```typescript
 // 업로드 제한
 - 최대 파일 크기: 100MB
 - 허용 확장자 화이트리스트
@@ -1074,7 +1069,6 @@ src/
 - 썸네일: CDN 캐시
 - 메타데이터: PostgreSQL
 - 임시 파일: 24시간 후 자동 삭제
-```
 
 ## 보안 요구사항
 
@@ -1123,7 +1117,6 @@ app.use(helmet({
 - WebSocket: 100,000 동시 연결
 
 ### 캐싱 전략
-```typescript
 // Redis 캐싱 계층
 - 사용자 세션: 15분
 - 권한 정보: 5분
@@ -1134,7 +1127,6 @@ app.use(helmet({
 - Write-through 패턴
 - 이벤트 기반 무효화
 - TTL 기반 만료
-```
 
 ## 테스트 전략
 
@@ -1267,6 +1259,7 @@ Closes #123
 
 이 가이드는 지속적으로 업데이트되며, 모든 개발자는 이를 숙지하고 준수해야 합니다.
 최신 버전은 항상 프로젝트 루트의 CLAUDE.md 파일을 참조하세요.
+````
 
 ## 10.3 백엔드 개발
 
