@@ -89,6 +89,34 @@ pandoc "$COMPLETE_FILE" \
     --metadata title="Claude Code 마스터하기" \
     --output "output/complete/claude-code-mastering-complete.html"
 
+# Mermaid 지원 추가
+echo "🎨 Mermaid 다이어그램 지원 추가 중..."
+sed -i '' 's|</body>|<!-- Mermaid 다이어그램 렌더링 -->\
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>\
+<script>\
+    mermaid.initialize({\
+        startOnLoad: true,\
+        theme: '\''base'\'',\
+        themeVariables: {\
+            primaryColor: '\''#f8fafc'\'',\
+            primaryTextColor: '\''#1e293b'\'',\
+            primaryBorderColor: '\''#e2e8f0'\'',\
+            lineColor: '\''#94a3b8'\'',\
+            secondaryColor: '\''#f1f5f9'\'',\
+            tertiaryColor: '\''#e2e8f0'\''\
+        },\
+        flowchart: {\
+            htmlLabels: false,\
+            useMaxWidth: false\
+        },\
+        mindmap: {\
+            htmlLabels: false,\
+            useMaxWidth: false\
+        }\
+    });\
+</script>\
+</body>|' "output/complete/claude-code-mastering-complete.html"
+
 echo "✅ HTML 생성 완료: output/complete/claude-code-mastering-complete.html"
 
 # PDF 생성 (Puppeteer 사용)
