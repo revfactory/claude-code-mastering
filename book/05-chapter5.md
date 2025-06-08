@@ -2,13 +2,29 @@
 
 > "올바른 도구를 올바른 작업에 사용하라" - 프로그래밍 격언
 
-## 학습 목표
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    전략 수립
+      프레임워크별 특성 이해
+      최적화된 활용 전략
+      개발 패턴 정립
+    주요 프레임워크
+      React/Next.js 마스터
+      Node.js/Express 활용
+      Django 개발 패턴
+    코드 품질 관리
+      CLAUDE.md 설정
+      일관된 품질 유지
+      팀 협업 규칙
+    마이그레이션
+      프레임워크 전환 지원
+      효과적 활용 방법
+      실전 적용 능력
+```
 
-이 장을 완료하면 다음을 할 수 있습니다:
-- 각 프레임워크의 특성에 맞는 Claude Code 활용 전략을 수립할 수 있습니다
-- React/Next.js, Node.js/Express, Django 등 주요 프레임워크별 개발 패턴을 이해할 수 있습니다
-- 프레임워크별 CLAUDE.md 설정을 통해 일관된 코드 품질을 유지할 수 있습니다
-- 프레임워크 전환 및 마이그레이션 프로젝트에서 Claude Code를 효과적으로 활용할 수 있습니다
+## 학습 목표
 
 ## 개요
 
@@ -243,33 +259,54 @@ claude "Express에 GraphQL을 통합한 API 서버를 만들어줘.
 
 **엔터프라이즈급 프로젝트 구조:**
 
-```
-src/
-├── controllers/      # HTTP 요청/응답 처리
-├── services/         # 비즈니스 로직
-├── repositories/     # 데이터 액세스 계층
-├── models/          # 데이터 모델과 스키마
-├── middleware/      # 인증, 로깅, 검증 등
-├── routes/          # API 라우트 정의
-├── config/          # 환경 설정
-├── utils/           # 공통 유틸리티
-├── types/           # TypeScript 타입 정의
-├── tests/           # 테스트 파일
-└── docs/            # API 문서
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[src/] --> B[controllers/]
+    A --> C[services/]
+    A --> D[repositories/]
+    A --> E[models/]
+    A --> F[middleware/]
+    A --> G[routes/]
+    A --> H[config/]
+    A --> I[utils/]
+    A --> J[types/]
+    A --> K[tests/]
+    A --> L[docs/]
+    
+    B -.-> |HTTP 요청/응답 처리| B1[Request Handler]
+    C -.-> |비즈니스 로직| C1[Business Logic]
+    D -.-> |데이터 액세스 계층| D1[Data Access]
+    E -.-> |데이터 모델과 스키마| E1[Schema Definition]
+    F -.-> |인증, 로깅, 검증| F1[Middleware Functions]
+    G -.-> |API 라우트 정의| G1[Route Definitions]
+    H -.-> |환경 설정| H1[Configuration]
+    I -.-> |공통 유틸리티| I1[Utility Functions]
+    J -.-> |TypeScript 타입 정의| J1[Type Definitions]
+    K -.-> |테스트 파일| K1[Test Suites]
+    L -.-> |API 문서| L1[Documentation]
 ```
 
 **계층별 책임 분리:**
 
-```
-src/
-├── controllers/      # 요청/응답 처리
-├── services/        # 비즈니스 로직
-├── repositories/    # 데이터 접근
-├── models/         # 데이터 모델
-├── middlewares/    # 미들웨어
-├── utils/          # 유틸리티
-├── config/         # 설정
-└── types/          # TypeScript 타입
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    A[Controllers] --> B[Services]
+    B --> C[Repositories]
+    C --> D[Models]
+    
+    A1[요청/응답 처리] -.-> A
+    B1[비즈니스 로직] -.-> B
+    C1[데이터 접근] -.-> C
+    D1[데이터 모델] -.-> D
+    
+    E[Middlewares] -.-> A
+    F[Utils] -.-> B
+    G[Config] -.-> B
+    H[Types] -.-> A
+    H -.-> B
+    H -.-> C
 ```
 
 ### 백엔드 개발 패턴
@@ -477,6 +514,32 @@ Platform.select({
 
 데이터 과학 프로젝트의 성공을 위해서는 단순한 분석 도구를 넘어서 재현 가능하고 확장 가능한 MLOps 파이프라인이 필요합니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph "데이터 수집"
+        A1[Raw Data] --> A2[Data Pipeline]
+        A2 --> A3[Clean Data]
+    end
+    
+    subgraph "실험 및 개발"
+        B1[Jupyter Notebooks] --> B2[Feature Engineering]
+        B2 --> B3[Model Training]
+        B3 --> B4[Experiment Tracking]
+    end
+    
+    subgraph "모델 운영"
+        C1[Model Registry] --> C2[API Serving]
+        C2 --> C3[Monitoring]
+        C3 --> C4[Retraining]
+        C4 --> C1
+    end
+    
+    A3 --> B1
+    B4 --> C1
+    C3 --> A2
+```
+
 ### Jupyter Notebook 환경
 
 Jupyter Notebook은 데이터 과학 프로젝트의 핵심 도구로, 코드, 시각화, 문서를 하나의 환경에서 통합적으로 관리할 수 있게 해줍니다. Claude Code는 재현 가능하고 체계적인 분석 환경 구축을 지원합니다.
@@ -654,6 +717,27 @@ claude "이 애플리케이션의 성능을 프로파일링하고,
 
 기존 프로젝트를 다른 프레임워크로 마이그레이션할 때는 단계적이고 점진적인 접근이 필요합니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[현재 시스템 분석] --> B[마이그레이션 계획 수립]
+    B --> C[파일럿 프로젝트]
+    C --> D{성공 여부}
+    D -->|성공| E[단계별 마이그레이션]
+    D -->|실패| F[계획 수정]
+    F --> C
+    E --> G[성능 검증]
+    G --> H{목표 달성}
+    H -->|아니오| I[최적화]
+    I --> G
+    H -->|예| J[전체 시스템 전환]
+    J --> K[모니터링 및 유지보수]
+    
+    style A fill:#e2e8f0
+    style J fill:#dcfce7
+    style K fill:#dcfce7
+```
+
 ```bash
 # 1. 의존성 및 아키텍처 분석
 claude "이 Express 앱의 핵심 기능과 구조를 분석해줘.
@@ -723,20 +807,41 @@ claude "코드 품질 개선 사항을 추적하는 시스템을 구축해줘.
 
 ### 핵심 성공 요소
 
-**1. 프레임워크 생태계 이해**
-- **철학과 원칙**: 각 프레임워크의 핵심 개념과 설계 원칙을 깊이 이해
-- **관용구와 패턴**: 커뮤니티에서 검증된 모범 사례와 관례 준수
-- **도구 체인**: 프레임워크별 전용 도구와 라이브러리 적극 활용
-
-**2. 실전 적용 전략**
-- **점진적 도입**: 한 번에 모든 것을 바꾸지 말고 단계적 접근
-- **성능 중심**: 각 프레임워크의 특성에 맞는 최적화 전략 수립
-- **팀 교육**: 새로운 프레임워크에 대한 체계적인 학습 계획
-
-**3. 지속적 개선**
-- **모니터링**: 프레임워크 전환 효과를 정량적으로 측정
-- **피드백 루프**: 팀 피드백을 바탕으로 한 지속적 프로세스 개선
-- **최신 동향**: 프레임워크 업데이트와 새로운 기능 지속 학습
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((프레임워크 성공 요소))
+    생태계 이해
+      철학과 원칙
+        핵심 개념 숙지
+        설계 원칙 준수
+      관용구와 패턴
+        커뮤니티 모범 사례
+        검증된 관례 적용
+      도구 체인
+        전용 도구 활용
+        라이브러리 생태계
+    실전 적용
+      점진적 도입
+        단계적 접근
+        리스크 최소화
+      성능 중심
+        최적화 전략
+        벤치마킹
+      팀 교육
+        체계적 학습
+        지식 공유
+    지속적 개선
+      모니터링
+        정량적 측정
+        성과 추적
+      피드백 루프
+        프로세스 개선
+        팀 의견 수렴
+      최신 동향
+        업데이트 추적
+        신기능 학습
+```
 
 ### 실무 체크리스트
 
