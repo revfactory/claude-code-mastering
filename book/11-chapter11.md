@@ -26,7 +26,7 @@ mindmap
 
 ## 학습 목표
 
-이 장을 완료하면 다음을 할 수 있습니다:
+이 장을 완료하면 다음을 할 수 있습니다
 - Claude Code Action을 활용한 GitHub 워크플로우 자동화를 구축할 수 있습니다
 - 풀 리퀘스트와 이슈에서 AI 기반 코드 리뷰와 개선을 자동화할 수 있습니다
 - 보안을 고려한 GitHub Actions 환경에서 Claude Code를 안전하게 운영할 수 있습니다
@@ -45,7 +45,7 @@ Claude Code Action은 GitHub의 이벤트 기반 시스템과 Claude AI를 연�
 
 ### 핵심 아키텍처와 동작 원리
 
-Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력을 결합한 지능형 자동화 시스템입니다:
+Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력을 결합한 지능형 자동화 시스템입니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -123,13 +123,13 @@ on:
 
 ### 상황 인식 AI 상호작용
 
-Claude Code Action은 단순한 키워드 매칭을 넘어서 맥락을 이해하고 적절한 행동을 결정합니다:
+Claude Code Action은 단순한 키워드 매칭을 넘어서 맥락을 이해하고 적절한 행동을 결정합니다
 
 ```bash
 # 다양한 상호작용 패턴
-claude "Pull Request에서 다음과 같은 다양한 요청을 처리하는 방법을 설명해줘:
+claude "Pull Request에서 다음과 같은 다양한 요청을 처리하는 방법을 설명해줘
 
-상황별 요청 예시:
+상황별 요청 예시
 1. '@claude 이 PR을 리뷰해줘' - 전체 코드 리뷰
 2. '@claude 이 함수의 성능을 개선해줘' - 특정 코드 최적화  
 3. '@claude 테스트 커버리지를 높여줘' - 테스트 코드 생성
@@ -146,7 +146,7 @@ Claude Code Action을 효과적으로 활용하기 위해서는 무엇을 할 �
 
 ### Claude가 할 수 있는 일
 
-Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 있습니다:
+Claude Code Action은 다양한 개발 작업을 자동화하고 지원할 수 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -229,7 +229,7 @@ graph TD
 
 ### Claude가 할 수 없는 일
 
-보안과 시스템 안정성을 위해 Claude Code Action에는 다음과 같은 제약사항이 있습니다:
+보안과 시스템 안정성을 위해 Claude Code Action에는 다음과 같은 제약사항이 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -305,7 +305,7 @@ graph TD
 
 ### 제약사항 극복 전략
 
-이러한 제약사항들은 창의적인 워크플로우 설계로 극복할 수 있습니다:
+이러한 제약사항들은 창의적인 워크플로우 설계로 극복할 수 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -442,7 +442,7 @@ Claude Code Action의 성공적인 도입을 위해서는 체계적인 설정과
 
 ### 빠른 시작: Claude CLI를 통한 자동 설정
 
-가장 효율적인 설정 방법은 Claude CLI의 자동 설치 기능을 활용하는 것입니다:
+가장 효율적인 설정 방법은 Claude CLI의 자동 설치 기능을 활용하는 것입니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -499,7 +499,7 @@ flowchart TD
 # Claude CLI를 통한 원클릭 설정
 claude "/install-github-app"
 
-# 이 명령은 다음을 자동으로 수행합니다:
+# 이 명령은 다음을 자동으로 수행합니다
 # 1. GitHub App 권한 설정
 # 2. Repository secrets 생성
 # 3. Workflow 파일 생성
@@ -520,20 +520,20 @@ claude "Claude CLI의 /install-github-app 명령이 수행하는 작업을 단�
 
 ### 수동 설정: 엔터프라이즈 환경을 위한 세밀한 제어
 
-보안 요구사항이 높은 조직이나 특별한 설정이 필요한 경우 수동 설정을 통해 더 세밀한 제어가 가능합니다:
+보안 요구사항이 높은 조직이나 특별한 설정이 필요한 경우 수동 설정을 통해 더 세밀한 제어가 가능합니다
 
 **1단계: GitHub App 설치와 권한 설정**
 
 ```bash
 # GitHub App 권한 분석과 최적화
 claude "Claude Code GitHub App의 권한을 분석하고 최소 권한 원칙에 따른 설정을 제안해줘.
-필수 권한:
+필수 권한
 - Pull requests: read & write
 - Issues: read & write  
 - Contents: read & write
 - Metadata: read
 
-보안 고려사항:
+보안 고려사항
 - 민감한 파일 접근 제한
 - 특정 브랜치 보호 설정
 - 조직 차원의 정책 적용
@@ -545,14 +545,14 @@ claude "Claude Code GitHub App의 권한을 분석하고 최소 권한 원칙에
 ```bash
 # 고급 시크릿 관리 전략
 claude "엔터프라이즈 환경에서 Claude Code Action을 위한 시크릿 관리 전략을 수립해줘.
-다음 사항을 포함해줘:
+다음 사항을 포함해줘
 
-시크릿 계층화:
+시크릿 계층화
 - ANTHROPIC_API_KEY: Claude API 접근
 - CUSTOM_API_KEYS: 추가 서비스 연동
 - ENVIRONMENT_VARS: 환경별 설정
 
-보안 모범 사례:
+보안 모범 사례
 - 시크릿 로테이션 정책
 - 접근 권한 최소화
 - 감사 추적 설정
@@ -632,7 +632,7 @@ jobs:
           
           # 커스텀 지침
           custom_instructions: |
-            당신은 우리 조직의 엔터프라이즈 개발 표준을 준수해야 합니다:
+            당신은 우리 조직의 엔터프라이즈 개발 표준을 준수해야 합니다
             - 모든 변경사항은 단위 테스트를 포함해야 합니다
             - 보안 모범 사례를 적용해야 합니다
             - 성능 영향을 고려해야 합니다
@@ -658,19 +658,19 @@ jobs:
 ```bash
 # 환경별 설정 전략
 claude "Claude Code Action을 다중 환경(dev/staging/prod)에서 운영하는 전략을 수립해줘.
-각 환경별 특성:
+각 환경별 특성
 
-개발 환경:
+개발 환경
 - 빠른 피드백과 실험 허용
 - 관대한 권한과 도구 접근
 - 상세한 로깅과 디버깅 정보
 
-스테이징 환경:
+스테이징 환경
 - 프로덕션과 유사한 제약사항
 - 성능과 보안 테스트
 - 사용자 수용 테스트 지원
 
-프로덕션 환경:
+프로덕션 환경
 - 최고 수준의 보안과 안정성
 - 최소 권한과 엄격한 검증
 - 포괄적인 모니터링과 알림
@@ -684,7 +684,7 @@ Pull Request는 코드 품질과 팀 협업의 핵심 지점입니다. Claude Co
 
 ### 지능형 코드 리뷰 시스템
 
-Claude Code Action은 컨텍스트를 이해하고 의미 있는 피드백을 제공하는 고급 코드 리뷰어입니다:
+Claude Code Action은 컨텍스트를 이해하고 의미 있는 피드백을 제공하는 고급 코드 리뷰어입니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -750,7 +750,7 @@ flowchart TD
 
 ```bash
 # 다차원 코드 리뷰 요청
-"@claude 이 PR을 종합적으로 리뷰해줘. 다음 관점을 모두 고려해줘:
+"@claude 이 PR을 종합적으로 리뷰해줘. 다음 관점을 모두 고려해줘
 - 코드 품질과 가독성
 - 성능과 메모리 효율성  
 - 보안 취약점과 위험요소
@@ -782,7 +782,7 @@ OWASP Top 10, 입력 검증, 권한 부여,
 
 ### 자동 코드 개선과 수정
 
-Claude는 문제를 발견하는 것을 넘어서 직접 해결책을 구현할 수 있습니다:
+Claude는 문제를 발견하는 것을 넘어서 직접 해결책을 구현할 수 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -957,7 +957,7 @@ jobs:
           direct_prompt: |
             복잡한 변경사항을 포함한 이 PR을 종합적으로 리뷰해주세요.
             
-            우선순위 분석:
+            우선순위 분석
             1. 아키텍처 변경이 시스템에 미치는 영향
             2. 기존 기능에 대한 호환성 유지
             3. 테스트 커버리지의 적절성
@@ -992,7 +992,7 @@ GitHub 이슈는 프로젝트 관리와 버그 추적의 중심입니다. Claude
 
 ### 지능형 이슈 분류와 라우팅
 
-Claude는 이슈의 내용을 분석하여 자동으로 분류하고 적절한 담당자에게 할당할 수 있습니다:
+Claude는 이슈의 내용을 분석하여 자동으로 분류하고 적절한 담당자에게 할당할 수 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -1096,7 +1096,7 @@ jobs:
 
 ### 자동 버그 수정과 해결
 
-Claude는 이슈를 단순히 분석하는 것을 넘어서 직접 해결책을 구현할 수 있습니다:
+Claude는 이슈를 단순히 분석하는 것을 넘어서 직접 해결책을 구현할 수 있습니다
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -1177,7 +1177,7 @@ flowchart LR
 
 ```bash
 # 기능 요청 분석
-"@claude 이 기능 요청을 분석해서 다음을 제공해줘:
+"@claude 이 기능 요청을 분석해서 다음을 제공해줘
 1. 요구사항 명세서 작성
 2. 기술적 구현 방안 검토
 3. 예상 개발 시간과 리소스
@@ -1249,21 +1249,21 @@ Claude Code Action을 안전하게 운영하기 위해서는 철저한 보안 �
 ```bash
 # 엔터프라이즈 시크릿 관리 전략
 claude "Claude Code Action을 위한 포괄적인 시크릿 관리 전략을 설계해줘.
-다음 요소를 포함해줘:
+다음 요소를 포함해줘
 
-시크릿 계층 구조:
+시크릿 계층 구조
 - Organization level secrets (전사 공통)
 - Repository level secrets (프로젝트별)  
 - Environment level secrets (환경별)
 
-보안 모범 사례:
+보안 모범 사례
 - 시크릿 로테이션 정책 (30-90일)
 - 접근 권한 최소화 원칙
 - 암호화와 전송 보안
 - 감사 로그와 모니터링
 - 사고 대응 절차
 
-규정 준수:
+규정 준수
 - SOC 2 Type II 요구사항
 - GDPR 개인정보 보호
 - HIPAA 보건의료 규정
@@ -1336,23 +1336,23 @@ jobs:
 ```bash
 # 역할 기반 접근 제어 (RBAC) 설계
 claude "Claude Code Action을 위한 RBAC 시스템을 설계해줘.
-다음 역할과 권한을 정의해줘:
+다음 역할과 권한을 정의해줘
 
-역할 정의:
+역할 정의
 - Admin: 전체 설정과 시크릿 관리
 - Senior Developer: 모든 코드 변경 권한
 - Developer: 제한된 코드 변경 권한  
 - Reviewer: 읽기 전용 리뷰 권한
 - External Contributor: 최소한의 상호작용
 
-권한 매트릭스:
+권한 매트릭스
 - 파일 읽기/쓰기 권한
 - 브랜치별 접근 제어
 - 민감한 디렉토리 보호
 - 시스템 명령어 실행 권한
 - 외부 API 호출 권한
 
-구현 방법:
+구현 방법
 - GitHub Team 기반 권한 매핑
 - 동적 권한 검증 로직
 - 감사 로그 자동 생성
@@ -1382,7 +1382,7 @@ claude "Claude Code Action을 위한 RBAC 시스템을 설계해줘.
     
     # 커스텀 보안 지침
     custom_instructions: |
-      보안 지침:
+      보안 지침
       1. 절대로 시크릿이나 패스워드를 코드에 하드코딩하지 마세요
       2. 모든 외부 입력은 검증해야 합니다
       3. 민감한 정보는 로그에 남기지 마세요
@@ -1397,23 +1397,23 @@ claude "Claude Code Action을 위한 RBAC 시스템을 설계해줘.
 ```bash
 # 감사 로그 시스템 설계
 claude "Claude Code Action의 모든 활동을 추적하는 감사 시스템을 설계해줘.
-다음 요소를 포함해줘:
+다음 요소를 포함해줘
 
-로그 수집 대상:
+로그 수집 대상
 - 모든 API 호출과 응답
 - 파일 변경과 커밋 내역
 - 권한 요청과 승인/거부
 - 에러와 예외 상황
 - 성능과 리소스 사용량
 
-로그 형식과 구조:
+로그 형식과 구조
 - 구조화된 JSON 로그
 - 타임스탬프와 상관관계 ID
 - 사용자와 액션 컨텍스트
 - 비즈니스 영향도 분류
 - 보안 이벤트 마킹
 
-저장과 분석:
+저장과 분석
 - 중앙화된 로그 수집 (ELK Stack)
 - 실시간 알림과 대시보드
 - 이상 패턴 자동 감지
@@ -1465,7 +1465,7 @@ jobs:
 
 ### AWS Bedrock 통합
 
-AWS Bedrock을 통한 Claude 접근은 AWS의 보안 및 규정 준수 기능을 활용할 수 있게 해줍니다:
+AWS Bedrock을 통한 Claude 접근은 AWS의 보안 및 규정 준수 기능을 활용할 수 있게 해줍니다
 
 **OIDC 기반 Bedrock 설정:**
 
@@ -1521,7 +1521,7 @@ jobs:
           
           custom_instructions: |
             AWS Bedrock 환경에서 실행 중입니다.
-            다음 AWS 특화 고려사항을 적용해주세요:
+            다음 AWS 특화 고려사항을 적용해주세요
             - AWS 보안 모범 사례 준수
             - CloudTrail 로깅 고려
             - VPC 네트워크 정책 인식
@@ -1533,21 +1533,21 @@ jobs:
 ```bash
 # AWS IAM 설정 최적화
 claude "Claude Code Action을 위한 AWS IAM 설정을 최적화해줘.
-다음을 포함해줘:
+다음을 포함해줘
 
-IAM 역할 정의:
+IAM 역할 정의
 - GitHub Actions용 OIDC 신뢰 관계
 - Bedrock 모델 접근 권한
 - CloudWatch 로깅 권한
 - 최소 권한 원칙 적용
 
-보안 강화 설정:
+보안 강화 설정
 - 조건부 접근 제어
 - 리소스 기반 정책
 - 시간 기반 접근 제한
 - IP 주소 화이트리스트
 
-Cross-region inference 설정:
+Cross-region inference 설정
 - 다중 리전 모델 접근
 - 지연 시간 최적화
 - 가용성 향상 전략
@@ -1556,7 +1556,7 @@ Cross-region inference 설정:
 
 ### Google Vertex AI 통합
 
-Google Cloud의 AI/ML 플랫폼인 Vertex AI를 통한 Claude 접근 설정:
+Google Cloud의 AI/ML 플랫폼인 Vertex AI를 통한 Claude 접근 설정
 
 **Vertex AI OIDC 설정:**
 
@@ -1614,7 +1614,7 @@ jobs:
           
           custom_instructions: |
             Google Vertex AI 환경에서 실행 중입니다.
-            다음 GCP 특화 고려사항을 적용해주세요:
+            다음 GCP 특화 고려사항을 적용해주세요
             - Google Cloud 보안 모범 사례 준수
             - Cloud Audit Logs 인식
             - VPC 및 방화벽 정책 고려
@@ -1628,21 +1628,21 @@ jobs:
 ```bash
 # 멀티 클라우드 아키텍처 설계
 claude "Claude Code Action을 위한 멀티 클라우드 전략을 설계해줘.
-다음 요소를 포함해줘:
+다음 요소를 포함해줘
 
-클라우드 선택 기준:
+클라우드 선택 기준
 - 지역별 가용성과 지연 시간
 - 비용 효율성과 예산 관리
 - 규정 준수 요구사항
 - 성능과 처리량 특성
 - 장애 복구 능력
 
-페일오버 시나리오:
+페일오버 시나리오
 - Primary: Direct Anthropic API
 - Secondary: AWS Bedrock (if primary fails)
 - Tertiary: Google Vertex AI (if both fail)
 
-자동 전환 로직:
+자동 전환 로직
 - 상태 모니터링과 헬스체크
 - 지능형 라우팅 알고리즘
 - 성능 기반 동적 선택
@@ -1744,7 +1744,7 @@ Claude Code Action의 진정한 가치는 조직의 특수한 요구사항에 �
 
 ### MCP 서버 통합과 확장
 
-MCP(Model Context Protocol)는 Claude의 기능을 확장하는 표준화된 방법입니다. 조직의 내부 시스템, 데이터베이스, API와의 통합을 통해 Claude가 더 풍부한 컨텍스트로 작업할 수 있게 합니다:
+MCP(Model Context Protocol)는 Claude의 기능을 확장하는 표준화된 방법입니다. 조직의 내부 시스템, 데이터베이스, API와의 통합을 통해 Claude가 더 풍부한 컨텍스트로 작업할 수 있게 합니다
 
 **기본 MCP 서버 통합:**
 
@@ -1773,16 +1773,16 @@ MCP(Model Context Protocol)는 Claude의 기능을 확장하는 표준화된 방
 ```bash
 # 조직 특화 MCP 서버 설계
 claude "우리 조직을 위한 커스텀 MCP 서버들을 설계해줘.
-다음 시스템과의 통합이 필요해:
+다음 시스템과의 통합이 필요해
 
-내부 시스템 연동:
+내부 시스템 연동
 - JIRA API: 이슈 트래킹과 프로젝트 관리
 - Confluence: 문서와 지식 베이스 접근
 - Slack API: 팀 커뮤니케이션과 알림
 - Jenkins: CI/CD 파이프라인 상태
 - DataDog: 모니터링과 성능 메트릭
 
-외부 서비스 통합:
+외부 서비스 통합
 - AWS API: 인프라 상태와 리소스 관리
 - Kubernetes API: 컨테이너 오케스트레이션
 - Database connections: 스키마 정보와 쿼리 실행
@@ -1856,22 +1856,22 @@ claude "우리 조직을 위한 커스텀 MCP 서버들을 설계해줘.
 ```bash
 # 조직 특화 코드 품질 도구
 claude "우리 팀의 코딩 표준을 자동으로 검사하는 커스텀 도구를 만들어줘.
-다음 검사 항목을 포함해줘:
+다음 검사 항목을 포함해줘
 
-코딩 표준 검사:
+코딩 표준 검사
 - 함수 네이밍 규칙 (camelCase, 동사로 시작)
 - 파일 구조 규칙 (feature/component 기반)
 - 코멘트 작성 규칙 (JSDoc, docstring)
 - 에러 처리 패턴 일관성
 - 로깅 형식 표준화
 
-성능 검사:
+성능 검사
 - 메모리 누수 패턴 감지
 - 비효율적인 루프와 쿼리
 - 불필요한 렌더링 감지
 - 번들 크기 최적화 기회
 
-보안 검사:
+보안 검사
 - 하드코딩된 시크릿 탐지
 - SQL 인젝션 취약점
 - XSS 공격 벡터
@@ -1887,21 +1887,21 @@ claude "우리 팀의 코딩 표준을 자동으로 검사하는 커스텀 도�
     anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
     custom_instructions: |
       당신은 우리 조직의 문서화 전문가입니다.
-      다음 문서화 표준을 준수해주세요:
+      다음 문서화 표준을 준수해주세요
       
-      API 문서화:
+      API 문서화
       - OpenAPI 3.0 스펙 준수
       - 요청/응답 예시 포함
       - 에러 코드와 메시지 설명
       - 버전 관리 정보
       
-      코드 문서화:
+      코드 문서화
       - 함수별 JSDoc/docstring
       - 복잡한 로직 인라인 주석
       - README 업데이트
       - 아키텍처 다이어그램
       
-      사용자 문서화:
+      사용자 문서화
       - 설치와 설정 가이드
       - 사용 예시와 튜토리얼
       - 문제 해결 가이드
@@ -1920,9 +1920,9 @@ claude "우리 팀의 코딩 표준을 자동으로 검사하는 커스텀 도�
 ```bash
 # 컨텍스트 기반 워크플로우 자동화
 claude "PR 내용을 분석해서 자동으로 적절한 워크플로우를 선택하는 시스템을 만들어줘.
-다음 분류 기준을 사용해줘:
+다음 분류 기준을 사용해줘
 
-변경 유형 분석:
+변경 유형 분석
 - 기능 추가 (feature): 새로운 기능 구현
 - 버그 수정 (bugfix): 기존 기능 오류 수정
 - 리팩토링 (refactor): 코드 구조 개선
@@ -1930,13 +1930,13 @@ claude "PR 내용을 분석해서 자동으로 적절한 워크플로우를 선�
 - 설정 (config): 설정 파일 변경
 - 테스트 (test): 테스트 코드 관련
 
-영향도 분석:
+영향도 분석
 - Critical: 핵심 비즈니스 로직 변경
 - High: 사용자 경험에 직접 영향
 - Medium: 내부 로직 개선
 - Low: 문서나 주석 업데이트
 
-각 분류에 따른 자동화 워크플로우:
+각 분류에 따른 자동화 워크플로우
 - 필요한 리뷰어 자동 할당
 - 적절한 테스트 전략 선택
 - 배포 승인 프로세스 결정
@@ -1970,13 +1970,13 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           direct_prompt: |
-            이 PR의 변경사항을 분석하고 다음을 결정해주세요:
+            이 PR의 변경사항을 분석하고 다음을 결정해주세요
             
             1. 위험도 평가 (low/medium/high/critical)
             2. 필요한 테스트 전략 (unit/integration/e2e/performance)
             3. 리뷰 요구사항 (standard/senior/architect/security)
             
-            분석 기준:
+            분석 기준
             - 변경된 파일의 수와 중요도
             - 비즈니스 로직 변경 여부
             - 보안 관련 코드 수정
@@ -1984,7 +1984,7 @@ jobs:
             - API 인터페이스 변경
             - 성능에 영향을 줄 수 있는 변경
             
-            결과를 다음 형식으로 GitHub Actions output에 설정해주세요:
+            결과를 다음 형식으로 GitHub Actions output에 설정해주세요
             echo "risk_level=medium" >> $GITHUB_OUTPUT
             echo "test_strategy=integration,e2e" >> $GITHUB_OUTPUT  
             echo "review_requirements=senior,security" >> $GITHUB_OUTPUT
@@ -2007,7 +2007,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           direct_prompt: |
             이는 높은 위험도의 변경사항입니다.
-            다음 강화된 검토를 수행해주세요:
+            다음 강화된 검토를 수행해주세요
             
             1. 세부적인 코드 리뷰
             2. 보안 취약점 전체 검사
@@ -2015,7 +2015,7 @@ jobs:
             4. 롤백 계획 수립
             5. 모니터링 계획 제안
             
-            추가로 다음 팀들을 리뷰에 포함시켜주세요:
+            추가로 다음 팀들을 리뷰에 포함시켜주세요
             @security-team @architecture-team @senior-engineers
 ```
 
@@ -2030,30 +2030,30 @@ Claude Code Action의 안정적인 운영을 위해서는 포괄적인 모니터
 ```bash
 # 엔터프라이즈 모니터링 전략
 claude "Claude Code Action을 위한 종합적인 모니터링 시스템을 설계해줘.
-다음 계층별 모니터링을 포함해줘:
+다음 계층별 모니터링을 포함해줘
 
-인프라 계층:
+인프라 계층
 - GitHub Actions 러너 리소스 사용량
 - API 응답 시간과 처리량
 - 네트워크 지연 시간과 패킷 손실
 - 저장소 I/O 성능
 - 메모리와 CPU 사용 패턴
 
-애플리케이션 계층:
+애플리케이션 계층
 - Claude API 호출 성공률과 지연 시간
 - 워크플로우 실행 시간과 성공률
 - 오류 발생 빈도와 패턴
 - 사용자 요청 처리 상태
 - 캐시 히트율과 효율성
 
-비즈니스 계층:
+비즈니스 계층
 - 사용자 만족도와 피드백
 - 코드 품질 개선 지표
 - 개발 생산성 향상 측정
 - 비용 효율성과 ROI
 - 팀 협업 효과성
 
-모니터링 도구 통합:
+모니터링 도구 통합
 - Prometheus + Grafana 대시보드
 - DataDog APM과 로그 분석
 - AWS CloudWatch (Bedrock 사용 시)
@@ -2131,30 +2131,30 @@ jobs:
 ```bash
 # 성능 최적화 방안
 claude "Claude Code Action의 성능을 최적화하는 전략을 수립해줘.
-다음 영역별 최적화를 포함해줘:
+다음 영역별 최적화를 포함해줘
 
-API 호출 최적화:
+API 호출 최적화
 - 요청 배칭과 병렬 처리
 - 결과 캐싱 전략 (Redis, Memcached)
 - 지능형 재시도 로직
 - 부분 응답과 스트리밍
 - 컨텍스트 압축과 최적화
 
-워크플로우 최적화:
+워크플로우 최적화
 - 조건부 실행과 스킵 로직
 - 의존성 최적화와 병렬화
 - 아티팩트 캐싱과 재사용
 - 환경 준비 시간 단축
 - 리소스 효율적 할당
 
-코드 분석 최적화:
+코드 분석 최적화
 - 증분 분석 (변경된 부분만)
 - 지능형 필터링 (관련 파일만)
 - 사전 컴파일된 분석 결과 활용
 - 백그라운드 전처리
 - 예측적 프리페칭
 
-모델 활용 최적화:
+모델 활용 최적화
 - 적절한 모델 선택 (작업별)
 - 프롬프트 최적화와 압축
 - 컨텍스트 윈도우 관리
@@ -2210,30 +2210,30 @@ jobs:
 ```bash
 # 비용 최적화 전략
 claude "Claude Code Action의 운영 비용을 모니터링하고 최적화하는 시스템을 만들어줘.
-다음 요소를 포함해줘:
+다음 요소를 포함해줘
 
-비용 추적:
+비용 추적
 - API 호출 비용 (토큰 사용량 기반)
 - GitHub Actions 런타임 비용
 - 클라우드 인프라 비용 (Bedrock/Vertex)
 - 스토리지와 네트워크 비용
 - 모니터링 도구 비용
 
-비용 최적화:
+비용 최적화
 - 토큰 효율적인 프롬프트 설계
 - 캐싱을 통한 중복 호출 방지
 - 스마트 모델 선택 (비용 vs 성능)
 - 예약 인스턴스와 할인 활용
 - 자동 스케일링과 리소스 해제
 
-예산 관리:
+예산 관리
 - 팀별/프로젝트별 비용 할당
 - 예산 임계값과 알림 설정
 - 월별 비용 예측과 계획
 - 비용 대비 효과 측정
 - 예산 초과 방지 메커니즘
 
-리포팅과 분석:
+리포팅과 분석
 - 실시간 비용 대시보드
 - 사용 패턴별 비용 분석
 - ROI 계산과 비즈니스 가치
@@ -2252,30 +2252,30 @@ Claude Code Action을 운영하면서 발생할 수 있는 다양한 문제들�
 ```bash
 # API 인증 문제 진단과 해결
 claude "Claude Code Action에서 발생하는 API 인증 관련 문제들을 체계적으로 진단하고 해결하는 가이드를 만들어줘.
-다음 시나리오를 포함해줘:
+다음 시나리오를 포함해줘
 
-일반적인 인증 오류:
+일반적인 인증 오류
 - Invalid API key (401 Unauthorized)
 - Rate limit exceeded (429 Too Many Requests)
 - API key expired or revoked
 - Insufficient permissions
 - Network connectivity issues
 
-진단 체크리스트:
+진단 체크리스트
 1. API 키 형식과 유효성 확인
 2. GitHub Secrets 설정 검증
 3. 네트워크 연결성 테스트
 4. Rate limiting 상태 확인
 5. 권한과 스코프 검증
 
-해결 방안:
+해결 방안
 - API 키 재생성과 업데이트 절차
 - Rate limiting 회피 전략
 - 백업 인증 방법 활용
 - 네트워크 문제 우회
 - 권한 에스컬레이션 프로세스
 
-예방 조치:
+예방 조치
 - 사전 경고 시스템 구축
 - 자동 키 로테이션
 - 모니터링과 알림 설정
@@ -2363,30 +2363,30 @@ jobs:
 ```bash
 # 포괄적인 로그 분석 시스템
 claude "Claude Code Action의 문제를 진단하기 위한 고급 로깅과 분석 시스템을 설계해줘.
-다음 요소를 포함해줘:
+다음 요소를 포함해줘
 
-구조화된 로깅:
+구조화된 로깅
 - JSON 형식의 구조화된 로그
 - 상관관계 ID와 추적 토큰
 - 타임스탬프와 실행 컨텍스트
 - 에러 분류와 심각도
 - 성능 메트릭과 리소스 사용량
 
-로그 수집과 저장:
+로그 수집과 저장
 - 중앙화된 로그 수집 (ELK Stack)
 - 실시간 로그 스트리밍
 - 장기 보존과 아카이빙
 - 검색과 인덱싱 최적화
 - 개인정보 마스킹과 보안
 
-분석과 인사이트:
+분석과 인사이트
 - 패턴 인식과 이상 탐지
 - 근본 원인 분석 (RCA)
 - 성능 병목 식별
 - 사용자 행동 분석
 - 예측적 문제 감지
 
-대시보드와 알림:
+대시보드와 알림
 - 실시간 모니터링 대시보드
 - 인텔리전트 알림 시스템
 - 에스컬레이션 절차
@@ -2445,7 +2445,7 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           direct_prompt: |
             성능 분석을 위한 테스트를 실행해주세요.
-            다음 작업을 수행해주세요:
+            다음 작업을 수행해주세요
             1. 간단한 코드 리뷰 (응답 시간 측정)
             2. 복잡한 코드 생성 (리소스 사용량 측정)
             3. 문서 업데이트 (I/O 성능 측정)
@@ -2470,30 +2470,30 @@ jobs:
 ```bash
 # 사용자 지원 가이드
 claude "Claude Code Action 사용자들이 자주 겪는 문제들과 해결책을 정리한 포괄적인 FAQ를 만들어줘.
-다음 카테고리로 분류해줘:
+다음 카테고리로 분류해줘
 
-설치와 설정:
+설치와 설정
 Q: GitHub App 설치 시 권한 오류가 발생해요
 A: Repository admin 권한이 필요합니다. 권한을 확인하고...
 
 Q: Workflow 파일을 추가했는데 동작하지 않아요
 A: 다음을 확인해주세요: 1) 파일 경로가 올바른지...
 
-사용법과 기능:
+사용법과 기능
 Q: @claude를 멘션했는데 응답이 없어요
 A: 트리거 조건을 확인해주세요: 1) 댓글 형식...
 
 Q: 코드 수정이 PR에 반영되지 않아요
 A: Claude는 새 브랜치를 생성합니다...
 
-오류 해결:
+오류 해결
 Q: API rate limit 오류가 발생해요
 A: 사용량을 확인하고 다음을 시도해보세요...
 
 Q: 권한 관련 오류가 발생해요
 A: GitHub token 권한을 확인해주세요...
 
-성능과 최적화:
+성능과 최적화
 Q: 응답이 너무 느려요
 A: 다음 최적화 방법을 시도해보세요...
 
