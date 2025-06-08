@@ -2,6 +2,28 @@
 
 > "완벽한 계획보다 지속적인 개선이 낫다" - 애자일 원칙
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    워크플로우 구축
+      EPCC 사이클 마스터
+      체계적 접근 방법
+      반복 가능한 프로세스
+    TDD 실천
+      테스트 주도 개발
+      품질 중심 사고
+      안전한 리팩토링
+    코드 품질 개선
+      코드 스멜 탐지
+      점진적 리팩토링
+      성능 최적화
+    생산성 극대화
+      문서화 자동화
+      워크플로우 최적화
+      도구 활용 전략
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -24,22 +46,24 @@ EPCC(Explore-Plan-Code-Commit) 워크플로우는 체계적이고 반복 가능�
 
 각 단계는 고유한 목적과 산출물을 가지며, 순환적으로 반복되어 지속적인 품질 향상을 달성합니다.
 
-```
-┌─────────────┐
-│   Explore   │ ← 코드베이스 이해
-└──────┬──────┘
-       │
-┌──────▼──────┐
-│    Plan     │ ← 접근 방법 설계
-└──────┬──────┘
-       │
-┌──────▼──────┐
-│    Code     │ ← 구현 및 테스트
-└──────┬──────┘
-       │
-┌──────▼──────┐
-│   Commit    │ ← 검증 및 커밋
-└─────────────┘
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[Explore<br/><small>코드베이스 이해</small>] --> B[Plan<br/><small>접근 방법 설계</small>]
+    B --> C[Code<br/><small>구현 및 테스트</small>]
+    C --> D[Commit<br/><small>검증 및 커밋</small>]
+    D --> A
+    
+    E[체계적 분석<br/>아키텍처 파악<br/>기술 부채 식별] -.-> A
+    F[구현 전략 수립<br/>작업 분해<br/>리스크 평가] -.-> B
+    G[점진적 구현<br/>TDD 적용<br/>통합 테스트] -.-> C
+    H[코드 검증<br/>커밋 메시지<br/>품질 확인] -.-> D
+    
+    classDef primaryStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    classDef detailStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D primaryStyle
+    class E,F,G,H detailStyle
 ```
 
 ### 1단계: Explore (탐색) - 체계적 코드베이스 이해
@@ -195,20 +219,28 @@ conventional commits 형식을 따르고,
 
 TDD의 Red-Green-Refactor 사이클은 코드 품질과 설계의 점진적 개선을 통해 견고한 소프트웨어를 구축하는 기반이 됩니다.
 
-```
-     ┌─────────────┐
-     │ Red (실패)  │
-     └──────┬──────┘
-            │
-     ┌──────▼──────┐
-     │Green (통과) │
-     └──────┬──────┘
-            │
-     ┌──────▼──────┐
-     │Refactor     │
-     └──────┬──────┘
-            │
-            └──────┘
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart LR
+    A[Red<br/><small>실패하는 테스트 작성</small>] --> B[Green<br/><small>최소 구현으로 통과</small>]
+    B --> C[Refactor<br/><small>코드 품질 개선</small>]
+    C --> A
+    
+    subgraph activities [TDD 활동]
+        D[테스트 케이스 정의<br/>엣지 케이스 고려<br/>실패 확인]
+        E[최소한의 코드<br/>테스트 통과 집중<br/>성능은 나중에]
+        F[중복 제거<br/>가독성 향상<br/>설계 개선]
+    end
+    
+    A -.-> D
+    B -.-> E
+    C -.-> F
+    
+    classDef cycleStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    classDef activityStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C cycleStyle
+    class D,E,F activityStyle
 ```
 
 ### TDD with Claude Code
@@ -375,6 +407,29 @@ claude "시스템 아키텍처를 Mermaid 다이어그램으로 그려줘.
 
 복잡한 기능 개발 시 체계적인 접근 방식이 어떻게 위험을 줄이고 품질을 향상시키는지 확인해보겠습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+gantt
+    title 3일간 결제 기능 추가 워크플로우
+    dateFormat  X
+    axisFormat %d
+    
+    section Day 1: 탐색과 계획
+    기존 시스템 분석     :active, d1-morning, 0, 1
+    결제 기능 설계      :d1-afternoon, after d1-morning, 1
+    아키텍처 문서화     :d1-doc, after d1-afternoon, 1
+    
+    section Day 2: 구현
+    백엔드 API 개발     :d2-backend, 1, 1
+    프론트엔드 UI      :d2-frontend, after d2-backend, 1
+    단위 테스트 작성    :d2-test, after d2-frontend, 1
+    
+    section Day 3: 통합과 배포
+    통합 테스트        :d3-integration, 2, 1
+    E2E 테스트        :d3-e2e, after d3-integration, 1
+    문서화 및 배포 준비  :d3-deploy, after d3-e2e, 1
+```
+
 ### Day 1: 탐색과 계획
 
 ```bash
@@ -477,6 +532,32 @@ claude "반복적인 작업을 자동화하는 스크립트를 만들어줘:
 효율적인 개발 워크플로우는 개발자와 팀의 생산성을 결정하는 핵심 요소입니다. Claude Code는 이러한 워크플로우의 각 단계에서 지능적인 지원을 제공하여, 개발자가 더 높은 수준의 문제 해결에 집중할 수 있도록 도와줍니다.
 
 ### 핵심 원칙 요약
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((핵심 원칙))
+    체계적 접근
+      EPCC 사이클 적용
+      예측 가능한 프로세스
+      반복 가능한 개발
+      리스크 최소화
+    품질 우선
+      TDD 실천
+      지속적 리팩토링
+      코드 리뷰 문화
+      자동화된 테스트
+    자동화 극대화
+      반복 작업 제거
+      도구 활용
+      스크립트 개발
+      효율성 향상
+    지속적 개선
+      메트릭 수집
+      프로세스 분석
+      피드백 반영
+      메타 개선
+```
 
 1. **체계적 접근**: EPCC(탐색-계획-코딩-커밋) 사이클을 통한 예측 가능하고 반복 가능한 개발 프로세스
 2. **품질 우선**: TDD와 지속적인 리팩토링을 통한 코드 품질의 지속적 향상
