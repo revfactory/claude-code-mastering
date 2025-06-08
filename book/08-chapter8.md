@@ -2,6 +2,28 @@
 
 > "병렬로 일하되, 동시에 생각하라" - 소프트웨어 아키텍처 원칙
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((학습 목표))
+    멀티 인스턴스 관리
+      효과적인 역할 분담
+      컨텍스트 최적화
+      작업 동기화
+    병렬 개발 환경
+      Git Worktree 활용
+      독립적 개발 공간
+      브랜치별 특화 설정
+    마이크로서비스 개발
+      서비스별 전문화
+      동시 개발 전략
+      통합 관리
+    정보 공유 최적화
+      컨텍스트 관리
+      인스턴스 간 협업
+      지식 동기화
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -26,23 +48,45 @@
 
 효과적인 멀티 인스턴스 전략은 단순한 작업 분할을 넘어서 각 인스턴스의 전문성과 상호 보완성을 고려한 체계적 설계가 필요합니다:
 
-```
-┌─────────────────┐    ┌─────────────────┐
-│ Frontend Studio │ ←→ │ Backend Engine  │
-│ (인스턴스 #1)   │    │ (인스턴스 #2)   │
-└─────────────────┘    └─────────────────┘
-         ↓                       ↓
-┌─────────────────┐    ┌─────────────────┐
-│ DevOps Pipeline │ ←→ │ QA & Monitoring │
-│ (인스턴스 #3)   │    │ (인스턴스 #4)   │
-└─────────────────┘    └─────────────────┘
-         ↓                       ↓
-┌─────────────────────────────────────────┐
-│     Integration Hub (인스턴스 #5)       │
-│  - 크로스 도메인 이슈 해결                │
-│  - 아키텍처 일관성 검증                  │
-│  - 팀 간 커뮤니케이션 조정               │
-└─────────────────────────────────────────┘
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    subgraph core [핵심 개발 영역]
+        A[Frontend Studio<br/><small>인스턴스 #1<br/>UX/UI 전문가</small>] 
+        B[Backend Engine<br/><small>인스턴스 #2<br/>시스템 아키텍트</small>]
+    end
+    
+    subgraph ops [운영 및 품질 관리]
+        C[DevOps Pipeline<br/><small>인스턴스 #3<br/>클라우드 네이티브 전문가</small>]
+        D[QA & Monitoring<br/><small>인스턴스 #4<br/>품질 보증 전문가</small>]
+    end
+    
+    subgraph integration [통합 관리]
+        E[Integration Hub<br/><small>인스턴스 #5<br/>아키텍처 조정자</small>]
+    end
+    
+    A <--> B
+    A --> C
+    B --> C
+    C <--> D
+    A --> E
+    B --> E
+    C --> E
+    D --> E
+    
+    F[크로스 도메인 이슈 해결] -.-> E
+    G[아키텍처 일관성 검증] -.-> E
+    H[팀 간 커뮤니케이션 조정] -.-> E
+    
+    classDef coreStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef opsStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef hubStyle fill:#cbd5e1,stroke:#475569,stroke-width:3px,color:#1e293b
+    classDef activityStyle fill:#f8fafc,stroke:#94a3b8,stroke-width:1px,color:#64748b
+    
+    class A,B coreStyle
+    class C,D opsStyle
+    class E hubStyle
+    class F,G,H activityStyle
 ```
 
 ### 인스턴스별 역할 분담
@@ -370,13 +414,41 @@ echo "Feature branch 'feature/$FEATURE_NAME' created in $WORKTREE_PATH"
 
 ### 서비스별 개발 환경 분리
 
-```
-project/
-├── user-service/      ← Terminal 1
-├── product-service/   ← Terminal 2  
-├── order-service/     ← Terminal 3
-├── payment-service/   ← Terminal 4
-└── api-gateway/       ← Terminal 5
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph project [마이크로서비스 프로젝트 구조]
+        A[user-service<br/><small>Terminal 1<br/>사용자 관리</small>]
+        B[product-service<br/><small>Terminal 2<br/>상품 관리</small>]
+        C[order-service<br/><small>Terminal 3<br/>주문 처리</small>]
+        D[payment-service<br/><small>Terminal 4<br/>결제 처리</small>]
+        E[api-gateway<br/><small>Terminal 5<br/>통합 관리</small>]
+    end
+    
+    subgraph terminals [병렬 개발 환경]
+        T1[Claude Instance 1<br/>사용자 인증 및 프로필]
+        T2[Claude Instance 2<br/>상품 카탈로그 및 검색]
+        T3[Claude Instance 3<br/>주문 워크플로우]
+        T4[Claude Instance 4<br/>결제 통합]
+        T5[Claude Instance 5<br/>API 라우팅 및 보안]
+    end
+    
+    A -.-> T1
+    B -.-> T2
+    C -.-> T3
+    D -.-> T4
+    E -.-> T5
+    
+    T1 --> T5
+    T2 --> T5
+    T3 --> T5
+    T4 --> T5
+    
+    classDef serviceStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef terminalStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D,E serviceStyle
+    class T1,T2,T3,T4,T5 terminalStyle
 ```
 
 ### 서비스 간 통신 관리
@@ -512,18 +584,45 @@ ecommerce/
 
 **팀 구성과 인스턴스 배치**
 
-```bash
-# 개발자 A: 프론트엔드 + 모바일
-Terminal A1: frontend 개발
-Terminal A2: mobile-app 개발
-
-# 개발자 B: 백엔드 + 인프라  
-Terminal B1: backend API 개발
-Terminal B2: infrastructure 관리
-
-# 개발자 C: 관리자 + 테스트
-Terminal C1: admin-panel 개발  
-Terminal C2: 전체 테스트 및 QA
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph devA [개발자 A: 프론트엔드]
+        A1[Terminal A1<br/><small>Frontend 개발<br/>React + TypeScript</small>]
+        A2[Terminal A2<br/><small>Mobile App 개발<br/>React Native</small>]
+    end
+    
+    subgraph devB [개발자 B: 백엔드]
+        B1[Terminal B1<br/><small>Backend API 개발<br/>Node.js + Express</small>]
+        B2[Terminal B2<br/><small>Infrastructure 관리<br/>Docker + K8s</small>]
+    end
+    
+    subgraph devC [개발자 C: 관리 및 품질]
+        C1[Terminal C1<br/><small>Admin Panel 개발<br/>Next.js + Dashboard</small>]
+        C2[Terminal C2<br/><small>전체 테스트 및 QA<br/>Jest + Cypress</small>]
+    end
+    
+    subgraph shared [공유 리소스]
+        S1[공통 API 스펙<br/>OpenAPI]
+        S2[공유 컴포넌트<br/>Design System]
+        S3[통합 문서<br/>Architecture Docs]
+    end
+    
+    A1 --> S1
+    A1 --> S2
+    A2 --> S1
+    A2 --> S2
+    B1 --> S1
+    B2 --> S3
+    C1 --> S2
+    C1 --> S3
+    C2 --> S3
+    
+    classDef devStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef sharedStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A1,A2,B1,B2,C1,C2 devStyle
+    class S1,S2,S3 sharedStyle
 ```
 
 ### 1주차: 프로젝트 설정
