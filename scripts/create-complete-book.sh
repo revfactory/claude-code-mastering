@@ -8,8 +8,94 @@ echo "📚 Claude Code 마스터하기 - 완전한 책 생성 시작..."
 # 출력 디렉토리 생성
 mkdir -p docs
 
-# CSS 파일을 docs 폴더에 복사
-cp output/style.css docs/style.css
+# CSS 파일을 docs 폴더에 생성 (인라인 스타일)
+cat > docs/style.css << 'EOF'
+/* Claude Code 마스터하기 - PDF 스타일 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    border-bottom: 2px solid #95a5a6;
+    padding-bottom: 0.3rem;
+    font-size: 2rem;
+}
+
+h3 {
+    color: #34495e;
+    font-size: 1.5rem;
+}
+
+code {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #333;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+EOF
 
 # 통합 마크다운 파일 생성
 COMPLETE_FILE="docs/claude-code-mastering-complete.md"
