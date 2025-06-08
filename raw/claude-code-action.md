@@ -513,14 +513,14 @@ To securely use your Anthropic API key:
    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
    ```
 
-**Never do this:**
+**Never do this**
 
 ```yaml
 # ❌ WRONG - Exposes your API key
 anthropic_api_key: "sk-ant-..."
 ```
 
-**Always do this:**
+**Always do this**
 
 ```yaml
 # ✅ CORRECT - Uses GitHub secrets

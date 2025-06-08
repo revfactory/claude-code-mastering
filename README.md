@@ -77,17 +77,17 @@ claude-code-mastering/
 
 ### 📖 읽기
 
-**온라인으로 읽기:**
+**온라인으로 읽기**
 - [📄 GitHub Pages에서 읽기](https://revfactory.github.io/claude-code-mastering/) - 완전한 HTML 버전 (Mermaid 다이어그램 포함)
 - [📖 개별 장 마크다운](book/) - GitHub에서 읽기
 
-**다운로드해서 읽기:**
+**다운로드해서 읽기**
 - [📄 전체 책 PDF](docs/claude-code-mastering-complete.pdf) - 오프라인 읽기용
 - [📄 전체 책 HTML](docs/claude-code-mastering-complete.html) - 로컬 HTML 버전
 
 ### 🔧 책 생성
 
-**요구사항:**
+**요구사항**
 ```bash
 # macOS/Linux
 brew install pandoc node
@@ -100,7 +100,7 @@ brew install pandoc node
 npm install puppeteer
 ```
 
-**사용법:**
+**사용법**
 ```bash
 # 1. 실행 권한 부여
 chmod +x scripts/create-complete-book.sh
@@ -115,7 +115,7 @@ chmod +x scripts/create-complete-book.sh
 # - docs/index.html (GitHub Pages용 - 자동 업데이트)
 ```
 
-**참고사항:**
+**참고사항**
 - PDF 생성에는 Puppeteer가 필요합니다 (`npm install puppeteer`)
 - HTML만 생성하려면 스크립트에서 PDF 생성 부분을 주석 처리하세요
 - Mermaid 다이어그램은 HTML에서만 정상 렌더링됩니다
@@ -135,7 +135,7 @@ chmod +x scripts/create-complete-book.sh
 
 이 프로젝트는 오픈소스입니다! 기여를 환영합니다.
 
-**기여 방법:**
+**기여 방법**
 1. 📝 오타나 개선사항 발견 시 Issue 등록
 2. 🔀 Pull Request로 직접 수정 제안
 3. 🌟 별표를 눌러 프로젝트 응원
@@ -147,12 +147,12 @@ chmod +x scripts/create-complete-book.sh
 
 **무단 배포 금지**: 이 저작물의 무단 복제, 배포, 전송, 출판은 저작권법에 의해 금지되어 있습니다.
 
-**허용 범위:**
+**허용 범위**
 - ✅ 개인적 학습 및 연구 목적의 열람
 - ✅ 비상업적 교육 목적의 인용 (출처 명시 시)
 - ✅ GitHub Issues를 통한 오탈자 제보 및 개선 제안
 
-**금지 사항:**
+**금지 사항**
 - ❌ 상업적 목적의 사용, 복제, 배포
 - ❌ 저작자 동의 없는 2차 저작물 제작
 - ❌ 전체 또는 일부 내용의 무단 전재

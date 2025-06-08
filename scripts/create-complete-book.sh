@@ -232,7 +232,7 @@ sed -i '' 's|</body>|<!-- Mermaid 다이어그램 렌더링 -->\
         }\
     });\
 </script>\
-</body>|' "output/complete/claude-code-mastering-complete.html"
+</body>|' "docs/claude-code-mastering-complete.html"
 
 echo "✅ HTML 생성 완료: docs/claude-code-mastering-complete.html"
 

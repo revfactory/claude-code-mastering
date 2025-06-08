@@ -257,7 +257,7 @@ claude "Express에 GraphQL을 통합한 API 서버를 만들어줘.
 - 쿼리 복잡도 제한"
 ```
 
-**엔터프라이즈급 프로젝트 구조:**
+**엔터프라이즈급 프로젝트 구조**
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
@@ -287,7 +287,7 @@ graph TD
     L -.-> |API 문서| L1[Documentation]
 ```
 
-**계층별 책임 분리:**
+**계층별 책임 분리**
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%

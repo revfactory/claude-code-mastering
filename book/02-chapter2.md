@@ -4,20 +4,6 @@
 
 이제 Claude Code를 설치해보겠습니다. 이 장에서는 **각 운영체제별로 단계별 설치 가이드**를 제공하며, 설치 과정에서 발생할 수 있는 문제들과 해결 방법도 함께 다룹니다.
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
-flowchart TD
-    A["시스템 요구사항 확인"] --> B["운영체제별 설치 진행"]
-    B --> C["기본 설정 및 최적화"]
-    C --> D["문제 해결 및 검증"]
-    
-    classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
-    
-    class A,B,C,D stepStyle
-```
-
-설치 과정은 다음과 같이 구성됩니다
-
 ## 2.1 시스템 요구사항
 
 ### 최소 요구사항
@@ -36,7 +22,7 @@ flowchart TD
 
 설치 전 시스템 환경을 확인하겠습니다. 터미널을 열고 다음 명령어들을 실행하여 필요한 도구들이 설치되어 있는지 확인하세요.
 
-**터미널 실행 방법:**
+**터미널 실행 방법**
 - **Mac**: `Cmd + Space` → "터미널" 검색
 - **Windows**: `Win + R` → "cmd" 입력
 - **Linux**: `Ctrl + Alt + T`
@@ -52,7 +38,7 @@ npm --version
 git --version
 ```
 
-**Node.js가 설치되어 있지 않거나 버전이 낮다면:**
+**Node.js가 설치되어 있지 않거나 버전이 낮다면**
 1. [Node.js 공식 사이트](https://nodejs.org)에서 LTS 버전을 다운로드하세요
 2. 또는 패키지 매니저를 사용하세요
    - **Mac**: `brew install node` (Homebrew 필요)
@@ -268,7 +254,7 @@ Claude Code의 모든 설정은 홈 디렉토리의 설정 파일에서 관리�
 }
 ```
 
-**주요 설정 옵션 설명:**
+**주요 설정 옵션 설명**
 - `default_model`: 작업 유형에 따라 적절한 모델 선택 (opus: 복잡한 작업, sonnet: 일반 작업, haiku: 빠른 응답)
 - `auto_commit`: 코드 변경 시 자동으로 Git 커밋할지 결정
 - `permissions`: 보안을 위해 필요한 권한만 활성화하는 것을 권장
@@ -295,7 +281,7 @@ graph TB
     class A,B,C permissionStyle
 ```
 
-**권한 유형별 설명:**
+**권한 유형별 설명**
 
 보안과 편의성의 균형을 위한 권한 설정 전략
 
@@ -329,7 +315,7 @@ graph LR
     class A,B,C,D editorStyle
 ```
 
-**지원되는 에디터:**
+**지원되는 에디터**
 
 선호하는 에디터와 통합 설정
 
@@ -364,7 +350,7 @@ flowchart TD
     class B,C,D caseStyle
 ```
 
-**프록시 설정이 필요한 경우:**
+**프록시 설정이 필요한 경우**
 
 기업 환경에서 프록시를 사용하는 경우의 설정 방법
 
@@ -389,12 +375,12 @@ Claude Code 설치 및 초기 사용 과정에서 발생할 수 있는 일반적
 
 이 오류는 Claude Code가 설치되었지만 시스템 PATH에 등록되지 않았을 때 발생합니다.
 
-**원인 분석:**
+**원인 분석**
 - npm 전역 설치 경로가 PATH에 포함되지 않음
 - 잘못된 설치 경로
 - Shell 환경 변수 설정 문제
 
-**해결 방법:**
+**해결 방법**
 ```bash
 # 1단계: npm 전역 경로 확인
 npm config get prefix
@@ -407,7 +393,7 @@ source ~/.bashrc
 claude --version
 ```
 
-**추가 해결책:**
+**추가 해결책**
 - macOS에서 `.zshrc` 파일 수정 필요할 수 있음
 - Windows에서는 시스템 환경 변수에서 PATH 수정
 
@@ -415,12 +401,12 @@ claude --version
 
 이 오류는 npm 전역 설치 시 권한 문제로 발생합니다. 특히 Linux나 macOS에서 자주 나타납니다.
 
-**원인 분석:**
+**원인 분석**
 - npm 전역 디렉토리에 대한 쓰기 권한 부족
 - sudo로 설치했을 때 소유권 문제
 - 시스템 보호된 디렉토리에 설치 시도
 
-**해결 방법:**
+**해결 방법**
 ```bash
 # 방법 1: 권한 수정 (권장)
 sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
@@ -439,12 +425,12 @@ source ~/.bashrc
 
 API 사용량 제한에 도달했을 때 발생하는 오류입니다. Anthropic의 API 정책에 따라 시간당 요청 횟수가 제한됩니다.
 
-**원인 분석:**
+**원인 분석**
 - 단시간 내 너무 많은 요청
 - API 플랜의 사용량 한계 도달
 - 네트워크 문제로 인한 중복 요청
 
-**해결 방법:**
+**해결 방법**
 ```bash
 # 1단계: 현재 상태 확인
 claude status
@@ -456,7 +442,7 @@ claude config set retry_delay 5000
 claude config set max_retries 3
 ```
 
-**예방 방법:**
+**예방 방법**
 - 대용량 작업 시 작은 단위로 분할하여 실행
 - `--rate-limit` 옵션 사용하여 요청 속도 조절
 - API 사용량 모니터링으로 제한 사전 파악
@@ -465,12 +451,12 @@ claude config set max_retries 3
 
 기업 환경에서 자체 인증서를 사용하거나 네트워크 보안 정책으로 인해 SSL 인증서 검증에 실패할 때 발생합니다.
 
-**원인 분석:**
+**원인 분석**
 - 회사 방화벽의 SSL 검사
 - 자체 서명된 인증서 사용
 - 오래된 시스템의 인증서 저장소 문제
 
-**해결 방법:**
+**해결 방법**
 ```bash
 # ⚠️ 임시 해결책 (보안 위험 있음)
 export NODE_TLS_REJECT_UNAUTHORIZED=0
@@ -485,7 +471,7 @@ claude config set tls_verify true
 claude config set ca_bundle /path/to/company-cert.pem
 ```
 
-**보안 고려사항:**
+**보안 고려사항**
 - `NODE_TLS_REJECT_UNAUTHORIZED=0`은 보안 위험이 있으므로 임시로만 사용
 - 가능하면 IT 부서와 협력하여 적절한 인증서 설정
 
@@ -508,7 +494,7 @@ claude config set cache_ttl 3600
 claude config set cache_max_size 100
 ```
 
-**캐시 활용 팁:**
+**캐시 활용 팁**
 - 동일한 코드를 반복 분석할 때 유용
 - 큰 프로젝트에서 점진적 작업 시 효과적
 - 캐시 무효화: `claude cache clear`
@@ -528,7 +514,7 @@ claude config set max_context_length 50000
 claude config get max_context_length
 ```
 
-**설정 가이드라인:**
+**설정 가이드라인**
 - **소규모 프로젝트 (< 50개 파일)**: 50,000
 - **중간 규모 프로젝트 (50-200개 파일)**: 100,000
 - **대규모 프로젝트 (200개+ 파일)**: 200,000
@@ -571,9 +557,9 @@ mindmap
       완전한 로컬 처리
 ```
 
-**로컬 모드의 장점:**
+**로컬 모드의 장점**
 
-**요구사항:**
+**요구사항**
 - 충분한 저장공간 (모델당 2-8GB)
 - 강력한 하드웨어 (GPU 권장)
 - 베타 기능으로 일부 제한사항 존재
@@ -582,12 +568,12 @@ mindmap
 
 이론적인 설정을 마쳤으니, 이제 실제로 Claude Code를 사용해보겠습니다. 간단한 웹 서버 프로젝트를 통해 Claude Code의 기본 사용법을 체험해보겠습니다.
 
-**학습 목표:**
+**학습 목표**
 - Claude Code의 자연어 명령 사용법 익히기
 - 프로젝트 생성부터 실행까지의 전체 과정 체험
 - 생성된 코드의 품질과 구조 이해
 
-**실습 과정:**
+**실습 과정**
 
 ```bash
 # 1단계: 프로젝트 디렉토리 생성
@@ -615,12 +601,12 @@ npm start
 # http://localhost:3000 접속하여 "Hello from Claude Code!" 메시지 확인
 ```
 
-**실습 포인트:**
+**실습 포인트**
 - 자연어로 복잡한 요구사항을 한 번에 전달
 - Claude Code가 생성하는 코드의 품질과 구조 관찰
 - 생성된 README.md에서 추가 사용법 확인
 
-**실습 완료 체크리스트:**
+**실습 완료 체크리스트**
 - [ ] 프로젝트가 성공적으로 생성되었는가?
 - [ ] 서버가 정상적으로 시작되는가?
 - [ ] 브라우저에서 올바른 메시지가 표시되는가?
@@ -632,20 +618,20 @@ Claude Code와 함께 첫 번째 프로젝트를 성공적으로 만들었습니
 
 이제 Claude Code의 설치와 기본 설정이 완료되었습니다. 첫 번째 실습을 통해 Claude Code의 강력함을 경험했을 것입니다.
 
-**이 장에서 배운 내용:**
+**이 장에서 배운 내용**
 - 운영체제별 설치 방법과 환경 설정
 - API 키 설정과 첫 번째 대화
 - 문제 해결 방법과 성능 최적화
 - 실제 프로젝트 생성 경험
 
-**다음 장 미리보기:**
+**다음 장 미리보기**
 제3장에서는 Claude Code의 핵심 기능들을 체계적으로 학습합니다
 - **파일 시스템 탐색**: 프로젝트 구조 파악과 효율적인 코드 분석
 - **코드 작성과 수정**: 자연어를 통한 정교한 코드 생성과 리팩토링
 - **테스트와 디버깅**: 품질 높은 코드를 위한 검증과 문제 해결
 - **Git 통합**: 버전 관리와 협업을 위한 워크플로우
 
-**유용한 참고 명령어:**
+**유용한 참고 명령어**
 ```bash
 # 도움말 확인
 claude help
@@ -660,7 +646,7 @@ claude config list
 claude --version
 ```
 
-**문제 해결 리소스:**
+**문제 해결 리소스**
 - 공식 문서: https://docs.anthropic.com/claude-code
 - 커뮤니티 포럼: https://community.anthropic.com
 - GitHub 이슈: https://github.com/anthropic/claude-code/issues

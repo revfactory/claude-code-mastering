@@ -246,37 +246,6 @@ graph LR
 
 ### ChatGPT와의 비교
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
-graph TB
-    subgraph comparison [" "]
-        direction TB
-        
-        subgraph high_integration ["높은 통합도"]
-            direction LR
-            CC["Claude Code<br/>통합 AI 플랫폼<br/>전체 프로젝트 컨텍스트<br/>지속적 세션 유지"]
-            VS["VS Code<br/>전문 개발 도구<br/>강력한 IDE 기능<br/>제한적 AI 기능"]
-            CU["Cursor<br/>AI 강화 에디터<br/>중간 수준 통합<br/>향상된 컨텍스트"]
-        end
-        
-        subgraph low_integration ["낮은 통합도"]
-            direction LR
-            CG["ChatGPT<br/>기본 AI 도구<br/>웹 기반 대화<br/>컨텍스트 분리"]
-            CP["GitHub Copilot<br/>코드 완성 도구<br/>인라인 제안<br/>파일 단위 컨텍스트"]
-        end
-        
-        high_integration -.-> low_integration
-    end
-    
-    classDef leader fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#0f172a
-    classDef advanced fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
-    classDef basic fill:#f8fafc,stroke:#64748b,stroke-width:1px,color:#64748b
-    
-    class CC leader
-    class VS,CU advanced
-    class CG,CP basic
-```
-
 | 특징 | ChatGPT | Claude Code |
 |------|---------|-------------|
 | 파일 시스템 접근 | 불가능 | 완전한 접근 |

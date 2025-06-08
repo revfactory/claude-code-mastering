@@ -68,7 +68,7 @@ claude "TypeScript 마이크로프론트엔드 아키텍처를 구성해줘.
 - 테스트 전략과 목 설정"
 ```
 
-**엔터프라이즈급 tsconfig.json 설정:**
+**엔터프라이즈급 tsconfig.json 설정**
 
 ```json
 {
@@ -310,7 +310,7 @@ claude "MLOps 파이프라인을 Python으로 구축해줘.
 - A/B 테스트 프레임워크"
 ```
 
-**엔터프라이즈급 pyproject.toml 설정:**
+**엔터프라이즈급 pyproject.toml 설정**
 
 ```toml
 [build-system]
@@ -448,7 +448,7 @@ claude "Python 코드 품질을 위한 정적 분석 도구를 설정해줘.
 - 전체 CI/CD 파이프라인 통합"
 ```
 
-**실전 타입 힌트 예시:**
+**실전 타입 힌트 예시**
 
 ```python
 from typing import (
@@ -576,7 +576,7 @@ claude "Python 애플리케이션의 성능 병목을 찾아서 최적화해줘.
 - JIT 컴파일러 (Numba) 활용"
 ```
 
-**고성능 비동기 패턴 예시:**
+**고성능 비동기 패턴 예시**
 
 ```python
 import asyncio
@@ -926,7 +926,7 @@ graph TD
     class A,C,K configStyle
 ```
 
-**엔터프라이즈급 Java 프로젝트 구조:**
+**엔터프라이즈급 Java 프로젝트 구조**
 
 ### Spring Boot 엔터프라이즈 패턴
 
@@ -991,7 +991,7 @@ claude "Kotlin DSL을 활용해서 설정과 빌드 스크립트를 개선해줘
 - 도메인 특화 언어 구현"
 ```
 
-**Kotlin 엔터프라이즈 코드 예시:**
+**Kotlin 엔터프라이즈 코드 예시**
 
 ```kotlin
 // 타입 안전한 설정 관리
