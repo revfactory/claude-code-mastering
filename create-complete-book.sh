@@ -38,6 +38,9 @@ toc: true
 **출판일**: 2025년 6월  
 **버전**: 1.0  
 
+**© 2025 황민호 (robin.hwang@kakaocorp.com). All rights reserved.**  
+**무단 배포 금지 - 개인 학습 및 연구 목적으로만 사용 가능**
+
 ---
 
 \newpage
@@ -61,7 +64,6 @@ files=(
     "book/10-chapter10.md"
     "book/13-chapter13.md"
     "book/99-conclusion.md"
-    "book/appendix.md"
 )
 
 # 각 파일 내용 추가
