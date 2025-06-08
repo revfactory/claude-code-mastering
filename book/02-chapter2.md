@@ -4,11 +4,19 @@
 
 이제 Claude Code를 설치해보겠습니다. 이 장에서는 **각 운영체제별로 단계별 설치 가이드**를 제공하며, 설치 과정에서 발생할 수 있는 문제들과 해결 방법도 함께 다룹니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["시스템 요구사항 확인"] --> B["운영체제별 설치 진행"]
+    B --> C["기본 설정 및 최적화"]
+    C --> D["문제 해결 및 검증"]
+    
+    classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D stepStyle
+```
+
 설치 과정은 다음과 같이 구성됩니다:
-1. 시스템 요구사항 확인
-2. 운영체제별 설치 진행
-3. 기본 설정 및 최적화
-4. 문제 해결 및 검증
 
 ## 2.1 시스템 요구사항
 
@@ -214,10 +222,25 @@ claude
 > Material-UI도 추가해줘
 ```
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph interactive ["대화형 모드의 장점"]
+        A["컨텍스트 유지<br/><small>이전 대화 내용 기억</small>"]
+        B["단계적 개선<br/><small>점진적 요구사항 조정</small>"]
+        C["효율적 협업<br/><small>대화를 통한 구체화</small>"]
+        
+        A --> B
+        B --> C
+        C --> A
+    end
+    
+    classDef advantageStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class A,B,C advantageStyle
+```
+
 대화형 모드의 장점:
-- **컨텍스트 유지**: 이전 대화 내용을 기억하여 연속적인 작업 가능
-- **단계적 개선**: 결과를 보고 점진적으로 요구사항 조정 가능
-- **효율적 협업**: 복잡한 프로젝트를 대화를 통해 구체화
 
 ## 2.4 기본 설정 최적화
 
@@ -254,10 +277,25 @@ Claude Code의 모든 설정은 홈 디렉토리의 설정 파일에서 관리�
 
 Claude Code는 강력한 도구이므로 적절한 권한 관리가 중요합니다. 작업 환경과 보안 요구사항에 따라 권한을 조정할 수 있습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph permissions ["권한 유형별 설명"]
+        direction TB
+        A["file_read<br/><small>프로젝트 파일 읽기<br/>코드 분석, 리뷰에 필수</small>"]
+        B["file_write<br/><small>파일 생성 및 수정<br/>개발 작업에 필수</small>"]
+        C["command_execution<br/><small>시스템 명령 실행<br/>빌드, 테스트 등에 필요</small>"]
+        
+        A --> B
+        B --> C
+    end
+    
+    classDef permissionStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C permissionStyle
+```
+
 **권한 유형별 설명:**
-- **file_read**: 프로젝트 파일 읽기 (코드 분석, 리뷰에 필수)
-- **file_write**: 파일 생성 및 수정 (개발 작업에 필수)
-- **command_execution**: 시스템 명령 실행 (빌드, 테스트 등에 필요)
 
 보안과 편의성의 균형을 위한 권한 설정 전략:
 
@@ -276,11 +314,22 @@ claude --allow-read --allow-write --deny-execute
 
 개발 효율성을 높이기 위해 Claude Code를 기존 에디터와 통합할 수 있습니다. 에디터 통합을 통해 코드 편집과 AI 지원을 원활하게 연결할 수 있습니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph editors ["지원되는 에디터"]
+        A["Visual Studio Code<br/><small>가장 완전한 통합 지원</small>"]
+        B["Vim/Neovim<br/><small>터미널 기반 워크플로우</small>"]
+        C["JetBrains IDEs<br/><small>IntelliJ, PyCharm 등</small>"]
+        D["Sublime Text<br/><small>경량 에디터</small>"]
+    end
+    
+    classDef editorStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D editorStyle
+```
+
 **지원되는 에디터:**
-- Visual Studio Code (가장 완전한 통합 지원)
-- Vim/Neovim (터미널 기반 워크플로우)
-- JetBrains IDEs (IntelliJ, PyCharm 등)
-- Sublime Text
 
 선호하는 에디터와 통합 설정:
 
@@ -299,10 +348,23 @@ claude config set editor vim
 
 많은 기업에서는 보안상의 이유로 프록시 서버를 통해 외부 인터넷에 접속합니다. Claude Code도 이런 환경에서 사용할 수 있도록 프록시 설정을 지원합니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["프록시 설정이 필요한 경우"]
+    
+    A --> B["회사 방화벽 뒤에서<br/>작업하는 경우"]
+    A --> C["VPN을 통해 회사 네트워크에<br/>연결된 경우"]
+    A --> D["특정 보안 정책이 적용된<br/>네트워크 환경"]
+    
+    classDef caseStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef rootStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    
+    class A rootStyle
+    class B,C,D caseStyle
+```
+
 **프록시 설정이 필요한 경우:**
-- 회사 방화벽 뒤에서 작업하는 경우
-- VPN을 통해 회사 네트워크에 연결된 경우
-- 특정 보안 정책이 적용된 네트워크 환경
 
 기업 환경에서 프록시를 사용하는 경우의 설정 방법:
 
@@ -491,11 +553,25 @@ claude list-models --local
 claude --model local:claude-instant "코드를 분석해줘"
 ```
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((로컬 모드의 장점))
+    인터넷 연결 불필요
+      오프라인 작업 가능
+      네트워크 의존성 제거
+    API 비용 절약
+      사용량 제한 없음
+      비용 효율적 운영
+    응답 속도 향상
+      로컬 처리로 지연 최소화
+      하드웨어 성능에 따라 결정
+    데이터 프라이버시 보장
+      외부 전송 없음
+      완전한 로컬 처리
+```
+
 **로컬 모드의 장점:**
-- 인터넷 연결 불필요
-- API 비용 절약
-- 응답 속도 향상 (하드웨어에 따라)
-- 데이터 프라이버시 보장
 
 **요구사항:**
 - 충분한 저장공간 (모델당 2-8GB)
