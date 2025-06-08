@@ -100,18 +100,19 @@ AI 페어 프로그래밍:
 ### AI 개발 도구의 스펙트럼
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph LR
-    subgraph matrix ["AI 개발 도구 성숙도 매트릭스"]
+    subgraph matrix [" "]
         direction LR
         
-        subgraph level1 ["Level 1: 기본 지원"]
-            A1[["💭 자동완성<br/><small>GitHub Copilot</small>"]]
-            A2[["⚡ 코드 생성<br/><small>Tabnine</small>"]]
+        subgraph level1 ["기본 지원"]
+            A1["자동완성<br/><small>GitHub Copilot</small>"]
+            A2["코드 생성<br/><small>Tabnine</small>"]
         end
         
-        subgraph level2 ["Level 2: 고급 지원"]
-            B1[["🤖 대화형 AI<br/><small>Claude Code</small>"]]
-            B2[["🚀 자율 에이전트<br/><small>미래 기술</small>"]]
+        subgraph level2 ["고급 지원"]
+            B1["대화형 AI<br/><small>Claude Code</small>"]
+            B2["자율 에이전트<br/><small>Future Tech</small>"]
         end
         
         A1 -.->|진화| A2
@@ -119,11 +120,12 @@ graph LR
         B1 -.->|발전| B2
     end
     
-    classDef current fill:#4f46e5,stroke:#312e81,stroke-width:3px,color:#fff
-    classDef future fill:#f59e0b,stroke:#92400e,stroke-width:2px,stroke-dasharray: 8 8,color:#fff
-    classDef basic fill:#6b7280,stroke:#374151,stroke-width:2px,color:#fff
+    classDef current fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef future fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,stroke-dasharray: 5 5,color:#64748b
+    classDef basic fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,color:#64748b
+    classDef highlight fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#0f172a
     
-    class B1 current
+    class B1 highlight
     class B2 future
     class A1,A2 basic
 ```
@@ -170,21 +172,22 @@ AI는 도구가 아닌 동료입니다:
 전체 프로젝트 맥락을 이해합니다:
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#334155", "primaryBorderColor": "#e2e8f0"}}}%%
 mindmap
-  root((Context<br/>Awareness))
-    🔍 프로젝트 분석
+  root((맥락 이해))
+    프로젝트 분석
       파일 구조 탐색
       의존성 매핑
       아키텍처 패턴 인식
-    📋 컨벤션 학습
+    컨벤션 학습
       코딩 스타일 분석
       네이밍 규칙 파악
       포맷팅 패턴 인식
-    💡 로직 이해
+    로직 이해
       비즈니스 요구사항
       데이터 플로우
       에러 처리 패턴
-    🎯 솔루션 제공
+    솔루션 제공
       최적화된 구현
       베스트 프랙티스 적용
       확장 가능한 설계
@@ -195,27 +198,27 @@ mindmap
 ### GitHub Copilot과의 비교
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#2d3748", "primaryBorderColor": "#4a5568", "lineColor": "#cbd5e0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
 graph LR
-    subgraph comparison ["AI 코딩 도구 기능 비교"]
+    subgraph comparison [" "]
         direction TB
         
-        subgraph copilot ["🔵 GitHub Copilot"]
+        subgraph copilot ["GitHub Copilot"]
             direction TB
-            A1["💬 인라인 자동완성<br/><small>간단한 제안</small>"]
-            A2["📄 현재 파일 중심<br/><small>제한적 컨텍스트</small>"]
-            A3["⌨️ 코드 작성<br/><small>단일 기능</small>"]
-            A4["⚙️ 제한적 설정<br/><small>기본 옵션만</small>"]
-            A5["📚 낮은 학습 곡선<br/><small>즉시 사용 가능</small>"]
+            A1["인라인 자동완성<br/><small>간단한 제안</small>"]
+            A2["현재 파일 중심<br/><small>제한적 컨텍스트</small>"]
+            A3["코드 작성<br/><small>단일 기능</small>"]
+            A4["제한적 설정<br/><small>기본 옵션만</small>"]
+            A5["낮은 학습 곡선<br/><small>즉시 사용 가능</small>"]
         end
         
-        subgraph claude ["🟢 Claude Code"]
+        subgraph claude ["Claude Code"]
             direction TB
-            B1["🗣️ 대화형 협업<br/><small>자연어 인터페이스</small>"]
-            B2["🌐 전체 프로젝트<br/><small>완전한 컨텍스트</small>"]
-            B3["🔄 전체 라이프사이클<br/><small>설계부터 배포까지</small>"]
-            B4["🎛️ 완전 커스터마이징<br/><small>CLAUDE.md 활용</small>"]
-            B5["📈 적응형 학습<br/><small>점진적 마스터리</small>"]
+            B1["대화형 협업<br/><small>자연어 인터페이스</small>"]
+            B2["전체 프로젝트<br/><small>완전한 컨텍스트</small>"]
+            B3["전체 라이프사이클<br/><small>설계부터 배포까지</small>"]
+            B4["완전 커스터마이징<br/><small>CLAUDE.md 활용</small>"]
+            B5["적응형 학습<br/><small>점진적 마스터리</small>"]
         end
         
         A1 -.->|vs| B1
@@ -225,8 +228,8 @@ graph LR
         A5 -.->|vs| B5
     end
     
-    classDef copilotStyle fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
-    classDef claudeStyle fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#15803d
+    classDef copilotStyle fill:#f1f5f9,stroke:#64748b,stroke-width:1px,color:#475569
+    classDef claudeStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
     
     class A1,A2,A3,A4,A5 copilotStyle
     class B1,B2,B3,B4,B5 claudeStyle
@@ -243,22 +246,34 @@ graph LR
 ### ChatGPT와의 비교
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#2d3748"}}}%%
-quadrantChart
-    title 개발 도구 역량 비교 매트릭스
-    x-axis 낮음 --> 높음: 개발 환경 통합도
-    y-axis 낮음 --> 높음: 컨텍스트 지속성
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
+graph TB
+    subgraph comparison [" "]
+        direction TB
+        
+        subgraph high_integration ["높은 통합도"]
+            direction LR
+            CC["Claude Code<br/><small>통합 AI 플랫폼</small><br/>전체 프로젝트 컨텍스트<br/>지속적 세션 유지"]
+            VS["VS Code<br/><small>전문 개발 도구</small><br/>강력한 IDE 기능<br/>제한적 AI 기능"]
+            CU["Cursor<br/><small>AI 강화 에디터</small><br/>중간 수준 통합<br/>향상된 컨텍스트"]
+        end
+        
+        subgraph low_integration ["낮은 통합도"]
+            direction LR
+            CG["ChatGPT<br/><small>기본 AI 도구</small><br/>웹 기반 대화<br/>컨텍스트 분리"]
+            CP["GitHub Copilot<br/><small>코드 완성 도구</small><br/>인라인 제안<br/>파일 단위 컨텍스트"]
+        end
+        
+        high_integration -.-> low_integration
+    end
     
-    quadrant-1 전문 개발 도구
-    quadrant-2 통합 AI 플랫폼 
-    quadrant-3 기본 AI 도구
-    quadrant-4 특화 개발 도구
+    classDef leader fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#0f172a
+    classDef advanced fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef basic fill:#f8fafc,stroke:#64748b,stroke-width:1px,color:#64748b
     
-    ChatGPT: [0.2, 0.1]
-    GitHub Copilot: [0.6, 0.3]
-    Claude Code: [0.9, 0.9]
-    VS Code: [0.8, 0.2]
-    Cursor: [0.7, 0.6]
+    class CC leader
+    class VS,CU advanced
+    class CG,CP basic
 ```
 
 | 특징 | ChatGPT | Claude Code |
@@ -311,26 +326,43 @@ claude "사용자 인증 기능을 만들어줘. React 프론트엔드, Node.js 
 Claude Code는 단순한 도구가 아닙니다. 이는 개발 방식의 패러다임 전환입니다.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#ffffff", "primaryTextColor": "#2d3748", "secondaryColor": "#f7fafc"}}}%%
-sankey-beta
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8"}}}%%
+flowchart LR
+    subgraph before ["전통적 개발 방식"]
+        direction TB
+        A1["개발자가 모든 세부사항을<br/>직접 구현"]
+        A2["반복적인 작업에<br/>시간 소모"]
+        A3["새로운 기술 학습에<br/>높은 진입 장벽"]
+        A4["느린 프로토타이핑<br/>사이클"]
+    end
     
-    "전통적 개발 방식",개발자 중심 작업,500
-    "전통적 개발 방식",반복 작업 중심,300
-    "전통적 개발 방식",높은 학습 부담,200
+    subgraph transition ["전환점"]
+        T["Claude Code<br/>도입"]
+    end
     
-    개발자 중심 작업,"Claude Code 도입",300
-    반복 작업 중심,"Claude Code 도입",200
-    높은 학습 부담,"Claude Code 도입",100
+    subgraph after ["혁신적 개발 문화"]
+        direction TB
+        B1["개발자는 '무엇을'<br/>만들지에 집중"]
+        B2["AI가 '어떻게'<br/>구현할지를 도움"]
+        B3["빠른 실험과<br/>검증 가능"]
+        B4["지속적인 학습과<br/>성장"]
+    end
     
-    "Claude Code 도입",전략적 사고 중심,400
-    "Claude Code 도입",AI 협업 중심,350
-    "Claude Code 도입",빠른 실험,250
-    "Claude Code 도입",지속적 성장,200
+    before --> transition
+    transition --> after
     
-    전략적 사고 중심,"혁신적 개발 문화",400
-    AI 협업 중심,"혁신적 개발 문화",350
-    빠른 실험,"혁신적 개발 문화",250
-    지속적 성장,"혁신적 개발 문화",200
+    A1 -.->|변화| B1
+    A2 -.->|자동화| B2
+    A3 -.->|가속화| B3
+    A4 -.->|최적화| B4
+    
+    classDef beforeStyle fill:#f8fafc,stroke:#64748b,stroke-width:1px,color:#64748b
+    classDef afterStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef transitionStyle fill:#f1f5f9,stroke:#475569,stroke-width:3px,color:#0f172a
+    
+    class A1,A2,A3,A4 beforeStyle
+    class B1,B2,B3,B4 afterStyle
+    class T transitionStyle
 ```
 
 다음 장에서는 Claude Code를 실제로 설치하고 첫 번째 명령을 실행해보겠습니다. AI와 함께하는 개발의 새로운 여정을 시작해보겠습니다.
