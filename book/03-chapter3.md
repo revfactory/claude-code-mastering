@@ -28,8 +28,8 @@ flowchart TD
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph LR
     subgraph structure ["Claude Code 명령어 구조"]
-        A["claude<br/><small>기본 명령어</small>"] --> B["[옵션]<br/><small>동작 방식 제어 플래그</small>"]
-        B --> C["[명령/질문]<br/><small>자연어로 작성하는 요청</small>"]
+        A["claude<br/>기본 명령어"] --> B["[옵션]<br/>동작 방식 제어 플래그"]
+        B --> C["[명령/질문]<br/>자연어로 작성하는 요청"]
     end
     
     classDef commandStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
@@ -113,10 +113,10 @@ claude "버그를 찾아서 수정하고, 테스트도 작성한 다음, 커밋 
 flowchart TD
     A["전체 구조 파악 전략"]
     
-    A --> B["프로젝트 개요 파악<br/><small>• 구조 트리 시각화<br/>• 기술 스택 분석</small>"]
-    A --> C["핵심 디렉토리 탐색<br/><small>• src 폴더 상세 분석<br/>• 설정 파일 분류</small>"]
-    A --> D["파일 패턴 분석<br/><small>• 파일 타입별 그룹핑<br/>• 테스트 구조 파악</small>"]
-    A --> E["최근 활동 추적<br/><small>• 변경사항 분석<br/>• 핵심 로직 위치 파악</small>"]
+    A --> B["프로젝트 개요 파악<br/>• 구조 트리 시각화<br/>• 기술 스택 분석"]
+    A --> C["핵심 디렉토리 탐색<br/>• src 폴더 상세 분석<br/>• 설정 파일 분류"]
+    A --> D["파일 패턴 분석<br/>• 파일 타입별 그룹핑<br/>• 테스트 구조 파악"]
+    A --> E["최근 활동 추적<br/>• 변경사항 분석<br/>• 핵심 로직 위치 파악"]
     
     classDef strategyStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
     classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
@@ -406,9 +406,9 @@ claude "프로젝트의 PR 템플릿에 맞춰서 설명을 작성해줘"
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph TB
     subgraph goals ["프로젝트 목표"]
-        A["모던한 기술 스택 활용<br/><small>React, TypeScript, Vite</small>"]
-        B["완성도 높은 사용자 경험 제공<br/><small>반응형, 접근성, 애니메이션</small>"]
-        C["전체 개발 주기 경험<br/><small>테스트와 배포까지</small>"]
+        A["모던한 기술 스택 활용<br/>React, TypeScript, Vite"]
+        B["완성도 높은 사용자 경험 제공<br/>반응형, 접근성, 애니메이션"]
+        C["전체 개발 주기 경험<br/>테스트와 배포까지"]
     end
     
     classDef goalStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
@@ -421,11 +421,11 @@ graph TB
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 flowchart TD
-    A["1단계: 프로젝트 설정<br/><small>React, TypeScript, Vite 구성</small>"] --> B["2단계: 컴포넌트 개발<br/><small>타입 정의, UI 컴포넌트 생성</small>"]
-    B --> C["3단계: 상태 관리<br/><small>Context API, 커스텀 훅</small>"]
-    C --> D["4단계: 스타일링<br/><small>Tailwind CSS, 반응형, 접근성</small>"]
-    D --> E["5단계: 테스트<br/><small>유닛 테스트, 통합 테스트</small>"]
-    E --> F["6단계: 배포 준비<br/><small>빌드 최적화, CI/CD, 모니터링</small>"]
+    A["1단계: 프로젝트 설정<br/>React, TypeScript, Vite 구성"] --> B["2단계: 컴포넌트 개발<br/>타입 정의, UI 컴포넌트 생성"]
+    B --> C["3단계: 상태 관리<br/>Context API, 커스텀 훅"]
+    C --> D["4단계: 스타일링<br/>Tailwind CSS, 반응형, 접근성"]
+    D --> E["5단계: 테스트<br/>유닛 테스트, 통합 테스트"]
+    E --> F["6단계: 배포 준비<br/>빌드 최적화, CI/CD, 모니터링"]
     
     classDef stepStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
     classDef currentStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b

@@ -3,7 +3,7 @@
 > "가장 좋은 학습은 실제 경험에서 나온다" - 존 듀이
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 mindmap
   root((조직별 활용 사례))
     개발 조직
@@ -79,7 +79,7 @@ Claude Code는 단순한 개발 도구를 넘어서 조직 전반의 문제 해�
 데이터 인프라 팀은 전사 데이터 파이프라인의 구축과 운영을 담당하며, Claude Code를 통해 복잡한 인프라 관리를 혁신적으로 개선했습니다. 특히 장애 대응과 운영 자동화 영역에서 놀라운 성과를 달성했습니다.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 flowchart TD
     A[데이터 인프라 팀] --> B[지능형 장애 진단]
     A --> C[자연어 워크플로우]
@@ -1229,7 +1229,7 @@ claude "실험 결과를 체계적으로 기록하는 템플릿을 만들어줘:
 ### 법무 특화 도구 개발
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 flowchart TD
     A[법무팀 디지털 혁신] --> B[개인용 접근성 도구]
     A --> C[전화 트리 시뮬레이션]
@@ -1341,7 +1341,7 @@ Gmail 자동화:
 ### 시각 중심 프로토타이핑
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 flowchart LR
     A[손그림 스케치] --> B[요구사항 분석]
     B --> C[레이아웃 구조 설계]
@@ -1483,7 +1483,7 @@ claude "아직 완벽하지 않지만 팀원들과 공유할 수 있는
 ### 활용 성숙도별 패턴
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TD
     subgraph maturity [성숙도 단계]
         A[초급: 도구 활용] --> B[중급: 워크플로우 통합]
@@ -1509,10 +1509,10 @@ graph TD
     end
     
     subgraph outcomes [성과 지표]
-        M[시간 절약<br/><small>30-50%</small>]
-        N[품질 향상<br/><small>에러 80% 감소</small>]
-        O[혁신 가속<br/><small>실험 주기 단축</small>]
-        P[문화 변화<br/><small>AI 네이티브 조직</small>]
+        M[시간 절약<br/>30-50%]
+        N[품질 향상<br/>에러 80% 감소]
+        O[혁신 가속<br/>실험 주기 단축]
+        P[문화 변화<br/>AI 네이티브 조직]
     end
     
     D --> M
@@ -1586,11 +1586,11 @@ claude "AI와 인간이 협업하는 새로운 업무 방식을 설계해줘.
 **2. 팀 내 확산 전략**
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TD
     subgraph adoption [확산 전략]
-        A[1단계: 얼리 어답터<br/><small>1-2명</small>] --> B[2단계: 점진적 확산<br/><small>팀의 50%</small>]
-        B --> C[3단계: 전체 도입<br/><small>팀의 100%</small>]
+        A[1단계: 얼리 어답터<br/>1-2명] --> B[2단계: 점진적 확산<br/>팀의 50%]
+        B --> C[3단계: 전체 도입<br/>팀의 100%]
     end
     
     subgraph early [얼리 어답터 단계]

@@ -50,10 +50,10 @@ Claude Code Action은 GitHub의 웹훅 시스템과 Claude AI의 추론 능력�
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 flowchart LR
-    A[GitHub 이벤트<br/><small>PR/Issue</small>] --> B[Action 트리거<br/><small>Context 수집</small>]
-    B --> C[Claude AI 분석<br/><small>의도 파악</small>]
-    C --> D[코드 변경<br/><small>실행 계획</small>]
-    D --> E[GitHub 업데이트<br/><small>결과 반영</small>]
+    A[GitHub 이벤트<br/>PR/Issue] --> B[Action 트리거<br/>Context 수집]
+    B --> C[Claude AI 분석<br/>의도 파악]
+    C --> D[코드 변경<br/>실행 계획]
+    D --> E[GitHub 업데이트<br/>결과 반영]
     
     classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
     classDef actionStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
@@ -239,21 +239,21 @@ graph TD
     A --> D[실행 권한 제한]
     A --> E[컨텍스트 범위 제한]
     
-    B --> B1[PR 승인 불가<br/><small>보안상 승인 권한 없음</small>]
-    B --> B2[공식 리뷰 제출 불가<br/><small>GitHub 리뷰 시스템 제한</small>]
-    B --> B3[복수 댓글 작성 불가<br/><small>단일 댓글 업데이트만 가능</small>]
+    B --> B1[PR 승인 불가<br/>보안상 승인 권한 없음]
+    B --> B2[공식 리뷰 제출 불가<br/>GitHub 리뷰 시스템 제한]
+    B --> B3[복수 댓글 작성 불가<br/>단일 댓글 업데이트만 가능]
     
-    C --> C1[다른 저장소 접근 불가<br/><small>트리거된 저장소만 접근</small>]
-    C --> C2[조직 정보 접근 불가<br/><small>조직 전체 권한 제한</small>]
-    C --> C3[외부 시스템 연동 제한<br/><small>MCP 서버 설정 필요</small>]
+    C --> C1[다른 저장소 접근 불가<br/>트리거된 저장소만 접근]
+    C --> C2[조직 정보 접근 불가<br/>조직 전체 권한 제한]
+    C --> C3[외부 시스템 연동 제한<br/>MCP 서버 설정 필요]
     
-    D --> D1[임의 명령어 실행 불가<br/><small>allowed_tools 명시 필요</small>]
-    D --> D2[시스템 수준 변경 차단<br/><small>민감한 작업 제한</small>]
-    D --> D3[강제 푸시 불가<br/><small>Git 히스토리 보호</small>]
+    D --> D1[임의 명령어 실행 불가<br/>allowed_tools 명시 필요]
+    D --> D2[시스템 수준 변경 차단<br/>민감한 작업 제한]
+    D --> D3[강제 푸시 불가<br/>Git 히스토리 보호]
     
-    E --> E1[CI/CD 로그 접근 불가<br/><small>별도 통합 설정 필요</small>]
-    E --> E2[빌드 상태 확인 제한<br/><small>MCP를 통한 우회 필요</small>]
-    E --> E3[실시간 모니터링 불가<br/><small>스냅샷 기반 작업</small>]
+    E --> E1[CI/CD 로그 접근 불가<br/>별도 통합 설정 필요]
+    E --> E2[빌드 상태 확인 제한<br/>MCP를 통한 우회 필요]
+    E --> E3[실시간 모니터링 불가<br/>스냅샷 기반 작업]
     
     classDef limitStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
     classDef categoryStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b

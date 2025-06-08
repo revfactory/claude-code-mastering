@@ -49,9 +49,9 @@ EPCC(Explore-Plan-Code-Commit) 워크플로우는 체계적이고 반복 가능�
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 flowchart TD
-    A[Explore<br/><small>코드베이스 이해</small>] --> B[Plan<br/><small>접근 방법 설계</small>]
-    B --> C[Code<br/><small>구현 및 테스트</small>]
-    C --> D[Commit<br/><small>검증 및 커밋</small>]
+    A[Explore<br/>코드베이스 이해] --> B[Plan<br/>접근 방법 설계]
+    B --> C[Code<br/>구현 및 테스트]
+    C --> D[Commit<br/>검증 및 커밋]
     D --> A
     
     E[체계적 분석<br/>아키텍처 파악<br/>기술 부채 식별] -.-> A
@@ -222,8 +222,8 @@ TDD의 Red-Green-Refactor 사이클은 코드 품질과 설계의 점진적 개�
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 flowchart LR
-    A[Red<br/><small>실패하는 테스트 작성</small>] --> B[Green<br/><small>최소 구현으로 통과</small>]
-    B --> C[Refactor<br/><small>코드 품질 개선</small>]
+    A[Red<br/>실패하는 테스트 작성] --> B[Green<br/>최소 구현으로 통과]
+    B --> C[Refactor<br/>코드 품질 개선]
     C --> A
     
     subgraph activities [TDD 활동]

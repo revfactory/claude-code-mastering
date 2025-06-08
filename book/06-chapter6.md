@@ -3,7 +3,7 @@
 > "언어는 사고를 형성한다" - 벤자민 리 워프
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 mindmap
   root((학습 목표))
     전략 수립
@@ -902,22 +902,22 @@ claude "Java 애플리케이션의 성능을 프로파일링하고 최적화해�
 ```
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TD
-    A[src/main/java/com/company/app/] --> B[config/<br/><small>Spring 설정 클래스</small>]
-    A --> C[domain/<br/><small>비즈니스 영역</small>]
-    A --> D[infrastructure/<br/><small>외부 시스템 연동</small>]
-    A --> E[presentation/<br/><small>컨트롤러와 DTO</small>]
-    A --> F[shared/<br/><small>공통 유틸리티</small>]
-    A --> G[security/<br/><small>보안 설정</small>]
+    A[src/main/java/com/company/app/] --> B[config/<br/>Spring 설정 클래스]
+    A --> C[domain/<br/>비즈니스 영역]
+    A --> D[infrastructure/<br/>외부 시스템 연동]
+    A --> E[presentation/<br/>컨트롤러와 DTO]
+    A --> F[shared/<br/>공통 유틸리티]
+    A --> G[security/<br/>보안 설정]
     
-    C --> H[model/<br/><small>도메인 모델</small>]
-    C --> I[service/<br/><small>비즈니스 서비스</small>]
-    C --> J[repository/<br/><small>데이터 액세스</small>]
+    C --> H[model/<br/>도메인 모델]
+    C --> I[service/<br/>비즈니스 서비스]
+    C --> J[repository/<br/>데이터 액세스]
     
-    K[resources/] --> L[application.yml<br/><small>환경별 설정</small>]
-    K --> M[logback.xml<br/><small>로깅 설정</small>]
-    K --> N[schema.sql<br/><small>데이터베이스 스키마</small>]
+    K[resources/] --> L[application.yml<br/>환경별 설정]
+    K --> M[logback.xml<br/>로깅 설정]
+    K --> N[schema.sql<br/>데이터베이스 스키마]
     
     classDef configStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
     classDef domainStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
@@ -1324,19 +1324,19 @@ Go는 단순함과 성능을 동시에 추구하는 언어로, 명시적이고 �
 Go 프로젝트의 성공은 명확한 패키지 구조와 의존성 관리에서 시작됩니다. Claude Code는 Go 커뮤니티의 표준 프로젝트 레이아웃과 Clean Architecture 원칙을 적용한 구조를 제안할 수 있습니다.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TD
-    A[Go 프로젝트 구조] --> B[cmd/<br/><small>메인 애플리케이션<br/>진입점과 실행 파일</small>]
-    A --> C[internal/<br/><small>내부 패키지<br/>외부에서 import 불가</small>]
-    A --> D[pkg/<br/><small>공개 패키지<br/>외부에서 사용 가능</small>]
-    A --> E[api/<br/><small>API 정의<br/>OpenAPI, gRPC 스키마</small>]
-    A --> F[web/<br/><small>웹 애플리케이션<br/>정적 파일, 템플릿</small>]
-    A --> G[configs/<br/><small>설정 파일<br/>환경별 구성</small>]
+    A[Go 프로젝트 구조] --> B[cmd/<br/>메인 애플리케이션<br/>진입점과 실행 파일]
+    A --> C[internal/<br/>내부 패키지<br/>외부에서 import 불가]
+    A --> D[pkg/<br/>공개 패키지<br/>외부에서 사용 가능]
+    A --> E[api/<br/>API 정의<br/>OpenAPI, gRPC 스키마]
+    A --> F[web/<br/>웹 애플리케이션<br/>정적 파일, 템플릿]
+    A --> G[configs/<br/>설정 파일<br/>환경별 구성]
     
-    C --> H[handler/<br/><small>HTTP 핸들러</small>]
-    C --> I[service/<br/><small>비즈니스 로직</small>]
-    C --> J[repository/<br/><small>데이터 저장소</small>]
-    C --> K[domain/<br/><small>도메인 모델</small>]
+    C --> H[handler/<br/>HTTP 핸들러]
+    C --> I[service/<br/>비즈니스 로직]
+    C --> J[repository/<br/>데이터 저장소]
+    C --> K[domain/<br/>도메인 모델]
     
     classDef publicStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
     classDef internalStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
@@ -1535,14 +1535,14 @@ claude "이 프로젝트의 요구사항을 분석하고,
 ### 언어별 적합한 도메인
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph LR
     subgraph languages [언어별 전문 분야]
-        A[Python<br/><small>데이터 과학, AI/ML<br/>스크립팅</small>] 
-        B[JavaScript/TS<br/><small>웹 개발<br/>풀스택</small>]
-        C[Go<br/><small>마이크로서비스<br/>DevOps</small>]
-        D[Rust<br/><small>시스템 프로그래밍<br/>WebAssembly</small>]
-        E[Java/Kotlin<br/><small>엔터프라이즈<br/>Android</small>]
+        A[Python<br/>데이터 과학, AI/ML<br/>스크립팅] 
+        B[JavaScript/TS<br/>웹 개발<br/>풀스택]
+        C[Go<br/>마이크로서비스<br/>DevOps]
+        D[Rust<br/>시스템 프로그래밍<br/>WebAssembly]
+        E[Java/Kotlin<br/>엔터프라이즈<br/>Android]
     end
     
     subgraph strengths [핵심 강점]
@@ -1573,7 +1573,7 @@ graph LR
 ### 핵심 원칙 요약
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 mindmap
   root((핵심 원칙))
     언어 철학 존중

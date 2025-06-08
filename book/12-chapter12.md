@@ -54,11 +54,11 @@ Claude Code의 진정한 혁신적 가치는 개인의 코딩 역량 향상을 �
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph TD
-    A[조직 성숙도 평가] --> B[레벨 1: 기초<br/><small>개별 작업 중심<br/>표준화 부족</small>]
-    A --> C[레벨 2: 발전<br/><small>팀워크 시작<br/>일부 자동화</small>]
-    A --> D[레벨 3: 성숙<br/><small>체계적 프로세스<br/>품질 관리</small>]
-    A --> E[레벨 4: 최적화<br/><small>데이터 기반 의사결정<br/>고도 자동화</small>]
-    A --> F[레벨 5: 혁신<br/><small>지속적 학습 문화<br/>AI-native 워크플로우</small>]
+    A[조직 성숙도 평가] --> B[레벨 1: 기초<br/>개별 작업 중심<br/>표준화 부족]
+    A --> C[레벨 2: 발전<br/>팀워크 시작<br/>일부 자동화]
+    A --> D[레벨 3: 성숙<br/>체계적 프로세스<br/>품질 관리]
+    A --> E[레벨 4: 최적화<br/>데이터 기반 의사결정<br/>고도 자동화]
+    A --> F[레벨 5: 혁신<br/>지속적 학습 문화<br/>AI-native 워크플로우]
     
     B --> G[개인 역량 강화 우선<br/>개발 속도 50% 향상]
     C --> H[팀 규칙과 워크플로우<br/>코드 품질 균일성 80%]
@@ -626,10 +626,10 @@ flowchart TD
     G --> H[역할별 전문 리뷰]
     
     subgraph specialists [전문가 리뷰 체계]
-        I[보안 전문가<br/><small>Security Champion</small>]
-        J[성능 전문가<br/><small>Performance Specialist</small>]
-        K[아키텍처 전문가<br/><small>Architecture Guardian</small>]
-        L[UX 전문가<br/><small>User Experience Advocate</small>]
+        I[보안 전문가<br/>Security Champion]
+        J[성능 전문가<br/>Performance Specialist]
+        K[아키텍처 전문가<br/>Architecture Guardian]
+        L[UX 전문가<br/>User Experience Advocate]
     end
     
     H --> I
@@ -781,7 +781,7 @@ graph LR
     end
     
     subgraph outcomes [리뷰 결과]
-        Q[심각도 평가<br/><small>Critical/High/Medium/Low</small>]
+        Q[심각도 평가<br/>Critical/High/Medium/Low]
         R[개선 방안 제시]
         S[우선순위 및 로드맵]
         T[학습 리소스 추천]
@@ -1288,25 +1288,25 @@ claude "우리 팀을 위한 차세대 기술 문서 시스템을 설계해줘:
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph TB
     subgraph exchange [지식 거래소]
-        A[팀 A<br/><small>프론트엔드 전문</small>]
-        B[팀 B<br/><small>백엔드 전문</small>]
-        C[팀 C<br/><small>데이터 전문</small>]
-        D[팀 D<br/><small>DevOps 전문</small>]
-        E[팀 E<br/><small>모바일 전문</small>]
+        A[팀 A<br/>프론트엔드 전문]
+        B[팀 B<br/>백엔드 전문]
+        C[팀 C<br/>데이터 전문]
+        D[팀 D<br/>DevOps 전문]
+        E[팀 E<br/>모바일 전문]
     end
     
     subgraph platform [지식 교환 플랫폼]
-        F[멘토링 요청<br/><small>전문성 매칭</small>]
-        G[기술 컸설팅<br/><small>크로스 팀 지원</small>]
-        H[베스트 프랙티스<br/><small>경험 공유</small>]
-        I[실패 사례<br/><small>익명 학습</small>]
+        F[멘토링 요청<br/>전문성 매칭]
+        G[기술 컸설팅<br/>크로스 팀 지원]
+        H[베스트 프랙티스<br/>경험 공유]
+        I[실패 사례<br/>익명 학습]
     end
     
     subgraph events [기술 쇼케이스 이벤트]
-        J[월간 Tech Talk<br/><small>자동 기획</small>]
-        K[혁신 프로젝트<br/><small>데모 데이</small>]
-        L[코드 리뷰<br/><small>라이브 세션</small>]
-        M[문제 해결<br/><small>협업 워크샵</small>]
+        J[월간 Tech Talk<br/>자동 기획]
+        K[혁신 프로젝트<br/>데모 데이]
+        L[코드 리뷰<br/>라이브 세션]
+        M[문제 해결<br/>협업 워크샵]
     end
     
     subgraph gamification [게임화 요소]

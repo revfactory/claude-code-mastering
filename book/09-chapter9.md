@@ -53,9 +53,9 @@ graph TD
     A --> C[컨텍스트 분석]
     A --> D[전략 수립]
     
-    B --> E[Production<br/><small>최고 품질 모델</small>]
-    B --> F[Staging<br/><small>표준 검증</small>]
-    B --> G[Development<br/><small>빠른 피드백</small>]
+    B --> E[Production<br/>최고 품질 모델]
+    B --> F[Staging<br/>표준 검증]
+    B --> G[Development<br/>빠른 피드백]
     
     C --> H[프로젝트 규모]
     C --> I[기술 스택]
@@ -262,11 +262,11 @@ graph LR
     end
     
     subgraph analysis [병렬 분석 엔진]
-        D[Security Scan<br/><small>OWASP, SANS</small>]
-        E[Performance Analysis<br/><small>복잡도, 메모리</small>]
-        F[Architecture Review<br/><small>SOLID, 패턴</small>]
-        G[Testing Coverage<br/><small>커버리지, 품질</small>]
-        H[Documentation<br/><small>API, 가이드</small>]
+        D[Security Scan<br/>OWASP, SANS]
+        E[Performance Analysis<br/>복잡도, 메모리]
+        F[Architecture Review<br/>SOLID, 패턴]
+        G[Testing Coverage<br/>커버리지, 품질]
+        H[Documentation<br/>API, 가이드]
     end
     
     subgraph integration [통합 및 결과]

@@ -3,7 +3,7 @@
 > "병렬로 일하되, 동시에 생각하라" - 소프트웨어 아키텍처 원칙
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 mindmap
   root((학습 목표))
     멀티 인스턴스 관리
@@ -49,20 +49,20 @@ mindmap
 효과적인 멀티 인스턴스 전략은 단순한 작업 분할을 넘어서 각 인스턴스의 전문성과 상호 보완성을 고려한 체계적 설계가 필요합니다:
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TD
     subgraph core [핵심 개발 영역]
-        A[Frontend Studio<br/><small>인스턴스 #1<br/>UX/UI 전문가</small>] 
-        B[Backend Engine<br/><small>인스턴스 #2<br/>시스템 아키텍트</small>]
+        A[Frontend Studio<br/>인스턴스 #1<br/>UX/UI 전문가] 
+        B[Backend Engine<br/>인스턴스 #2<br/>시스템 아키텍트]
     end
     
     subgraph ops [운영 및 품질 관리]
-        C[DevOps Pipeline<br/><small>인스턴스 #3<br/>클라우드 네이티브 전문가</small>]
-        D[QA & Monitoring<br/><small>인스턴스 #4<br/>품질 보증 전문가</small>]
+        C[DevOps Pipeline<br/>인스턴스 #3<br/>클라우드 네이티브 전문가]
+        D[QA & Monitoring<br/>인스턴스 #4<br/>품질 보증 전문가]
     end
     
     subgraph integration [통합 관리]
-        E[Integration Hub<br/><small>인스턴스 #5<br/>아키텍처 조정자</small>]
+        E[Integration Hub<br/>인스턴스 #5<br/>아키텍처 조정자]
     end
     
     A <--> B
@@ -415,14 +415,14 @@ echo "Feature branch 'feature/$FEATURE_NAME' created in $WORKTREE_PATH"
 ### 서비스별 개발 환경 분리
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph TB
     subgraph project [마이크로서비스 프로젝트 구조]
-        A[user-service<br/><small>Terminal 1<br/>사용자 관리</small>]
-        B[product-service<br/><small>Terminal 2<br/>상품 관리</small>]
-        C[order-service<br/><small>Terminal 3<br/>주문 처리</small>]
-        D[payment-service<br/><small>Terminal 4<br/>결제 처리</small>]
-        E[api-gateway<br/><small>Terminal 5<br/>통합 관리</small>]
+        A[user-service<br/>Terminal 1<br/>사용자 관리]
+        B[product-service<br/>Terminal 2<br/>상품 관리]
+        C[order-service<br/>Terminal 3<br/>주문 처리]
+        D[payment-service<br/>Terminal 4<br/>결제 처리]
+        E[api-gateway<br/>Terminal 5<br/>통합 관리]
     end
     
     subgraph terminals [병렬 개발 환경]
@@ -585,21 +585,21 @@ ecommerce/
 **팀 구성과 인스턴스 배치**
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}, "flowchart": {"htmlLabels": false, "useMaxWidth": false}}}%%
 graph LR
     subgraph devA [개발자 A: 프론트엔드]
-        A1[Terminal A1<br/><small>Frontend 개발<br/>React + TypeScript</small>]
-        A2[Terminal A2<br/><small>Mobile App 개발<br/>React Native</small>]
+        A1[Terminal A1<br/>Frontend 개발<br/>React + TypeScript]
+        A2[Terminal A2<br/>Mobile App 개발<br/>React Native]
     end
     
     subgraph devB [개발자 B: 백엔드]
-        B1[Terminal B1<br/><small>Backend API 개발<br/>Node.js + Express</small>]
-        B2[Terminal B2<br/><small>Infrastructure 관리<br/>Docker + K8s</small>]
+        B1[Terminal B1<br/>Backend API 개발<br/>Node.js + Express]
+        B2[Terminal B2<br/>Infrastructure 관리<br/>Docker + K8s]
     end
     
     subgraph devC [개발자 C: 관리 및 품질]
-        C1[Terminal C1<br/><small>Admin Panel 개발<br/>Next.js + Dashboard</small>]
-        C2[Terminal C2<br/><small>전체 테스트 및 QA<br/>Jest + Cypress</small>]
+        C1[Terminal C1<br/>Admin Panel 개발<br/>Next.js + Dashboard]
+        C2[Terminal C2<br/>전체 테스트 및 QA<br/>Jest + Cypress]
     end
     
     subgraph shared [공유 리소스]

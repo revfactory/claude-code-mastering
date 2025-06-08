@@ -122,17 +122,17 @@ fix(api): 사용자 조회 시 null 참조 오류 수정
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph LR
     subgraph readme ["README.md"]
-        A1["대상: 사람<br/><small>개발자, 사용자</small>"]
-        A2["목적: 프로젝트 소개<br/><small>사용 가이드</small>"]
-        A3["내용: 설치 방법<br/><small>API 문서, 예제</small>"]
-        A4["형식: 사용자 친화적<br/><small>설명 중심</small>"]
+        A1["대상: 사람<br/>개발자, 사용자"]
+        A2["목적: 프로젝트 소개<br/>사용 가이드"]
+        A3["내용: 설치 방법<br/>API 문서, 예제"]
+        A4["형식: 사용자 친화적<br/>설명 중심"]
     end
     
     subgraph claude ["CLAUDE.md"]
-        B1["대상: Claude Code<br/><small>AI 어시스턴트</small>"]
-        B2["목적: 작업 지침<br/><small>컨텍스트 제공</small>"]
-        B3["내용: 코딩 규칙<br/><small>아키텍처, 팀 컨벤션</small>"]
-        B4["형식: 구조화된<br/><small>AI 이해 최적화</small>"]
+        B1["대상: Claude Code<br/>AI 어시스턴트"]
+        B2["목적: 작업 지침<br/>컨텍스트 제공"]
+        B3["내용: 코딩 규칙<br/>아키텍처, 팀 컨벤션"]
+        B4["형식: 구조화된<br/>AI 이해 최적화"]
     end
     
     A1 -.->|vs| B1
@@ -275,11 +275,11 @@ export const userprofile = () => { }
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 flowchart TD
-    A["Import 순서"] --> B["1. React 관련<br/><small>React, useState, useEffect</small>"]
-    B --> C["2. 외부 라이브러리<br/><small>axios, lodash, moment</small>"]
-    C --> D["3. 내부 모듈<br/><small>@/constants, @/services</small>"]
-    D --> E["4. 상대 경로 import<br/><small>../components, ./utils</small>"]
-    E --> F["5. 스타일 파일<br/><small>CSS, SCSS 파일</small>"]
+    A["Import 순서"] --> B["1. React 관련<br/>React, useState, useEffect"]
+    B --> C["2. 외부 라이브러리<br/>axios, lodash, moment"]
+    C --> D["3. 내부 모듈<br/>@/constants, @/services"]
+    D --> E["4. 상대 경로 import<br/>../components, ./utils"]
+    E --> F["5. 스타일 파일<br/>CSS, SCSS 파일"]
     
     classDef importStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
     classDef rootStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
@@ -314,10 +314,10 @@ import './styles.css';
 %%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
 graph TB
     subgraph rules ["함수 작성 규칙"]
-        A["한 가지 일만 수행<br/><small>Single Responsibility</small>"]
-        B["함수 길이 50줄 이하<br/><small>가독성 향상</small>"]
-        C["매개변수 3개 이하<br/><small>복잡성 감소</small>"]
-        D["복잡도 10 이하<br/><small>Cyclomatic Complexity</small>"]
+        A["한 가지 일만 수행<br/>Single Responsibility"]
+        B["함수 길이 50줄 이하<br/>가독성 향상"]
+        C["매개변수 3개 이하<br/>복잡성 감소"]
+        D["복잡도 10 이하<br/>Cyclomatic Complexity"]
     end
     
     classDef ruleStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
