@@ -6,13 +6,21 @@
 
 CLAUDE.md는 Claude Code가 프로젝트의 컨텍스트를 이해하고, 팀의 코딩 규칙을 준수하며, 일관된 품질의 코드를 생성하도록 돕는 핵심 도구입니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["CLAUDE.md의 역할과 중요성"] --> B["프로젝트 구조 및 아키텍처 문서화"]
+    B --> C["코딩 스타일 가이드 정의"]
+    C --> D["개발 환경 자동화 설정"]
+    D --> E["팀 협업을 위한 규칙 수립"]
+    E --> F["실전 프로젝트 예제와 최적화 전략"]
+    
+    classDef chapterStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D,E,F chapterStyle
+```
+
 **이 장에서 다룰 내용:**
-1. CLAUDE.md의 역할과 중요성
-2. 프로젝트 구조 및 아키텍처 문서화
-3. 코딩 스타일 가이드 정의
-4. 개발 환경 자동화 설정
-5. 팀 협업을 위한 규칙 수립
-6. 실전 프로젝트 예제와 최적화 전략
 
 ## 4.1 CLAUDE.md의 역할과 중요성
 
@@ -20,10 +28,25 @@ CLAUDE.md는 Claude Code가 프로젝트의 컨텍스트를 이해하고, 팀의
 
 CLAUDE.md는 프로젝트 루트 디렉토리에 위치하는 특별한 마크다운 파일입니다. 이 파일은 Claude Code에게 프로젝트별 지침과 규칙을 제공하여, 보다 정확하고 일관된 결과를 도출할 수 있게 합니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((CLAUDE.md 핵심 개념))
+    프로젝트 컨텍스트
+      고유한 특성 이해
+      비즈니스 도메인 파악
+      아키텍처 구조 인식
+    지속적 규칙 적용
+      세션 간 일관성 유지
+      스타일 가이드 준수
+      자동 규칙 검증
+    팀 지식 저장소
+      암묵적 지식 명시화
+      개발 경험 축적
+      베스트 프랙티스 공유
+```
+
 **CLAUDE.md의 핵심 개념:**
-- **프로젝트 컨텍스트**: AI가 프로젝트의 고유한 특성을 이해하도록 돕는 가이드북
-- **지속적 규칙 적용**: 매 세션마다 동일한 규칙과 스타일 유지
-- **팀 지식 저장소**: 개발 팀의 암묵적 지식을 명시적으로 문서화
 
 프로젝트 구조 예시:
 
@@ -95,15 +118,36 @@ fix(api): 사용자 조회 시 null 참조 오류 수정
 
 ### CLAUDE.md vs README.md
 
-두 파일의 차이점과 각각의 역할을 명확히 이해하는 것이 중요합니다:
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph readme ["README.md"]
+        A1["대상: 사람<br/><small>개발자, 사용자</small>"]
+        A2["목적: 프로젝트 소개<br/><small>사용 가이드</small>"]
+        A3["내용: 설치 방법<br/><small>API 문서, 예제</small>"]
+        A4["형식: 사용자 친화적<br/><small>설명 중심</small>"]
+    end
+    
+    subgraph claude ["CLAUDE.md"]
+        B1["대상: Claude Code<br/><small>AI 어시스턴트</small>"]
+        B2["목적: 작업 지침<br/><small>컨텍스트 제공</small>"]
+        B3["내용: 코딩 규칙<br/><small>아키텍처, 팀 컨벤션</small>"]
+        B4["형식: 구조화된<br/><small>AI 이해 최적화</small>"]
+    end
+    
+    A1 -.->|vs| B1
+    A2 -.->|vs| B2
+    A3 -.->|vs| B3
+    A4 -.->|vs| B4
+    
+    classDef readmeStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef claudeStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class A1,A2,A3,A4 readmeStyle
+    class B1,B2,B3,B4 claudeStyle
+```
 
-| 구분 | README.md | CLAUDE.md |
-|------|-----------|-----------|
-| **대상** | 사람 (개발자, 사용자) | Claude Code (AI 어시스턴트) |
-| **목적** | 프로젝트 소개 및 사용 가이드 | AI를 위한 작업 지침 및 컨텍스트 |
-| **내용** | 설치 방법, API 문서, 예제 | 코딩 규칙, 아키텍처, 팀 컨벤션 |
-| **형식** | 사용자 친화적 설명 | AI가 이해하기 쉬운 구조화된 형식 |
-| **업데이트** | 기능 변경 시 업데이트 | 개발 규칙 변경 시 업데이트 |
+두 파일의 차이점과 각각의 역할을 명확히 이해하는 것이 중요합니다:
 
 **실제 활용 예시:**
 
@@ -228,12 +272,23 @@ const maxretrycount = 3;
 export const userprofile = () => { }
 ```
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A["Import 순서"] --> B["1. React 관련<br/><small>React, useState, useEffect</small>"]
+    B --> C["2. 외부 라이브러리<br/><small>axios, lodash, moment</small>"]
+    C --> D["3. 내부 모듈<br/><small>@/constants, @/services</small>"]
+    D --> E["4. 상대 경로 import<br/><small>../components, ./utils</small>"]
+    E --> F["5. 스타일 파일<br/><small>CSS, SCSS 파일</small>"]
+    
+    classDef importStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef rootStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
+    
+    class A rootStyle
+    class B,C,D,E,F importStyle
+```
+
 ### Import 순서
-1. React 관련
-2. 외부 라이브러리
-3. 내부 모듈
-4. 상대 경로 import
-5. 스타일 파일
 
 ```typescript
 import React, { useState, useEffect } from 'react';
@@ -255,11 +310,22 @@ import './styles.css';
 ```markdown
 ## 코드 품질 기준
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph rules ["함수 작성 규칙"]
+        A["한 가지 일만 수행<br/><small>Single Responsibility</small>"]
+        B["함수 길이 50줄 이하<br/><small>가독성 향상</small>"]
+        C["매개변수 3개 이하<br/><small>복잡성 감소</small>"]
+        D["복잡도 10 이하<br/><small>Cyclomatic Complexity</small>"]
+    end
+    
+    classDef ruleStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D ruleStyle
+```
+
 ### 함수 작성 규칙
-- 함수는 한 가지 일만 수행
-- 함수 길이는 50줄 이하
-- 매개변수는 3개 이하
-- 복잡도(Cyclomatic Complexity) 10 이하
 
 ### 에러 처리
 ```typescript
