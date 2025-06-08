@@ -8,6 +8,9 @@ echo "📚 Claude Code 마스터하기 - 완전한 책 생성 시작..."
 # 출력 디렉토리 생성
 mkdir -p output/complete
 
+# CSS 파일을 루트에 복사 (상대 경로 참조를 위해)
+cp output/style.css ./style.css
+
 # 통합 마크다운 파일 생성
 COMPLETE_FILE="output/complete/claude-code-mastering-complete.md"
 
@@ -82,7 +85,7 @@ echo "🌐 HTML 생성 중..."
 pandoc "$COMPLETE_FILE" \
     --from markdown \
     --to html5 \
-    --css ../style.css \
+    --css style.css \
     --standalone \
     --toc \
     --toc-depth=3 \
