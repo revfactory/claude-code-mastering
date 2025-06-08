@@ -1,0 +1,46 @@
+# GitHub Pages 정적 사이트 배포 워크플로
+name: Deploy to GitHub Pages
+
+on:
+  # main 브랜치에 푸시될 때 자동 배포
+  push:
+    branches: [ "main" ]
+  
+  # 수동으로 워크플로 실행 가능
+  workflow_dispatch:
+
+# GitHub Pages에 배포할 권한 설정
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시 배포 방지 (하나씩 순차 실행)
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 정적 파일 빌드 및 배포
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 체크아웃
+        uses: actions/checkout@v4
+      
+      - name: GitHub Pages 설정
+        uses: actions/configure-pages@v4
+      
+      - name: 정적 파일 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 전체 저장소를 정적 사이트로 배포
+          path: '.'
+      
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4
