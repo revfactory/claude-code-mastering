@@ -2,6 +2,32 @@
 
 > "혼자 가면 빨리 갈 수 있지만, 함께 가면 멀리 갈 수 있다" - 아프리카 속담
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((팀 활용 목표))
+    도입 전략
+      조직 성숙도 평가
+      규모별 맞춤 접근
+      단계적 확산 모델
+      성과 측정 체계
+    협업 문화
+      AI-First 마인드셋
+      지식 공유 활성화
+      코드 리뷰 혁신
+      집단 지능 증폭
+    거버넌스
+      가이드라인 수립
+      품질 기준 정의
+      보안 정책 구축
+      규정 준수 관리
+    생산성 극대화
+      워크플로우 최적화
+      자동화 확대
+      병목 제거
+      혁신 가속화
+```
+
 ## 학습 목표
 
 이 장을 완료하면 다음을 할 수 있습니다:
@@ -24,6 +50,46 @@ Claude Code의 진정한 혁신적 가치는 개인의 코딩 역량 향상을 �
 ### 조직 성숙도 평가 프레임워크
 
 팀의 현재 상태를 객관적으로 평가하여 적절한 도입 전략을 선택하는 것이 중요합니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TD
+    A[조직 성숙도 평가] --> B[레벨 1: 기초<br/><small>개별 작업 중심<br/>표준화 부족</small>]
+    A --> C[레벨 2: 발전<br/><small>팀워크 시작<br/>일부 자동화</small>]
+    A --> D[레벨 3: 성숙<br/><small>체계적 프로세스<br/>품질 관리</small>]
+    A --> E[레벨 4: 최적화<br/><small>데이터 기반 의사결정<br/>고도 자동화</small>]
+    A --> F[레벨 5: 혁신<br/><small>지속적 학습 문화<br/>AI-native 워크플로우</small>]
+    
+    B --> G[개인 역량 강화 우선<br/>개발 속도 50% 향상]
+    C --> H[팀 규칙과 워크플로우<br/>코드 품질 균일성 80%]
+    D --> I[고급 자동화와 측정<br/>배포 주기 70% 단축]
+    E --> J[AI-native 워크플로우<br/>혁신 프로젝트 200% 증가]
+    F --> K[실험적 기술 도입<br/>산업 표준 창조]
+    
+    subgraph assessment [평가 영역]
+        L[코드 리뷰 문화]
+        M[CI/CD 자동화]
+        N[테스트 품질]
+        O[문서화 수준]
+        P[기술 표준화]
+        Q[팀 역량 편차]
+    end
+    
+    A -.-> L
+    A -.-> M
+    A -.-> N
+    A -.-> O
+    A -.-> P
+    A -.-> Q
+    
+    classDef levelStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef strategyStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef assessmentStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    
+    class B,C,D,E,F levelStyle
+    class G,H,I,J,K strategyStyle
+    class L,M,N,O,P,Q assessmentStyle
+```
 
 ```bash
 # 조직 성숙도 진단
@@ -50,6 +116,69 @@ claude "우리 팀의 개발 성숙도를 평가해줘.
 | **Level 5: 혁신** | 지속적 학습 문화 | 실험적 기술 도입 리더 | 산업 표준 창조 |
 
 ### 팀 규모별 도입 모델
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart LR
+    subgraph startup [스타트업 3-10명]
+        A[빠른 실험과 적응]
+        B[1주일 전체 온보딩]
+        C[MVP 개발 가속화]
+        D[기술 부채 최소화]
+        E[ROI 즉시 측정]
+    end
+    
+    subgraph growth [성장기 50-200명]
+        F[표준화와 확장성]
+        G[팀간 일관성 유지]
+        H[계층별 역할 정의]
+        I[교육 체계 구축]
+        J[성과 측정 체계]
+    end
+    
+    subgraph enterprise [대기업 1000명+]
+        K[거버넌스와 리스크 관리]
+        L[보안 컴플라이언스]
+        M[기존 도구 통합]
+        N[변화 관리]
+        O[글로벌 협업]
+    end
+    
+    subgraph outcomes [기대 성과]
+        P[개발 속도 향상]
+        Q[코드 품질 개선]
+        R[팀 협업 강화]
+        S[혁신 가속화]
+    end
+    
+    A --> P
+    B --> Q
+    C --> R
+    D --> S
+    E --> P
+    
+    F --> Q
+    G --> R
+    H --> S
+    I --> P
+    J --> Q
+    
+    K --> R
+    L --> S
+    M --> P
+    N --> Q
+    O --> R
+    
+    classDef startupStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef growthStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef enterpriseStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    classDef outcomeStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    
+    class A,B,C,D,E startupStyle
+    class F,G,H,I,J growthStyle
+    class K,L,M,N,O enterpriseStyle
+    class P,Q,R,S outcomeStyle
+```
 
 **스타트업 (3-10명): 빠른 실험과 적응**
 
@@ -96,6 +225,58 @@ claude "대기업 환경에서의 Claude Code 전사 도입 전략을 수립해�
 ### 고급 팀 헌장: AI-First 개발 문화
 
 단순한 사용 규칙을 넘어서 AI와 함께 일하는 새로운 개발 문화를 정의합니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((AI-First 개발 문화))
+    핵심 가치
+      증강된 창의성
+        창의성 증폭 도구
+        협력적 문제 해결
+        혁신적 접근법 탐구
+      지속적 학습
+        AI 상호작용 학습
+        집단 지능 구축
+        실패 학습 문화
+      책임감 있는 AI 활용
+        인간 최종 검증
+        윤리적 AI 사용
+        보안 우선 원칙
+      투명한 협업
+        AI 활용 과정 공개
+        동료 학습 지원
+        베스트 프랙티스 전파
+    실천 원칙
+      개발 워크플로우
+        기능 개발 검증
+        팀 표준 준수
+        보안 고려사항
+      코드 리뷰
+        자체 검증 프로세스
+        품질 기준 적용
+        건설적 피드백
+      지식 공유
+        주간 학습 공유
+        문제 해결 과정 기록
+        가이드 문서 작성
+    성과 측정
+      개인 KPI
+        학습 속도 지수
+        코드 품질 점수
+        혁신 기여도
+        멘토링 효과
+      팀 KPI
+        집단 생산성
+        기술 부채 감소
+        혁신 프로젝트
+        고객 만족도
+      조직 KPI
+        개발 비용 효율성
+        출시 속도
+        인재 유지율
+        기술 리더십
+```
 
 ```markdown
 # Claude Code 팀 헌장 2.0: AI-First Development Culture
@@ -200,6 +381,59 @@ claude "이번 주 Claude Code와 함께 해결한 복잡한 문제를 정리해
 ### 동적 CLAUDE.md 생태계 구축
 
 단순한 정적 문서를 넘어서 프로젝트와 함께 진화하는 지능형 가이드라인 시스템을 구축합니다:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[프로젝트 상태 모니터링] --> B{변화 감지}
+    B -->|코드베이스 진화| C[아키텍처 패턴 분석]
+    B -->|팀 역량 변화| D[역량 프로파일 업데이트]
+    B -->|성능 디그레이데이션| E[병목 분석 리포트]
+    B -->|보안 요구사항 변화| F[보안 가이드라인 갱신]
+    
+    C --> G[컴텍스트 인식 가이드 생성]
+    D --> H[역할별 맞춤형 워크플로우]
+    E --> I[성능 최적화 체크리스트]
+    F --> J[보안 예방 가이드라인]
+    
+    subgraph generation [동적 생성 시스템]
+        G --> K[기본 CLAUDE.md]
+        H --> L[역할별 확장]
+        I --> M[성능 가이드]
+        J --> N[보안 체크리스트]
+    end
+    
+    subgraph features [지능형 기능]
+        K --> O[자동 업데이트 트리거]
+        L --> P[팀 학습 경로 추천]
+        M --> Q[성능 모니터링 연동]
+        N --> R[리스크 예방 알림]
+    end
+    
+    subgraph feedback [피드백 루프]
+        O --> S[효과성 측정]
+        P --> T[학습 진행도 추적]
+        Q --> U[성능 개선 효과]
+        R --> V[보안 인시던트 감소]
+    end
+    
+    S --> A
+    T --> A
+    U --> A
+    V --> A
+    
+    classDef monitoringStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef analysisStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef generationStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef featuresStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef feedbackStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B monitoringStyle
+    class C,D,E,F,G,H,I,J analysisStyle
+    class K,L,M,N generationStyle
+    class O,P,Q,R featuresStyle
+    class S,T,U,V feedbackStyle
+```
 
 ```bash
 # 적응형 CLAUDE.md 생성
@@ -378,6 +612,69 @@ claude "팀의 전반적인 건강도를 분석하고 개선 방안을 제시해
 
 전통적인 코드 리뷰를 넘어서 AI와 인간의 서로 다른 강점을 활용한 다층적 품질 보장 시스템을 구축합니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[코드 작성 완료] --> B[AI 사전 리뷰]
+    B --> C{품질 기준 충족}
+    C -->|기준 미달| D[자동 개선 제안]
+    C -->|기준 충족| E[PR 생성]
+    D --> F[개발자 수정]
+    F --> B
+    
+    E --> G[맥락 인식 AI 리뷰]
+    G --> H[역할별 전문 리뷰]
+    
+    subgraph specialists [전문가 리뷰 체계]
+        I[보안 전문가<br/><small>Security Champion</small>]
+        J[성능 전문가<br/><small>Performance Specialist</small>]
+        K[아키텍처 전문가<br/><small>Architecture Guardian</small>]
+        L[UX 전문가<br/><small>User Experience Advocate</small>]
+    end
+    
+    H --> I
+    H --> J
+    H --> K
+    H --> L
+    
+    subgraph analysis [전문 분석 영역]
+        I --> M[보안 위협 모델링<br/>취약점 패턴 분석<br/>컴플라이언스 검증]
+        J --> N[성능 병목 분석<br/>알고리즘 최적화<br/>리소스 효율성]
+        K --> O[설계 원칙 준수<br/>의존성 관리<br/>확장성 평가]
+        L --> P[사용성 평가<br/>접근성 검증<br/>인터렉션 품질]
+    end
+    
+    M --> Q[종합 리뷰 리포트]
+    N --> Q
+    O --> Q
+    P --> Q
+    
+    Q --> R{리뷰 결과}
+    R -->|승인| S[병합 승인]
+    R -->|수정 요청| T[개발자 피드백]
+    T --> F
+    S --> U[자동 배포]
+    
+    subgraph feedback [피드백 루프]
+        U --> V[운영 메트릭 수집]
+        V --> W[리뷰 효과성 분석]
+        W --> X[리뷰 프로세스 개선]
+        X --> B
+    end
+    
+    classDef processStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef specialistStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef analysisStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef decisionStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef feedbackStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B,E,G,H,Q processStyle
+    class I,J,K,L specialistStyle
+    class M,N,O,P analysisStyle
+    class C,R decisionStyle
+    class V,W,X feedbackStyle
+```
+
 ### 지능형 사전 리뷰 시스템
 
 개발자가 PR을 생성하기 전에 AI가 다각도로 코드를 분석하여 품질을 사전에 보장합니다:
@@ -451,6 +748,77 @@ claude "이 PR을 리뷰하되, 다음 맥락을 고려해서 분석해줘:
 ```
 
 ### 역할별 전문화된 리뷰 프로세스
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph LR
+    subgraph security [보안 전문 리뷰]
+        A[보안 위협 모델링]
+        B[OWASP Top 10 체크]
+        C[인증 및 권한 부여]
+        D[데이터 보호 및 암호화]
+    end
+    
+    subgraph performance [성능 전문 리뷰]
+        E[알고리즘 복잡도 분석]
+        F[데이터베이스 쿼리 최적화]
+        G[네트워크 I/O 효율성]
+        H[프론트엔드 렌더링 성능]
+    end
+    
+    subgraph architecture [아키텍처 전문 리뷰]
+        I[설계 원칙 준수]
+        J[의존성 및 결합도]
+        K[확장성 및 유지보수성]
+        L[테스트 가능성]
+    end
+    
+    subgraph ux [사용자 경험 리뷰]
+        M[사용성 평가]
+        N[접근성 검증]
+        O[인터렉션 품질]
+        P[성능 인식 영향]
+    end
+    
+    subgraph outcomes [리뷰 결과]
+        Q[심각도 평가<br/><small>Critical/High/Medium/Low</small>]
+        R[개선 방안 제시]
+        S[우선순위 및 로드맵]
+        T[학습 리소스 추천]
+    end
+    
+    A --> Q
+    B --> R
+    C --> S
+    D --> T
+    
+    E --> Q
+    F --> R
+    G --> S
+    H --> T
+    
+    I --> Q
+    J --> R
+    K --> S
+    L --> T
+    
+    M --> Q
+    N --> R
+    O --> S
+    P --> T
+    
+    classDef securityStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef performanceStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef architectureStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef uxStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    classDef outcomeStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,B,C,D securityStyle
+    class E,F,G,H performanceStyle
+    class I,J,K,L architectureStyle
+    class M,N,O,P uxStyle
+    class Q,R,S,T outcomeStyle
+```
 
 **Security Champion - 보안 전문 리뷰**
 
@@ -659,6 +1027,64 @@ claude "최근 코드 리뷰에서 제기된 혁신적 아이디어들을 정리
 
 개별 지식의 단순한 공유를 넘어서 팀의 집단 지능을 체계적으로 구축하고 증폭시키는 고급 시스템을 구축합니다.
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+mindmap
+  root((집단 지능 증폭))
+    지식 발굴
+      암묵지 추출
+        개인별 노하우
+        경험 기반 판단
+        문제 해결 패턴
+      명시지 체계화
+        문서 품질 개선
+        정보 연결망 구축
+        중복 제거 및 통합
+      지식 연결망
+        개념 간 연관성
+        팀원 간 지식 의존성
+        외부 지식 통합
+    학습 시스템
+      맥락 인식 학습
+        계층화된 목표
+        이야기 구조 설명
+        인터랙티브 요소
+      맞춤형 경험
+        배경별 커스터마이징
+        실시간 적응 시스템
+        성과 기반 조정
+      학습 생태계
+        동료 학습 지원
+        멘토링 시스템
+        지식 평가 및 인증
+    지능형 지식베이스
+      AI 어시스턴트
+        자연어 질의 답변
+        컴텍스트 인식 추천
+        개인화 학습 경로
+      사용 패턴 분석
+        정보 우선순위화
+        검색 실패 패턴
+        전문성 매핑
+      자동 콘텐츠 관리
+        업데이트 알림
+        오래된 정보 감지
+        품질 지표 기반 개선
+    크로스 팀 협업
+      지식 거래소
+        전문성 매칭
+        멘토링 요청 시스템
+        베스트 프랙티스 공유
+      기술 쇼케이스
+        월간 Tech Talk
+        혁신 프로젝트 데모
+        코드 리뷰 세션
+      학습 커뮤니티
+        문제 해결 협업
+        실패 사례 공유
+        지식 기여 인센티브
+```
+
 ### AI 기반 지식 발굴과 구조화
 
 팀이 암묵적으로 보유한 지식을 AI가 체계적으로 발굴하고 구조화합니다:
@@ -726,6 +1152,99 @@ claude "이번 주 가장 복잡한 기술적 결정을 교육 자료로 만들�
 
 정적인 위키를 넘어서 살아있는 지식 생태계를 구축합니다:
 
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+flowchart TD
+    A[사용자 질의] --> B[AI 어시스턴트]
+    B --> C{컨텍스트 분석}
+    
+    C -->|직접 답변 가능| D[즈식 답변 제공]
+    C -->|관련 정보 필요| E[지식베이스 검색]
+    C -->|새로운 질문| F[전문가 에스캼레이션]
+    
+    E --> G[유사 문제 및 해결책]
+    E --> H[관련 코드 및 이슈]
+    E --> I[추천 학습 경로]
+    
+    subgraph knowledge [지식베이스 시스템]
+        J[문서 콘텐츠]
+        K[코드 단편]
+        L[이슈 히스토리]
+        M[베스트 프랙티스]
+        N[사용 패턴 데이터]
+    end
+    
+    G --> J
+    H --> K
+    I --> L
+    
+    subgraph analytics [사용 분석 데이터]
+        O[검색 패턴]
+        P[정보 간꫊]
+        Q[사용자 피드백]
+        R[대화 품질]
+    end
+    
+    D --> O
+    E --> P
+    F --> Q
+    
+    subgraph automation [자동 콘텐츠 관리]
+        S[콘텐츠 품질 평가]
+        T[업데이트 필요 감지]
+        U[중복 콘텐츠 통합]
+        V[누락 정보 식별]
+    end
+    
+    N --> S
+    K --> T
+    L --> U
+    M --> V
+    
+    subgraph external [외부 지식 통합]
+        W[공식 문서 연동]
+        X[커뮤니티 베스트 프랙티스]
+        Y[업계 트렌드 큐레이션]
+        Z[기술 뉴스 및 논문]
+    end
+    
+    S --> W
+    T --> X
+    U --> Y
+    V --> Z
+    
+    subgraph feedback [학습 피드백 루프]
+        AA[사용자 만족도]
+        BB[정보 정확성]
+        CC[학습 효과]
+        DD[시스템 개선]
+    end
+    
+    W --> AA
+    X --> BB
+    Y --> CC
+    Z --> DD
+    
+    AA --> B
+    BB --> B
+    CC --> B
+    DD --> B
+    
+    classDef userStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef aiStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    classDef knowledgeStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef analyticsStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef automationStyle fill:#fee2e2,stroke:#dc2626,stroke-width:2px,color:#7f1d1d
+    classDef externalStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    
+    class A,D,E,F userStyle
+    class B,C aiStyle
+    class G,H,I,J,K,L,M,N knowledgeStyle
+    class O,P,Q,R analyticsStyle
+    class S,T,U,V automationStyle
+    class W,X,Y,Z,AA,BB,CC,DD externalStyle
+```
+
 ```bash
 # 자가 진화하는 기술 문서 시스템
 claude "우리 팀을 위한 차세대 기술 문서 시스템을 설계해줘:
@@ -764,6 +1283,85 @@ claude "우리 팀을 위한 차세대 기술 문서 시스템을 설계해줘:
 ### 크로스 팀 지식 교환 허브
 
 팀 경계를 넘어서는 조직 차원의 지식 순환 시스템:
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
+graph TB
+    subgraph exchange [지식 거래소]
+        A[팀 A<br/><small>프론트엔드 전문</small>]
+        B[팀 B<br/><small>백엔드 전문</small>]
+        C[팀 C<br/><small>데이터 전문</small>]
+        D[팀 D<br/><small>DevOps 전문</small>]
+        E[팀 E<br/><small>모바일 전문</small>]
+    end
+    
+    subgraph platform [지식 교환 플랫폼]
+        F[멘토링 요청<br/><small>전문성 매칭</small>]
+        G[기술 컸설팅<br/><small>크로스 팀 지원</small>]
+        H[베스트 프랙티스<br/><small>경험 공유</small>]
+        I[실패 사례<br/><small>익명 학습</small>]
+    end
+    
+    subgraph events [기술 쇼케이스 이벤트]
+        J[월간 Tech Talk<br/><small>자동 기획</small>]
+        K[혁신 프로젝트<br/><small>데모 데이</small>]
+        L[코드 리뷰<br/><small>라이브 세션</small>]
+        M[문제 해결<br/><small>협업 워크샵</small>]
+    end
+    
+    subgraph gamification [게임화 요소]
+        N[지식 기여 포인트]
+        O[멘토링 배지]
+        P[전문성 인증]
+        Q[팀 랭킹 시스템]
+    end
+    
+    subgraph outcomes [결과 및 성과]
+        R[조직 학습 속도 향상]
+        S[팀 간 사일로 제거]
+        T[혁신적 솔루션 증가]
+        U[직원 개발 만족도 향상]
+    end
+    
+    A --> F
+    B --> G
+    C --> H
+    D --> I
+    E --> F
+    
+    F --> J
+    G --> K
+    H --> L
+    I --> M
+    
+    J --> N
+    K --> O
+    L --> P
+    M --> Q
+    
+    N --> R
+    O --> S
+    P --> T
+    Q --> U
+    
+    A -.-> B
+    B -.-> C
+    C -.-> D
+    D -.-> E
+    E -.-> A
+    
+    classDef teamStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
+    classDef platformStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
+    classDef eventStyle fill:#ecfdf5,stroke:#059669,stroke-width:2px,color:#064e3b
+    classDef gameStyle fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#92400e
+    classDef outcomeStyle fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+    
+    class A,B,C,D,E teamStyle
+    class F,G,H,I platformStyle
+    class J,K,L,M eventStyle
+    class N,O,P,Q gameStyle
+    class R,S,T,U outcomeStyle
+```
 
 ```bash
 # 조직 차원의 지식 생태계 구축
