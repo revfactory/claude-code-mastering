@@ -41,29 +41,37 @@ claude-code-mastering/
 ├── 📄 README.md                              # 이 파일
 ├── 📄 index.html                             # GitHub Pages 메인 페이지
 ├── 📄 style.css                              # CSS 스타일
-├── 🔧 create-complete-book.sh                # 통합 책 생성 스크립트
-├── 🔧 html-to-pdf.js                         # HTML→PDF 변환 도구
-├── 📁 book/                                  # 소책자 원본 (마크다운)
+├── 📁 book/                                  # 완성된 책 내용 (마크다운)
 │   ├── 📄 00-preface.md                      # 서문
-│   ├── 📄 01-chapter1.md                     # 제1장
-│   ├── 📄 02-chapter2.md                     # 제2장
-│   ├── 📄 03-chapter3.md                     # 제3장
-│   ├── 📄 04-chapter4.md                     # 제4장
-│   ├── 📄 05-chapter5.md                     # 제5장
-│   ├── 📄 06-chapter6.md                     # 제6장
-│   ├── 📄 07-chapter7.md                     # 제7장
-│   ├── 📄 08-chapter8.md                     # 제8장
-│   ├── 📄 09-chapter9.md                     # 제9장
-│   ├── 📄 10-chapter10.md                    # 제10장
-│   ├── 📄 13-chapter13.md                    # 제13장
-│   └── 📄 99-conclusion.md                   # 결론
-└── 📁 output/                                # 변환된 파일들
+│   ├── 📄 01-chapter1.md                     # 제1장: Claude Code란 무엇인가?
+│   ├── 📄 02-chapter2.md                     # 제2장: 설치와 초기 설정
+│   ├── 📄 03-chapter3.md                     # 제3장: 기본 사용법 마스터
+│   ├── 📄 04-chapter4.md                     # 제4장: CLAUDE.md로 프로젝트 맞춤 설정
+│   ├── 📄 05-chapter5.md                     # 제5장: 프레임워크별 베스트 프랙티스
+│   ├── 📄 06-chapter6.md                     # 제6장: 언어별 활용 전략
+│   ├── 📄 07-chapter7.md                     # 제7장: 효율적인 개발 워크플로우
+│   ├── 📄 08-chapter8.md                     # 제8장: 멀티태스킹과 병렬 처리
+│   ├── 📄 09-chapter9.md                     # 제9장: 자동화와 CI/CD 통합
+│   ├── 📄 10-chapter10.md                    # 제10장: 웹 애플리케이션 구축
+│   ├── 📄 13-chapter13.md                    # 제13장: 조직별 Claude Code 활용 사례 연구
+│   └── 📄 99-conclusion.md                   # 결론: AI와 함께하는 개발의 미래
+├── 📁 scripts/                               # 변환 스크립트들
+│   ├── 🔧 create-complete-book.sh            # 통합 책 생성 스크립트
+│   ├── 🔧 html-to-pdf.js                     # HTML→PDF 변환 도구
+│   ├── 🔧 enhanced-pdf-generator.js          # 고급 PDF 생성기
+│   └── 🔧 check-pdf-pages.js                 # PDF 페이지 검증 도구
+├── 📁 raw/                                   # 원본 자료 및 초안
+│   ├── 📄 claude-code-action.md              # Claude Code Action 가이드
+│   ├── 📄 claude-code-best-practices-ko.md   # 원본 베스트 프랙티스
+│   ├── 📄 claude-code-book-outline.md        # 책 목차 구성
+│   └── 📄 usecase.md                         # 활용 사례 초안
+└── 📁 output/                                # 생성된 결과물
     ├── 📁 complete/                          # 완전한 책 버전
     │   ├── 📄 claude-code-mastering-complete.html  # 전체 책 HTML
     │   ├── 📄 claude-code-mastering-complete.md    # 통합 마크다운
     │   └── 📄 claude-code-mastering-complete.pdf   # 전체 책 PDF
-    ├── 📁 html/                              # 개별 HTML 버전
-    ├── 📁 pdf/                               # 개별 PDF 버전
+    ├── 📁 html/                              # 개별 HTML 버전 (미사용)
+    ├── 📁 pdf/                               # 개별 PDF 버전 (미사용)
     └── 📄 style.css                          # HTML/PDF 스타일
 ```
 
@@ -85,27 +93,34 @@ claude-code-mastering/
 ```bash
 # macOS/Linux
 brew install pandoc node
-npm install puppeteer
 
 # 또는 시스템 패키지 매니저 사용
 # Ubuntu: sudo apt install pandoc nodejs npm
 # CentOS: sudo yum install pandoc nodejs npm
+
+# PDF 생성을 위한 Puppeteer 설치 (필요시)
+npm install puppeteer
 ```
 
 **사용법:**
 ```bash
-# 실행 권한 부여
-chmod +x create-complete-book.sh
+# 1. 실행 권한 부여
+chmod +x scripts/create-complete-book.sh
 
-# 완전한 책 생성 (HTML + PDF)
-./create-complete-book.sh
+# 2. 완전한 책 생성 (HTML + PDF)
+./scripts/create-complete-book.sh
 
-# 생성된 파일들:
-# - output/complete/claude-code-mastering-complete.html
-# - output/complete/claude-code-mastering-complete.pdf
-# - output/complete/claude-code-mastering-complete.md
-# - index.html (GitHub Pages용)
+# 3. 생성된 파일들 확인
+# - output/complete/claude-code-mastering-complete.html  (전체 책 HTML)
+# - output/complete/claude-code-mastering-complete.pdf   (전체 책 PDF)
+# - output/complete/claude-code-mastering-complete.md    (통합 마크다운)
+# - index.html (GitHub Pages용 - 자동 업데이트)
 ```
+
+**참고사항:**
+- PDF 생성에는 Puppeteer가 필요합니다 (`npm install puppeteer`)
+- HTML만 생성하려면 스크립트에서 PDF 생성 부분을 주석 처리하세요
+- Mermaid 다이어그램은 HTML에서만 정상 렌더링됩니다
 
 ## 🎯 주요 특징
 

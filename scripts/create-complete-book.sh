@@ -150,7 +150,7 @@ echo "✅ HTML 생성 완료: output/complete/claude-code-mastering-complete.htm
 
 # PDF 생성 (Puppeteer 사용)
 echo "📄 PDF 생성 중..."
-node html-to-pdf.js \
+node scripts/html-to-pdf.js \
     "output/complete/claude-code-mastering-complete.html" \
     "output/complete/claude-code-mastering-complete.pdf"
 
