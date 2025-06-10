@@ -1063,7 +1063,7 @@ flowchart LR
         A[버그 리포트 분석]
         B[재현 단계 검증]
         C[오류 로그 추적]
-        D[규콙 코드 식별]
+        D[규격 코드 식별]
     end
     
     subgraph analysis [근본 원인 분석]
@@ -1074,7 +1074,7 @@ flowchart LR
     end
     
     subgraph solution [해결책 설계]
-        I[여러 수정 대안 발경]
+        I[여러 수정 대안 발견]
         J[각 대안의 장단점 분석]
         K[최적 솔루션 선택]
         L[수정 범위 최소화]
