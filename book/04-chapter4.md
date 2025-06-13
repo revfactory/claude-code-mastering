@@ -184,7 +184,7 @@ graph LR
 
 프로젝트의 디렉토리 구조와 각 파일의 역할을 명확히 정의하면 Claude Code가 더 정확한 작업을 수행할 수 있습니다. 단순한 구조 나열을 넘어서 각 디렉토리의 책임과 파일 명명 규칙까지 포함해야 합니다.
 
-```markdown
+````markdown
 # CLAUDE.md
 
 ## 프로젝트 구조
@@ -214,13 +214,13 @@ src/
 - 유틸리티: camelCase (예: formatDate.ts)
 - 상수: UPPER_SNAKE_CASE (예: API_ENDPOINTS.ts)
 - 스타일: kebab-case (예: user-profile.module.css)
-```
+````
 
 ### 아키텍처 패턴 명시
 
 프로젝트에서 사용하는 주요 아키텍처 패턴과 디자인 원칙을 명시하면 일관성 있는 코드를 생성할 수 있습니다.
 
-```markdown
+````markdown
 ## 아키텍처 패턴
 
 ### 상태 관리
@@ -245,7 +245,7 @@ export const ComponentName: React.FC<ComponentProps> = (props) => {
 ### 데이터 흐름
 
 1. 사용자 액션 → 2. Action dispatch → 3. Reducer 처리 → 4. State 업데이트 → 5. UI 리렌더링
-
+````
 
 ## 4.3 코딩 스타일 가이드 정의
 
@@ -275,23 +275,12 @@ const maxretrycount = 3;
 export const userprofile = () => { }
 ```
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
-flowchart TD
-    A["Import 순서"] --> B["1. React 관련<br/>React, useState, useEffect"]
-    B --> C["2. 외부 라이브러리<br/>axios, lodash, moment"]
-    C --> D["3. 내부 모듈<br/>@/constants, @/services"]
-    D --> E["4. 상대 경로 import<br/>../components, ./utils"]
-    E --> F["5. 스타일 파일<br/>CSS, SCSS 파일"]
-    
-    classDef importStyle fill:#f1f5f9,stroke:#475569,stroke-width:2px,color:#1e293b
-    classDef rootStyle fill:#e2e8f0,stroke:#334155,stroke-width:3px,color:#1e293b
-    
-    class A rootStyle
-    class B,C,D,E,F importStyle
-```
-
 ### Import 순서
+1. React 관련 (예: React, useState, useEffect)
+2. 외부 라이브러리 (예: axios, lodash, moment)
+3. 내부 모듈 (예: @/constants, @/services)
+4. 상대 경로 import (예: ../components, ./utils)
+5. 스타일 파일 (예: CSS, SCSS 파일)
 
 ```typescript
 import React, { useState, useEffect } from 'react';
@@ -310,25 +299,14 @@ import './styles.css';
 
 높은 품질의 코드를 유지하기 위한 구체적인 기준과 규칙을 설정합니다. 이러한 기준은 코드 리뷰 시 체크리스트로도 활용됩니다.
 
-```markdown
+````markdown
 ## 코드 품질 기준
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#f8fafc", "primaryTextColor": "#1e293b", "primaryBorderColor": "#e2e8f0", "lineColor": "#94a3b8", "secondaryColor": "#f1f5f9", "tertiaryColor": "#e2e8f0"}}}%%
-graph TB
-    subgraph rules ["함수 작성 규칙"]
-        A["한 가지 일만 수행<br/>Single Responsibility"]
-        B["함수 길이 50줄 이하<br/>가독성 향상"]
-        C["매개변수 3개 이하<br/>복잡성 감소"]
-        D["복잡도 10 이하<br/>Cyclomatic Complexity"]
-    end
-    
-    classDef ruleStyle fill:#e2e8f0,stroke:#334155,stroke-width:2px,color:#1e293b
-    
-    class A,B,C,D ruleStyle
-```
-
 ### 함수 작성 규칙
+- 한 가지 일만 수행 (Single Responsibility)
+- 함수 길이 50줄 이하 (가독성 향상)
+- 매개변수 3개 이하 (복잡성 감소)
+- 복잡도 10 이하 (Cyclomatic Complexity)
 
 ### 에러 처리
 ```typescript
@@ -358,6 +336,7 @@ const validateToken = (token: string): boolean => {
   return jwt.verify(token, SECRET_KEY);
 }
 ```
+````
 
 ## 4.4 개발 환경 자동화
 
@@ -365,7 +344,7 @@ const validateToken = (token: string): boolean => {
 
 일관된 개발 환경을 위한 필수 도구와 설정을 명시합니다. 새로운 팀원이 빠르게 개발 환경을 구축할 수 있도록 단계별 가이드를 제공합니다.
 
-```markdown
+````markdown
 ## 개발 환경
 
 ### 필수 도구
@@ -374,6 +353,7 @@ const validateToken = (token: string): boolean => {
 - VS Code + 추천 확장 프로그램
 
 ### 초기 설정 스크립트
+```bash
 # 의존성 설치
 pnpm install
 
@@ -409,6 +389,7 @@ pnpm dev
 - pre-commit: 린트 및 포매팅 검사
 - commit-msg: 커밋 메시지 형식 검증
 - pre-push: 테스트 실행
+````
 
 ## 4.5 팀 협업을 위한 규칙 설정
 
@@ -438,11 +419,13 @@ pnpm dev
 - 최소 1명의 승인 필요
 - 모든 CI 체크 통과
 - 충돌 해결 완료
+```
 
 ### 브랜치 전략
 
 체계적인 Git 브랜치 관리를 위한 전략과 규칙을 정의합니다. Git Flow를 기반으로 한 실용적인 브랜치 전략을 소개합니다.
 
+```markdown
 ## Git 브랜치 전략
 
 ### 브랜치 명명 규칙
@@ -463,8 +446,6 @@ main
 - feature → develop: Squash merge
 - develop → main: Merge commit
 - hotfix → main: Cherry-pick
-```
-
 
 ## 팀 커뮤니케이션
 
@@ -496,6 +477,7 @@ main
 - 고려한 옵션들
 - 결정 사항
 - 결과
+```
 
 ## 실전 예제: 대규모 전자상거래 프로젝트
 
@@ -611,6 +593,7 @@ claude "CLAUDE.md 파일이 업데이트되었어.
 
 다양한 개발 환경에 따른 다른 설정을 체계적으로 관리할 수 있습니다.
 
+```markdown
 ## 환경별 설정
 
 ### 개발 환경
@@ -622,12 +605,13 @@ claude "CLAUDE.md 파일이 업데이트되었어.
 - 로그 레벨: ERROR
 - 실제 데이터만 사용
 - 에러 메시지 일반화
-
+```
 
 ### 4. 지속적 개선과 버전 관리
 
 CLAUDE.md 자체도 소프트웨어처럼 버전 관리하고 지속적으로 개선해야 합니다.
 
+```markdown
 ## CLAUDE.md 버전 관리
 
 ### v2.1.0 (2024-03-15)
@@ -646,7 +630,7 @@ CLAUDE.md 자체도 소프트웨어처럼 버전 관리하고 지속적으로 �
 #### 주요 변경
 - 마이크로서비스 아키텍처로 전환
 - 새로운 브랜치 전략 (Git Flow → GitHub Flow)
-
+```
 
 **개선 사이클 예시**
 ```bash
