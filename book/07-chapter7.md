@@ -416,19 +416,19 @@ gantt
     axisFormat %d
     
     section Day 1: 탐색과 계획
-    기존 시스템 분석     :active, d1-morning, 0, 1
-    결제 기능 설계      :d1-afternoon, after d1-morning, 1
-    아키텍처 문서화     :d1-doc, after d1-afternoon, 1
+    기존 시스템 분석     :active, d1-morning, 0, 1d
+    결제 기능 설계      :d1-afternoon, after d1-morning, 1d
+    아키텍처 문서화     :d1-doc, after d1-afternoon, 1d
     
     section Day 2: 구현
-    백엔드 API 개발     :d2-backend, 1, 1
-    프론트엔드 UI      :d2-frontend, after d2-backend, 1
-    단위 테스트 작성    :d2-test, after d2-frontend, 1
+    백엔드 API 개발     :d2-backend, 1, 1d
+    프론트엔드 UI      :d2-frontend, after d2-backend, 1d
+    단위 테스트 작성    :d2-test, after d2-frontend, 1d
     
     section Day 3: 통합과 배포
-    통합 테스트        :d3-integration, 2, 1
-    E2E 테스트        :d3-e2e, after d3-integration, 1
-    문서화 및 배포 준비  :d3-deploy, after d3-e2e, 1
+    통합 테스트        :d3-integration, 2, 1d
+    E2E 테스트        :d3-e2e, after d3-integration, 1d
+    문서화 및 배포 준비  :d3-deploy, after d3-e2e, 1d
 ```
 
 ### Day 1: 탐색과 계획
