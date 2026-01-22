@@ -209,7 +209,7 @@ with open('docs/claude-code-mastering-complete.html', 'w', encoding='utf-8') as 
 
 # Mermaid 스크립트 추가
 sed -i '' 's|</body>|<!-- Mermaid 다이어그램 렌더링 -->\
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>\
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>\
 <script>\
     mermaid.initialize({\
         startOnLoad: true,\
